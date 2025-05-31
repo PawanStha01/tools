@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter - Count Characters, Words, Lines | Multi-Tools</title>
+    <meta name="description" content="Free online character counter tool. Count characters with and without spaces, words, sentences, paragraphs, and lines in your text. Perfect for Twitter, SEO, and essays.">
+    <meta name="keywords" content="character counter, word counter, text counter, letter counter, twitter character count, seo character count">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .count-box {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        
+        .count-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .count-label {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .character-distribution {
+            height: 200px;
+            margin: 1.5rem 0;
+        }
+        
+        .char-frequency {
+            height: 20px;
+            margin-bottom: 2px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .social-limit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+        
+        .progress {
+            flex-grow: 1;
+            height: 8px;
+        }
+        
+        .progress-bar.under-limit {
+            background-color: var(--success-color);
+        }
+        
+        .progress-bar.near-limit {
+            background-color: var(--warning-color);
+        }
+        
+        .progress-bar.over-limit {
+            background-color: var(--danger-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Character Counter</h1>
+                        <p class="tool-description">Count characters with and without spaces, words, sentences, paragraphs, and lines in your text. Perfect for Twitter, SEO, and essays.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <div class="mb-3">
+                        <label for="text-input" class="form-label">Enter or paste your text below:</label>
+                        <textarea class="form-control" id="text-input" rows="10" placeholder="Type or paste your text here..."></textarea>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mb-3">
+                        <button class="btn btn-outline-secondary" id="clear-btn">Clear</button>
+                        <button class="btn btn-outline-primary" id="copy-btn">
+                            <i class="bi bi-clipboard"></i> Copy Text
+                        </button>
+                    </div>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container">
+                        <h4>Character Count Results</h4>
+                        
+                        <div class="row">
+                            <div class="col-md-3 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="char-count">0</div>
+                                    <div class="count-label">Characters</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="char-no-spaces-count">0</div>
+                                    <div class="count-label">Characters (no spaces)</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="word-count">0</div>
+                                    <div class="count-label">Words</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="sentence-count">0</div>
+                                    <div class="count-label">Sentences</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-4 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="paragraph-count">0</div>
+                                    <div class="count-label">Paragraphs</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="count-box">
+                                    <div class="count-value" id="line-count">0</div>
+                                    <div class="count-label">Lines</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="count-box">
+                                    <div class="count-value" id="reading-time">0 min</div>
+                                    <div class="count-label">Reading Time</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Social Media Limits</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="social-limit">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter" class="social-icon">
+                                    <div class="progress">
+                                        <div class="progress-bar" id="twitter-progress" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2" id="twitter-count">0/280</span>
+                                </div>
+                                
+                                <div class="social-limit">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" class="social-icon">
+                                    <div class="progress">
+                                        <div class="progress-bar" id="facebook-progress" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2" id="facebook-count">0/63,206</span>
+                                </div>
+                                
+                                <div class="social-limit">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon">
+                                    <div class="progress">
+                                        <div class="progress-bar" id="instagram-progress" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2" id="instagram-count">0/2,200</span>
+                                </div>
+                                
+                                <div class="social-limit">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-icon">
+                                    <div class="progress">
+                                        <div class="progress-bar" id="linkedin-progress" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2" id="linkedin-count">0/3,000</span>
+                                </div>
+                                
+                                <div class="social-limit">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111466.png" alt="TikTok" class="social-icon">
+                                    <div class="progress">
+                                        <div class="progress-bar" id="tiktok-progress" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <span class="ms-2" id="tiktok-count">0/2,200</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Character Distribution</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="character-distribution" id="char-distribution">
+                                    <!-- Character distribution will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Character Counting</h4>
+                        <p>Character counting is essential for various purposes, from meeting social media character limits to optimizing content for SEO. Here's why character counting matters:</p>
+                        
+                        <h5>Social Media Character Limits</h5>
+                        <ul>
+                            <li><strong>Twitter:</strong> 280 characters per tweet</li>
+                            <li><strong>Instagram:</strong> 2,200 characters for captions</li>
+                            <li><strong>Facebook:</strong> 63,206 characters for posts</li>
+                            <li><strong>LinkedIn:</strong> 3,000 characters for posts, 1,500 characters for comments</li>
+                            <li><strong>TikTok:</strong> 2,200 characters for captions</li>
+                        </ul>
+                        
+                        <h5>SEO Considerations</h5>
+                        <ul>
+                            <li><strong>Meta Titles:</strong> Ideally 50-60 characters</li>
+                            <li><strong>Meta Descriptions:</strong> Ideally 150-160 characters</li>
+                            <li><strong>URL Length:</strong> Shorter URLs (under 60 characters) are preferred</li>
+                            <li><strong>Email Subject Lines:</strong> 40-50 characters for optimal open rates</li>
+                        </ul>
+                        
+                        <h5>Academic Writing</h5>
+                        <ul>
+                            <li><strong>Essays:</strong> Often have word count requirements (e.g., 500 words, 1,000 words)</li>
+                            <li><strong>Research Papers:</strong> May have character or word limits for abstracts and sections</li>
+                            <li><strong>Personal Statements:</strong> Typically limited to a specific character or word count</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Tip</h5>
+                            <p class="mb-0">When writing for social media or SEO, it's best to stay within the recommended character limits to ensure your content displays properly and achieves maximum impact.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                  <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+
+                
+                        
+                    </div>
+                </div>
+                
+                <!-- Related Tools 
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Related Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/text-tools/word-counter.html">Word Counter</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/case-converter.html">Case Converter</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/text-to-speech.html">Text to Speech</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/fancy-text-generator.html">Fancy Text Generator</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/random-text-generator.html">Random Text Generator</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                
+                <!-- Popular Tools 
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Popular Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/image-tools/image-to-png.html">Image to PNG Converter</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/percentage-calculator.html">Percentage Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/developer-tools/json-formatter.html">JSON Formatter</a></li>
+                            <li class="list-group-item"><a href="/tools/seo-tools/meta-tag-generator.html">Meta Tag Generator</a></li>
+                            <li class="list-group-item"><a href="/tools/unit-converters/length-converter.html">Length Converter</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+   
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textInput = document.getElementById('text-input');
+            const clearBtn = document.getElementById('clear-btn');
+            const copyBtn = document.getElementById('copy-btn');
+            
+            // Count elements
+            const charCount = document.getElementById('char-count');
+            const charNoSpacesCount = document.getElementById('char-no-spaces-count');
+            const wordCount = document.getElementById('word-count');
+            const sentenceCount = document.getElementById('sentence-count');
+            const paragraphCount = document.getElementById('paragraph-count');
+            const lineCount = document.getElementById('line-count');
+            const readingTime = document.getElementById('reading-time');
+            
+            // Social media elements
+            const twitterProgress = document.getElementById('twitter-progress');
+            const twitterCount = document.getElementById('twitter-count');
+            const facebookProgress = document.getElementById('facebook-progress');
+            const facebookCount = document.getElementById('facebook-count');
+            const instagramProgress = document.getElementById('instagram-progress');
+            const instagramCount = document.getElementById('instagram-count');
+            const linkedinProgress = document.getElementById('linkedin-progress');
+            const linkedinCount = document.getElementById('linkedin-count');
+            const tiktokProgress = document.getElementById('tiktok-progress');
+            const tiktokCount = document.getElementById('tiktok-count');
+            
+            // Character distribution
+            const charDistribution = document.getElementById('char-distribution');
+            
+            // Social media limits
+            const TWITTER_LIMIT = 280;
+            const FACEBOOK_LIMIT = 63206;
+            const INSTAGRAM_LIMIT = 2200;
+            const LINKEDIN_LIMIT = 3000;
+            const TIKTOK_LIMIT = 2200;
+            
+            // Count text statistics
+            function countText() {
+                const text = textInput.value;
+                
+                // Count characters
+                const chars = text.length;
+                charCount.textContent = chars;
+                
+                // Count characters without spaces
+                const charsNoSpaces = text.replace(/\s+/g, '').length;
+                charNoSpacesCount.textContent = charsNoSpaces;
+                
+                // Count words
+                const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+                wordCount.textContent = words;
+                
+                // Count sentences
+                const sentences = text.trim() === '' ? 0 : text.split(/[.!?]+/).filter(Boolean).length;
+                sentenceCount.textContent = sentences;
+                
+                // Count paragraphs
+                const paragraphs = text.trim() === '' ? 0 : text.split(/\n+/).filter(para => para.trim() !== '').length;
+                paragraphCount.textContent = paragraphs;
+                
+                // Count lines
+                const lines = text.trim() === '' ? 0 : text.split('\n').length;
+                lineCount.textContent = lines;
+                
+                // Calculate reading time (average reading speed: 225 words per minute)
+                const minutes = Math.ceil(words / 225);
+                readingTime.textContent = minutes + ' min';
+                
+                // Update social media limits
+                updateSocialMediaLimits(chars);
+                
+                // Update character distribution
+                updateCharacterDistribution(text);
+            }
+            
+            // Update social media limits
+            function updateSocialMediaLimits(chars) {
+                // Twitter
+                const twitterPercentage = Math.min((chars / TWITTER_LIMIT) * 100, 100);
+                twitterProgress.style.width = twitterPercentage + '%';
+                twitterCount.textContent = chars + '/' + TWITTER_LIMIT;
+                
+                if (chars > TWITTER_LIMIT) {
+                    twitterProgress.classList.remove('under-limit', 'near-limit');
+                    twitterProgress.classList.add('over-limit');
+                } else if (chars > TWITTER_LIMIT * 0.8) {
+                    twitterProgress.classList.remove('under-limit', 'over-limit');
+                    twitterProgress.classList.add('near-limit');
+                } else {
+                    twitterProgress.classList.remove('near-limit', 'over-limit');
+                    twitterProgress.classList.add('under-limit');
+                }
+                
+                // Facebook
+                const facebookPercentage = Math.min((chars / FACEBOOK_LIMIT) * 100, 100);
+                facebookProgress.style.width = facebookPercentage + '%';
+                facebookCount.textContent = chars + '/' + FACEBOOK_LIMIT.toLocaleString();
+                
+                if (chars > FACEBOOK_LIMIT) {
+                    facebookProgress.classList.remove('under-limit', 'near-limit');
+                    facebookProgress.classList.add('over-limit');
+                } else if (chars > FACEBOOK_LIMIT * 0.8) {
+                    facebookProgress.classList.remove('under-limit', 'over-limit');
+                    facebookProgress.classList.add('near-limit');
+                } else {
+                    facebookProgress.classList.remove('near-limit', 'over-limit');
+                    facebookProgress.classList.add('under-limit');
+                }
+                
+                // Instagram
+                const instagramPercentage = Math.min((chars / INSTAGRAM_LIMIT) * 100, 100);
+                instagramProgress.style.width = instagramPercentage + '%';
+                instagramCount.textContent = chars + '/' + INSTAGRAM_LIMIT.toLocaleString();
+                
+                if (chars > INSTAGRAM_LIMIT) {
+                    instagramProgress.classList.remove('under-limit', 'near-limit');
+                    instagramProgress.classList.add('over-limit');
+                } else if (chars > INSTAGRAM_LIMIT * 0.8) {
+                    instagramProgress.classList.remove('under-limit', 'over-limit');
+                    instagramProgress.classList.add('near-limit');
+                } else {
+                    instagramProgress.classList.remove('near-limit', 'over-limit');
+                    instagramProgress.classList.add('under-limit');
+                }
+                
+                // LinkedIn
+                const linkedinPercentage = Math.min((chars / LINKEDIN_LIMIT) * 100, 100);
+                linkedinProgress.style.width = linkedinPercentage + '%';
+                linkedinCount.textContent = chars + '/' + LINKEDIN_LIMIT.toLocaleString();
+                
+                if (chars > LINKEDIN_LIMIT) {
+                    linkedinProgress.classList.remove('under-limit', 'near-limit');
+                    linkedinProgress.classList.add('over-limit');
+                } else if (chars > LINKEDIN_LIMIT * 0.8) {
+                    linkedinProgress.classList.remove('under-limit', 'over-limit');
+                    linkedinProgress.classList.add('near-limit');
+                } else {
+                    linkedinProgress.classList.remove('near-limit', 'over-limit');
+                    linkedinProgress.classList.add('under-limit');
+                }
+                
+                // TikTok
+                const tiktokPercentage = Math.min((chars / TIKTOK_LIMIT) * 100, 100);
+                tiktokProgress.style.width = tiktokPercentage + '%';
+                tiktokCount.textContent = chars + '/' + TIKTOK_LIMIT.toLocaleString();
+                
+                if (chars > TIKTOK_LIMIT) {
+                    tiktokProgress.classList.remove('under-limit', 'near-limit');
+                    tiktokProgress.classList.add('over-limit');
+                } else if (chars > TIKTOK_LIMIT * 0.8) {
+                    tiktokProgress.classList.remove('under-limit', 'over-limit');
+                    tiktokProgress.classList.add('near-limit');
+                } else {
+                    tiktokProgress.classList.remove('near-limit', 'over-limit');
+                    tiktokProgress.classList.add('under-limit');
+                }
+            }
+            
+            // Update character distribution
+            function updateCharacterDistribution(text) {
+                // Clear previous distribution
+                charDistribution.innerHTML = '';
+                
+                if (text.trim() === '') {
+                    return;
+                }
+                
+                // Count character frequency
+                const charFrequency = {};
+                const letters = text.replace(/[^a-zA-Z]/g, '').toLowerCase();
+                
+                for (let i = 0; i < letters.length; i++) {
+                    const char = letters[i];
+                    charFrequency[char] = (charFrequency[char] || 0) + 1;
+                }
+                
+                // Sort characters by frequency
+                const sortedChars = Object.keys(charFrequency).sort((a, b) => charFrequency[b] - charFrequency[a]);
+                
+                // Get top 10 characters
+                const topChars = sortedChars.slice(0, 10);
+                
+                // Find maximum frequency for scaling
+                const maxFrequency = Math.max(...topChars.map(char => charFrequency[char]));
+                
+                // Create distribution bars
+                const distributionContainer = document.createElement('div');
+                distributionContainer.className = 'd-flex align-items-end h-100';
+                
+                topChars.forEach(char => {
+                    const frequency = charFrequency[char];
+                    const percentage = (frequency / maxFrequency) * 100;
+                    
+                    const barContainer = document.createElement('div');
+                    barContainer.className = 'd-flex flex-column align-items-center mx-1 flex-grow-1';
+                    
+                    const bar = document.createElement('div');
+                    bar.className = 'char-frequency';
+                    bar.style.width = '100%';
+                    bar.style.height = percentage + '%';
+                    
+                    const label = document.createElement('div');
+                    label.className = 'mt-2 text-center';
+                    label.innerHTML = `<strong>${char}</strong><br><small>${frequency}</small>`;
+                    
+                    barContainer.appendChild(bar);
+                    barContainer.appendChild(label);
+                    distributionContainer.appendChild(barContainer);
+                });
+                
+                charDistribution.appendChild(distributionContainer);
+            }
+            
+            // Auto-count on input
+            textInput.addEventListener('input', countText);
+            
+            // Clear button click
+            clearBtn.addEventListener('click', function() {
+                textInput.value = '';
+                countText();
+                textInput.focus();
+            });
+            
+            // Copy button click
+            copyBtn.addEventListener('click', function() {
+                textInput.select();
+                document.execCommand('copy');
+                
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="bi bi-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            });
+            
+            // Initial count
+            countText();
+        });
+    </script>
+</body>
+</html>

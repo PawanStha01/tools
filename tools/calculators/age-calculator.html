@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator - Calculate Your Exact Age | Multi-Tools</title>
+    <meta name="description" content="Free online age calculator. Calculate your exact age in years, months, days, hours, minutes, and seconds. Find out how many days until your next birthday.">
+    <meta name="keywords" content="age calculator, birthday calculator, calculate age, exact age, days until birthday, age in days">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .age-result {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .age-detail {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .birthday-countdown {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .countdown-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .time-unit {
+            display: inline-block;
+            text-align: center;
+            margin: 0 0.5rem;
+        }
+        
+        .time-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .time-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+  <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Age Calculator</h1>
+                        <p class="tool-description">Calculate your exact age in years, months, days, hours, minutes, and seconds. Find out how many days until your next birthday.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <form id="age-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="birth-date" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="birth-date" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="calculation-date" class="form-label">Calculate Age At</label>
+                                <div class="d-flex">
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input" type="radio" name="date-option" id="today-option" value="today" checked>
+                                        <label class="form-check-label" for="today-option">
+                                            Today
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="date-option" id="custom-option" value="custom">
+                                        <label class="form-check-label" for="custom-option">
+                                            Custom Date
+                                        </label>
+                                    </div>
+                                </div>
+                                <input type="date" class="form-control mt-2" id="custom-date" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Calculate Age</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container mt-4" id="result-container" style="display: none;">
+                        <h4>Age Results</h4>
+                        
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div class="age-result" id="age-years">0 years</div>
+                                </div>
+                                
+                                <div class="row text-center">
+                                    <div class="col-4">
+                                        <div class="age-detail" id="age-months">0 months</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="age-detail" id="age-days">0 days</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="age-detail" id="age-total-days">0 total days</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Detailed Age Breakdown</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Years
+                                                <span class="badge bg-primary rounded-pill" id="detail-years">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Months
+                                                <span class="badge bg-primary rounded-pill" id="detail-months">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Weeks
+                                                <span class="badge bg-primary rounded-pill" id="detail-weeks">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Days
+                                                <span class="badge bg-primary rounded-pill" id="detail-days">0</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Hours
+                                                <span class="badge bg-primary rounded-pill" id="detail-hours">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Minutes
+                                                <span class="badge bg-primary rounded-pill" id="detail-minutes">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Seconds
+                                                <span class="badge bg-primary rounded-pill" id="detail-seconds">0</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Milliseconds
+                                                <span class="badge bg-primary rounded-pill" id="detail-milliseconds">0</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="birthday-countdown" id="birthday-countdown">
+                            <h5>Next Birthday Countdown</h5>
+                            <p>Your next birthday is on <span id="next-birthday-date">January 1, 2023</span></p>
+                            <div class="d-flex justify-content-center">
+                                <div class="time-unit">
+                                    <span class="time-value" id="countdown-months">0</span>
+                                    <span class="time-label">Months</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="countdown-days">0</span>
+                                    <span class="time-label">Days</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="countdown-hours">0</span>
+                                    <span class="time-label">Hours</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="countdown-minutes">0</span>
+                                    <span class="time-label">Minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Age Calculation</h4>
+                        <p>Age calculation is the process of determining the elapsed time between a person's birth date and the current date (or another specified date). While it seems simple, accurate age calculation involves several complexities:</p>
+                        
+                        <h5>Different Ways to Calculate Age</h5>
+                        <ul>
+                            <li><strong>Calendar Age:</strong> The most common method, counting years, months, and days since birth.</li>
+                            <li><strong>Lunar Age:</strong> Used in some cultures, based on lunar calendar cycles.</li>
+                            <li><strong>Developmental Age:</strong> Used in pediatrics to assess a child's development relative to peers.</li>
+                        </ul>
+                        
+                        <h5>Interesting Age Facts</h5>
+                        <ul>
+                            <li>In some East Asian cultures, a person is considered 1 year old at birth and gains another year on New Year's Day rather than on their birthday.</li>
+                            <li>The legal age for various activities (voting, driving, drinking) varies widely across different countries.</li>
+                            <li>Leap year babies (born on February 29) technically only have a birthday every four years.</li>
+                            <li>The oldest documented person in history lived to 122 years and 164 days.</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Note</h5>
+                            <p class="mb-0">This calculator uses the Gregorian calendar for all calculations. For legal purposes, age calculations may vary based on local laws and regulations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-container sidebar-ad">
+                    <!-- Ad code will go here -->
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                    </div>
+                </div>
+                
+                <!-- More Calculators -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">More Calculators</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/calculators/bmi-calculator.html">BMI Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/percentage-calculator.html">Percentage Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/loan-emi-calculator.html">Loan EMI Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/discount-calculator.html">Discount Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/tip-calculator.html">Tip Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ageForm = document.getElementById('age-form');
+            const birthDate = document.getElementById('birth-date');
+            const todayOption = document.getElementById('today-option');
+            const customOption = document.getElementById('custom-option');
+            const customDate = document.getElementById('custom-date');
+            const resultContainer = document.getElementById('result-container');
+            
+            // Age result elements
+            const ageYears = document.getElementById('age-years');
+            const ageMonths = document.getElementById('age-months');
+            const ageDays = document.getElementById('age-days');
+            const ageTotalDays = document.getElementById('age-total-days');
+            
+            // Detailed age elements
+            const detailYears = document.getElementById('detail-years');
+            const detailMonths = document.getElementById('detail-months');
+            const detailWeeks = document.getElementById('detail-weeks');
+            const detailDays = document.getElementById('detail-days');
+            const detailHours = document.getElementById('detail-hours');
+            const detailMinutes = document.getElementById('detail-minutes');
+            const detailSeconds = document.getElementById('detail-seconds');
+            const detailMilliseconds = document.getElementById('detail-milliseconds');
+            
+            // Birthday countdown elements
+            const birthdayCountdown = document.getElementById('birthday-countdown');
+            const nextBirthdayDate = document.getElementById('next-birthday-date');
+            const countdownMonths = document.getElementById('countdown-months');
+            const countdownDays = document.getElementById('countdown-days');
+            const countdownHours = document.getElementById('countdown-hours');
+            const countdownMinutes = document.getElementById('countdown-minutes');
+            
+            // Set default date to today
+            const today = new Date();
+            const todayStr = today.toISOString().split('T')[0];
+            customDate.value = todayStr;
+            
+            // Toggle custom date input
+            todayOption.addEventListener('change', function() {
+                if (this.checked) {
+                    customDate.disabled = true;
+                }
+            });
+            
+            customOption.addEventListener('change', function() {
+                if (this.checked) {
+                    customDate.disabled = false;
+                    customDate.focus();
+                }
+            });
+            
+            // Calculate age
+            ageForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const birthDateValue = new Date(birthDate.value);
+                
+                // Validate birth date
+                if (isNaN(birthDateValue.getTime())) {
+                    alert('Please enter a valid birth date.');
+                    return;
+                }
+                
+                // Get calculation date
+                let calculationDate;
+                if (todayOption.checked) {
+                    calculationDate = new Date();
+                } else {
+                    calculationDate = new Date(customDate.value);
+                    
+                    // Validate custom date
+                    if (isNaN(calculationDate.getTime())) {
+                        alert('Please enter a valid calculation date.');
+                        return;
+                    }
+                }
+                
+                // Check if birth date is in the future
+                if (birthDateValue > calculationDate) {
+                    alert('Birth date cannot be in the future.');
+                    return;
+                }
+                
+                // Calculate age
+                const ageDetails = calculateAge(birthDateValue, calculationDate);
+                
+                // Display age results
+                ageYears.textContent = `${ageDetails.years} ${ageDetails.years === 1 ? 'year' : 'years'}`;
+                ageMonths.textContent = `${ageDetails.months} ${ageDetails.months === 1 ? 'month' : 'months'}`;
+                ageDays.textContent = `${ageDetails.days} ${ageDetails.days === 1 ? 'day' : 'days'}`;
+                ageTotalDays.textContent = `${ageDetails.totalDays} total ${ageDetails.totalDays === 1 ? 'day' : 'days'}`;
+                
+                // Display detailed age breakdown
+                detailYears.textContent = ageDetails.years;
+                detailMonths.textContent = ageDetails.totalMonths;
+                detailWeeks.textContent = Math.floor(ageDetails.totalDays / 7);
+                detailDays.textContent = ageDetails.totalDays;
+                detailHours.textContent = ageDetails.totalHours;
+                detailMinutes.textContent = ageDetails.totalMinutes;
+                detailSeconds.textContent = ageDetails.totalSeconds;
+                detailMilliseconds.textContent = ageDetails.totalMilliseconds;
+                
+                // Calculate next birthday
+                const nextBirthday = calculateNextBirthday(birthDateValue, calculationDate);
+                
+                // Format next birthday date
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                nextBirthdayDate.textContent = nextBirthday.date.toLocaleDateString(undefined, options);
+                
+                // Display birthday countdown
+                countdownMonths.textContent = nextBirthday.months;
+                countdownDays.textContent = nextBirthday.days;
+                countdownHours.textContent = nextBirthday.hours;
+                countdownMinutes.textContent = nextBirthday.minutes;
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Reset form
+            ageForm.addEventListener('reset', function() {
+                resultContainer.style.display = 'none';
+                customDate.disabled = true;
+                todayOption.checked = true;
+            });
+            
+            // Calculate age function
+            function calculateAge(birthDate, currentDate) {
+                // Clone dates to avoid modifying the originals
+                const birth = new Date(birthDate);
+                const current = new Date(currentDate);
+                
+                // Calculate years
+                let years = current.getFullYear() - birth.getFullYear();
+                
+                // Calculate months
+                let months = current.getMonth() - birth.getMonth();
+                
+                // Calculate days
+                let days = current.getDate() - birth.getDate();
+                
+                // Adjust months and years if days is negative
+                if (days < 0) {
+                    months--;
+                    // Get the last day of the previous month
+                    const lastMonth = new Date(current.getFullYear(), current.getMonth(), 0);
+                    days += lastMonth.getDate();
+                }
+                
+                // Adjust years if months is negative
+                if (months < 0) {
+                    years--;
+                    months += 12;
+                }
+                
+                // Calculate total values
+                const diffMs = current - birth;
+                const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const totalMonths = years * 12 + months;
+                const totalHours = Math.floor(diffMs / (1000 * 60 * 60));
+                const totalMinutes = Math.floor(diffMs / (1000 * 60));
+                const totalSeconds = Math.floor(diffMs / 1000);
+                const totalMilliseconds = diffMs;
+                
+                return {
+                    years,
+                    months,
+                    days,
+                    totalDays,
+                    totalMonths,
+                    totalHours,
+                    totalMinutes,
+                    totalSeconds,
+                    totalMilliseconds
+                };
+            }
+            
+            // Calculate next birthday function
+            function calculateNextBirthday(birthDate, currentDate) {
+                // Clone dates to avoid modifying the originals
+                const birth = new Date(birthDate);
+                const current = new Date(currentDate);
+                
+                // Create next birthday date
+                const nextBirthday = new Date(current.getFullYear(), birth.getMonth(), birth.getDate());
+                
+                // If birthday has already occurred this year, set to next year
+                if (nextBirthday < current) {
+                    nextBirthday.setFullYear(current.getFullYear() + 1);
+                }
+                
+                // Calculate difference
+                const diffMs = nextBirthday - current;
+                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                
+                // Calculate months, days, hours, minutes
+                const months = Math.floor(diffDays / 30);
+                const days = diffDays % 30;
+                const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                
+                return {
+                    date: nextBirthday,
+                    months,
+                    days,
+                    hours,
+                    minutes
+                };
+            }
+            
+            // Set default birth date to 18 years ago
+            const defaultBirthDate = new Date();
+            defaultBirthDate.setFullYear(defaultBirthDate.getFullYear() - 18);
+            birthDate.value = defaultBirthDate.toISOString().split('T')[0];
+        });
+    </script>
+</body>
+</html>

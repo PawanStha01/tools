@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Fancy Text Generator - Create stylish Unicode fonts for Instagram, Twitter, WhatsApp, and more. Convert text to cool, decorative styles instantly.">
+    <meta name="keywords" content="fancy text generator, stylish fonts, cool text, Unicode fonts, social media text, Instagram bio fonts, text converter">
+    <meta name="author" content="Utility Tools">
+    <meta name="robots" content="index, follow">
+    <title>Fancy Text Generator | Stylish Unicode Fonts for Social Media</title>
+    
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5649c0;
+            --secondary: #f8f9fa;
+            --dark: #2d3436;
+            --light: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8f9fc;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        
+        
+        .tool-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+        
+        .tool-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-title i {
+            margin-right: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .input-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .text-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-height: 120px;
+            margin-bottom: 1.5rem;
+            resize: vertical;
+        }
+        
+        .style-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .style-option {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .style-option:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .style-option.active {
+            border: 2px solid var(--primary);
+            background-color: rgba(108, 92, 231, 0.05);
+        }
+        
+        .style-option .preview-text {
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .style-option .select-indicator {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: var(--primary);
+        }
+        
+        .style-option.active .select-indicator {
+            display: block;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            margin-left: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        .result-container {
+            background: var(--secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 1.5rem;
+            border: 1px solid #ddd;
+        }
+        
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .ad-container {
+            background: #f1f3f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px dashed #ccc;
+        }
+        
+        .style-category {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .style-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .tool-container {
+                padding: 1.5rem;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Fancy Text Generator",
+        "description": "A free online tool to generate stylish Unicode fonts for social media platforms like Instagram, Twitter, and WhatsApp.",
+        "url": "https://yourwebsite.com/fancy-text-generator.html",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    
+     <!-- Header Placeholder -->
+<div id="header-placeholder"></div>
+
+  <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+
+    <!-- Ad Space -->
+    <div class="container">
+        <div class="ad-container">
+            <div class="text-center">
+                 <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+              
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Tool Container -->
+    <div class="container">
+        <div class="tool-container" role="main">
+            <h1 class="tool-title">
+                <i class="fas fa-font"></i> Fancy Text Generator
+            </h1>
+            
+            <div class="mb-4">
+                <label class="input-label" for="input-text">Enter your text:</label>
+                <textarea class="text-input" id="input-text" placeholder="Type something here to convert it to fancy text..." aria-describedby="input-help"></textarea>
+                <small id="input-help" class="form-text text-muted">Enter text to see it transformed into stylish fonts.</small>
+            </div>
+            
+            <h5 class="input-label">Choose a text style:</h5>
+            <div class="style-options" id="style-options" role="radiogroup" aria-label="Text style options">
+                <!-- Style options will be loaded by JavaScript -->
+            </div>
+            
+            <div class="d-flex flex-wrap">
+                <button class="btn-primary" id="generate-btn" aria-label="Generate fancy text">
+                    <i class="fas fa-magic"></i> Generate Fancy Text
+                </button>
+                <button class="btn-secondary" id="reset-btn" aria-label="Reset input and results">
+                    <i class="fas fa-undo"></i> Reset
+                </button>
+            </div>
+            
+            <div class="result-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <span style="font-weight: 600;">Your Fancy Text:</span>
+                    <button class="copy-btn" id="copy-btn" aria-label="Copy generated text">
+                        <i class="far fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div id="result-text" style="font-size: 1.2rem; min-height: 50px; word-wrap: break-word;" aria-live="polite"></div>
+            </div>
+            
+            <div class="mt-4">
+                <h4><i class="fas fa-info-circle"></i> About This Tool</h4>
+                <p>This Fancy Text Generator converts your normal text into stylish fonts using Unicode characters. Perfect for social media bios, posts, and messages on Instagram, Twitter, WhatsApp, and more.</p>
+            </div>
+        </div>
+        
+        <!-- Ad Space -->
+        <div class="ad-container">
+            <div class="text-center">
+                <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+            </div>
+        </div>
+    </div>
+    
+     <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+
+
+
+
+    <script>
+
+
+        // Text styles data with expanded options and categories
+        const textStyles = [
+            {
+                category: 'Classic Styles',
+                styles: [
+                    { 
+                        id: 'bold',
+                        name: 'Bold Text',
+                        preview: '𝐁𝐨𝐥𝐝 𝐓𝐞𝐱𝐭',
+                        offset: 0x1D400,
+                        length: 26
+                    },
+                    {
+                        id: 'italic',
+                        name: 'Italic Text',
+                        preview: '𝐼𝑡𝑎𝑙𝑖𝑐 𝑇𝑒𝑥𝑡',
+                        offset: 0x1D434,
+                        length: 26
+                    },
+                    {
+                        id: 'bold-italic',
+                        name: 'Bold Italic',
+                        preview: '𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄',
+                        offset: 0x1D468,
+                        length: 26
+                    }
+                ]
+            },
+            {
+                category: 'Decorative Styles',
+                styles: [
+                    {
+                        id: 'script',
+                        name: 'Script Text',
+                        preview: '𝒮𝒸𝓇𝒾𝓅𝓉 𝒯𝑒𝓍𝓉',
+                        offset: 0x1D4D0,
+                        length: 26
+                    },
+                    {
+                        id: 'fraktur',
+                        name: 'Fraktur Text',
+                        preview: '𝔉𝔯𝔞𝔨𝔱𝔲𝔯 𝔗𝔢𝔵𝔱',
+                        offset: 0x1D504,
+                        length: 26
+                    },
+                    {
+                        id: 'gothic',
+                        name: 'Gothic Text',
+                        preview: '𝕲𝖔𝖙𝖍𝖎𝖈 𝕿𝖊𝖝𝖙',
+                        offset: 0x1D56C,
+                        length: 26
+                    },
+                    {
+                        id: 'medieval',
+                        name: 'Medieval Text',
+                        preview: '𝔐𝔢𝔡𝔦𝔢𝔳𝔞𝔩 𝔗𝔢𝔵𝔱',
+                        offset: 0x1D510,
+                        length: 26
+                    }
+                ]
+            },
+            {
+                category: 'Modern Styles',
+                styles: [
+                    {
+                        id: 'sans-serif',
+                        name: 'Sans-Serif',
+                        preview: '𝖲𝖺𝗇𝗌-𝖲𝖾𝗋𝗶𝗳 𝖳𝖾𝗑𝗍',
+                        offset: 0x1D5A0,
+                        length: 26
+                    },
+                    {
+                        id: 'monospace',
+                        name: 'Monospace',
+                        preview: '𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎 𝚃𝚎𝚡𝚝',
+                        offset: 0x1D670,
+                        length: 26
+                    },
+                    {
+                        id: 'double-struck',
+                        name: 'Double Struck',
+                        preview: '𝔻𝕠𝕦𝕓𝕝𝕖 𝕊𝕥𝕣𝕦𝕔𝕜',
+                        offset: 0x1D538,
+                        length: 26
+                    }
+                ]
+            },
+            {
+                category: 'Unique Styles',
+                styles: [
+                    {
+                        id: 'circled',
+                        name: 'Circled Text',
+                        preview: 'ⒸⒾⓇⒸⓁⒺⒹ ⓉⒺⓍⓉ',
+                        offset: 0x24B6,
+                        length: 26
+                    },
+                    {
+                        id: 'squared',
+                        name: 'Squared Text',
+                        preview: '🅂🅀🅄🄰🅁🄴🄳 🅃🄴🅇🅃',
+                        offset: 0x1F130,
+                        length: 26
+                    },
+                    {
+                        id: 'small-caps',
+                        name: 'Small Caps',
+                        preview: 'ꜱᴍᴀʟʟ ᴄᴀᴘꜱ ᴛᴇxᴛ',
+                        transform: text => text.toLowerCase().replace(/[a-z]/g, c => {
+                            const smallCaps = ['ᴀ', 'ʙ', 'ᴄ', 'ᴅ', 'ᴇ', 'ꜰ', 'ɢ', 'ʜ', 'ɪ', 'ᴊ', 'ᴋ', 'ʟ', 'ᴍ', 'ɴ', 'ᴏ', 'ᴘ', 'q', 'ʀ', 'ꜱ', 'ᴛ', 'ᴜ', 'ᴠ', 'ᴡ', 'x', 'ʏ', 'ᴢ'];
+                            return smallCaps[c.charCodeAt(0) - 97] || c;
+                        })
+                    },
+                    {
+                        id: 'inverted',
+                        name: 'Inverted Text',
+                        preview: 'ɹǝʇxǝ⊥ pǝʇɹǝʌuI',
+                        transform: text => text.split('').reverse().join('').replace(/[a-zA-Z]/g, c => {
+                            const inverted = {
+                                'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ɓ',
+                                'h': 'ɥ', 'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u',
+                                'o': 'o', 'p': 'd', 'q': 'b', 'r': 'ɹ', 's': 's', 't': 'ʇ', 'u': 'n',
+                                'v': 'ʌ', 'w': 'ʍ', 'x': 'x', 'y': 'ʎ', 'z': 'z',
+                                'A': '∀', 'B': '𐐒', 'C': 'Ɔ', 'D': 'ᗡ', 'E': 'Ǝ', 'F': 'Ⅎ', 'G': '⅁',
+                                'H': 'H', 'I': 'I', 'J': 'ᒋ', 'K': '⋊', 'L': '⅂', 'M': 'W', 'N': 'N',
+                                'O': 'O', 'P': 'Ԁ', 'Q': 'Q', 'R': 'ᴚ', 'S': 'S', 'T': '⊥', 'U': '∩',
+                                'V': 'Λ', 'W': 'M', 'X': 'X', 'Y': '⅄', 'Z': 'Z'
+                            };
+                            return inverted[c] || c;
+                        })
+                    },
+                    {
+                        id: 'bubble',
+                        name: 'Bubble Text',
+                        preview: '🅑🅤🅑🅑🅛🅔 🅣🅔🅧🅣',
+                        offset: 0x1F171,
+                        length: 26
+                    },
+                    {
+                        id: 'regional',
+                        name: 'Regional Indicator',
+                        preview: '🇷🇪🇬🇮🇴🇳🇦🇱 🇹🇪🇽🇹',
+                        transform: text => text.toUpperCase().replace(/[A-Z]/g, c => {
+                            const regionalBase = 0x1F1E6;
+                            return String.fromCodePoint(regionalBase + (c.charCodeAt(0) - 65));
+                        })
+                    },
+                    {
+                        id: 'zalgo',
+                        name: 'Zalgo Text',
+                        preview: 'Z̴a̶l̸g̷o̵ ̴T̶e̷x̶t̵',
+                        transform: text => {
+                            const zalgoUp = ['̍', '̎', '̄', '̅', '̿', '̑', '̆', '̐', '͒', '͗', '͑'];
+                            const zalgoDown = ['̖', '̗', '̘', '̙', '̜', '̝', '̞', '̟', '̠', '̤', '̥'];
+                            const zalgoMid = ['̕', '̛', '̀', '́', '͘', '̡', '̢', '̧', '̨', '̴', '̵'];
+                            let result = '';
+                            for (let char of text) {
+                                result += char;
+                                if (/[a-zA-Z]/.test(char)) {
+                                    const count = Math.floor(Math.random() * 3) + 1;
+                                    for (let i = 0; i < count; i++) {
+                                        const rand = Math.random();
+                                        if (rand < 0.33) result += zalgoUp[Math.floor(Math.random() * zalgoUp.length)];
+                                        else if (rand < 0.66) result += zalgoDown[Math.floor(Math.random() * zalgoDown.length)];
+                                        else result += zalgoMid[Math.floor(Math.random() * zalgoMid.length)];
+                                    }
+                                }
+                            }
+                            return result;
+                        }
+                    }
+                ]
+            }
+        ];
+        
+        
+        
+        // Render style options with categories
+        function renderStyleOptions() {
+            const styleOptionsContainer = document.getElementById('style-options');
+            styleOptionsContainer.innerHTML = '';
+            
+            textStyles.forEach(category => {
+                // Add category header
+                const categoryHeader = document.createElement('h6');
+                categoryHeader.className = 'style-category';
+                categoryHeader.textContent = category.category;
+                styleOptionsContainer.appendChild(categoryHeader);
+                
+                // Add styles
+                category.styles.forEach(style => {
+                    const styleOption = document.createElement('div');
+                    styleOption.className = 'style-option';
+                    styleOption.setAttribute('data-style-id', style.id);
+                    styleOption.setAttribute('role', 'radio');
+                    styleOption.setAttribute('aria-checked', 'false');
+                    styleOption.setAttribute('tabindex', '0');
+                    styleOption.innerHTML = `
+                        <div style="font-weight: 600; margin-bottom: 5px;">${style.name}</div>
+                        <div class="preview-text">${style.preview}</div>
+                        <i class="fas fa-check-circle select-indicator"></i>
+                    `;
+                    styleOptionsContainer.appendChild(styleOption);
+                });
+            });
+        }
+        
+        // Select first style by default
+        function selectFirstStyle() {
+            const firstStyle = document.querySelector('.style-option');
+            if (firstStyle) {
+                firstStyle.classList.add('active');
+                firstStyle.setAttribute('aria-checked', 'true');
+            }
+        }
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            const inputText = document.getElementById('input-text');
+            let debounceTimer;
+            
+            // Live preview on input
+            inputText.addEventListener('input', () => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(generateFancyText, 300);
+            });
+            
+            // Style option selection
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.style-option')) {
+                    const styleOption = e.target.closest('.style-option');
+                    selectStyle(styleOption);
+                }
+                
+                // Generate button
+                if (e.target.matches('#generate-btn, #generate-btn *')) {
+                    generateFancyText();
+                }
+                
+                // Copy button
+                if (e.target.matches('#copy-btn, #copy-btn *')) {
+                    copyToClipboard();
+                }
+                
+                // Reset button
+                if (e.target.matches('#reset-btn, #reset-btn *')) {
+                    resetForm();
+                }
+            });
+            
+            // Keyboard navigation for style options
+            document.getElementById('style-options').addEventListener('keydown', function(e) {
+                const activeOption = document.querySelector('.style-option.active');
+                if (!activeOption) return;
+                
+                const options = Array.from(document.querySelectorAll('.style-option'));
+                const index = options.indexOf(activeOption);
+                
+                if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                    const nextIndex = (index + 1) % options.length;
+                    selectStyle(options[nextIndex]);
+                    options[nextIndex].focus();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                    const prevIndex = (index - 1 + options.length) % options.length;
+                    selectStyle(options[prevIndex]);
+                    options[prevIndex].focus();
+                    e.preventDefault();
+                } else if (e.key === 'Enter' || e.key === ' ') {
+                    selectStyle(activeOption);
+                    generateFancyText();
+                    e.preventDefault();
+                }
+            });
+        }
+        
+        // Select a style option
+        function selectStyle(styleOption) {
+            // Remove active class and update ARIA from all options
+            document.querySelectorAll('.style-option').forEach(option => {
+                option.classList.remove('active');
+                option.setAttribute('aria-checked', 'false');
+            });
+            
+            // Add active class and update ARIA to selected option
+            styleOption.classList.add('active');
+            styleOption.setAttribute('aria-checked', 'true');
+            
+            // Auto-generate text when style is changed
+            generateFancyText();
+        }
+        
+        // Generate fancy text
+        function generateFancyText() {
+            const inputText = document.getElementById('input-text').value;
+            const activeStyleOption = document.querySelector('.style-option.active');
+            
+            if (!inputText.trim()) {
+                document.getElementById('result-text').textContent = 'Please enter some text first.';
+                return;
+            }
+            
+            if (!activeStyleOption) {
+                document.getElementById('result-text').textContent = 'Please select a text style.';
+                return;
+            }
+            
+            const styleId = activeStyleOption.getAttribute('data-style-id');
+            let selectedStyle;
+            for (const category of textStyles) {
+                const style = category.styles.find(s => s.id === styleId);
+                if (style) {
+                    selectedStyle = style;
+                    break;
+                }
+            }
+            
+            let result = '';
+            
+            if (selectedStyle.transform) {
+                // Use custom transform function for styles like small-caps or inverted
+                result = selectedStyle.transform(inputText);
+            } else {
+                // Use Unicode offset for standard styles
+                for (let i = 0; i < inputText.length; i++) {
+                    const char = inputText[i];
+                    const lowerChar = char.toLowerCase();
+                    
+                    if (lowerChar >= 'a' && lowerChar <= 'z') {
+                        // Convert lowercase letters to fancy style
+                        const charCode = lowerChar.charCodeAt(0) - 'a'.charCodeAt(0);
+                        result += String.fromCodePoint(selectedStyle.offset + charCode);
+                    } else if (char >= 'A' && char <= 'Z') {
+                        // Convert uppercase letters to fancy style
+                        const charCode = char.charCodeAt(0) - 'A'.charCodeAt(0);
+                        result += String.fromCodePoint(selectedStyle.offset + charCode);
+                    } else {
+                        // Keep non-alphabetic characters as-is
+                        result += char;
+                    }
+                }
+            }
+            
+            document.getElementById('result-text').textContent = result;
+        }
+        
+        // Copy to clipboard
+        function copyToClipboard() {
+            const resultText = document.getElementById('result-text').textContent;
+            
+            if (!resultText.trim() || resultText === 'Please enter some text first.' || resultText === 'Please select a text style.') {
+                alert('Nothing to copy! Generate some fancy text first.');
+                return;
+            }
+            
+            navigator.clipboard.writeText(resultText).then(() => {
+                const copyBtn = document.getElementById('copy-btn');
+                copyBtn.innerHTML = '<i class="far fa-copy"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="far fa-copy"></i> Copy';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+                alert('Failed to copy text. Please try again.');
+            });
+        }
+        
+        // Reset form
+        function resetForm() {
+            document.getElementById('input-text').value = '';
+            document.getElementById('result-text').textContent = '';
+            selectFirstStyle();
+        }
+    </script>
+</body>
+</html>

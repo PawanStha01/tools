@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator - Calculate Sale Price & Savings | Multi-Tools</title>
+    <meta name="description" content="Free online discount calculator. Calculate sale price, discount amount, and percentage savings. Perfect for shopping, sales, and business pricing.">
+    <meta name="keywords" content="discount calculator, sale price calculator, percentage off calculator, savings calculator, price reduction">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .result-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        
+        .savings-badge {
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .calculation-steps {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #dee2e6;
+            font-size: 0.9rem;
+        }
+        
+        .calculation-step {
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-ms-thumb {
+            background: var(--primary-color);
+        }
+        
+        .range-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+  <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+   
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Discount Calculator</h1>
+                        <p class="tool-description">Calculate sale price, discount amount, and percentage savings. Perfect for shopping, sales, and business pricing strategies.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <form id="discount-form">
+                        <div class="mb-3">
+                            <label for="original-price" class="form-label">Original Price</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="original-price" placeholder="Enter original price" min="0.01" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="discount-type" class="form-label">Discount Type</label>
+                            <select class="form-select" id="discount-type">
+                                <option value="percentage" selected>Percentage (%)</option>
+                                <option value="amount">Fixed Amount ($)</option>
+                            </select>
+                        </div>
+                        
+                        <div id="percentage-discount-container">
+                            <div class="mb-3">
+                                <label for="discount-percentage" class="form-label">Discount Percentage</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="discount-percentage" placeholder="Enter discount percentage" min="0" max="100" step="0.1" value="20" required>
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <input type="range" class="form-range" id="discount-percentage-range" min="0" max="100" step="1" value="20">
+                                <div class="d-flex justify-content-between">
+                                    <small>0%</small>
+                                    <small class="range-value" id="discount-percentage-value">20%</small>
+                                    <small>100%</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="amount-discount-container" style="display: none;">
+                            <div class="mb-3">
+                                <label for="discount-amount" class="form-label">Discount Amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" class="form-control" id="discount-amount" placeholder="Enter discount amount" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="include-tax">
+                                <label class="form-check-label" for="include-tax">
+                                    Include Tax
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div id="tax-container" style="display: none;">
+                            <div class="mb-3">
+                                <label for="tax-rate" class="form-label">Tax Rate</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="tax-rate" placeholder="Enter tax rate" min="0" max="100" step="0.1" value="7.5">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Calculate Discount</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container mt-4" id="result-container" style="display: none;">
+                        <h4>Discount Results</h4>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="result-box text-center">
+                                    <div class="result-label">Final Price</div>
+                                    <div class="result-value text-primary" id="final-price">$0.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="result-box text-center">
+                                    <div class="result-label">You Save</div>
+                                    <div class="result-value text-success" id="you-save">$0.00</div>
+                                    <div class="savings-badge" id="savings-percentage">0% OFF</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="calculation-steps" id="calculation-steps">
+                            <h5>Calculation Steps</h5>
+                            <div class="calculation-step" id="step-1"></div>
+                            <div class="calculation-step" id="step-2"></div>
+                            <div class="calculation-step" id="step-3"></div>
+                            <div class="calculation-step" id="step-4" style="display: none;"></div>
+                            <div class="calculation-step" id="step-5" style="display: none;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Discount Calculations</h4>
+                        <p>Discount calculations are used to determine the reduced price of a product or service after applying a discount. Understanding how discounts work is essential for both consumers and businesses.</p>
+                        
+                        <h5>Types of Discounts</h5>
+                        <ul>
+                            <li><strong>Percentage Discount:</strong> A reduction based on a percentage of the original price (e.g., 20% off).</li>
+                            <li><strong>Fixed Amount Discount:</strong> A specific dollar amount subtracted from the original price (e.g., $10 off).</li>
+                            <li><strong>Buy One Get One (BOGO):</strong> Purchase one item and receive another at a reduced price or free.</li>
+                            <li><strong>Volume Discount:</strong> Price reductions based on purchasing multiple items or services.</li>
+                            <li><strong>Seasonal Discount:</strong> Temporary price reductions during specific times of the year.</li>
+                        </ul>
+                        
+                        <h5>Discount Formulas</h5>
+                        <div class="alert alert-light">
+                            <p><strong>For Percentage Discounts:</strong></p>
+                            <ul>
+                                <li>Discount Amount = Original Price × (Discount Percentage ÷ 100)</li>
+                                <li>Sale Price = Original Price - Discount Amount</li>
+                            </ul>
+                            
+                            <p><strong>For Fixed Amount Discounts:</strong></p>
+                            <ul>
+                                <li>Sale Price = Original Price - Discount Amount</li>
+                                <li>Discount Percentage = (Discount Amount ÷ Original Price) × 100</li>
+                            </ul>
+                            
+                            <p><strong>Including Tax:</strong></p>
+                            <ul>
+                                <li>Tax Amount = Price × (Tax Rate ÷ 100)</li>
+                                <li>Total Price = Price + Tax Amount</li>
+                            </ul>
+                        </div>
+                        
+                        <h5>Tips for Smart Shopping</h5>
+                        <ul>
+                            <li><strong>Compare Percentage vs. Dollar Discounts:</strong> Sometimes a lower percentage discount might actually save you more money if the original price is higher.</li>
+                            <li><strong>Check the Original Price:</strong> Some retailers inflate the original price to make discounts seem more attractive.</li>
+                            <li><strong>Consider Additional Costs:</strong> Remember to factor in shipping, handling, and taxes when calculating your total savings.</li>
+                            <li><strong>Timing Matters:</strong> Prices for many items follow predictable cycles. Research the best time to buy specific products for maximum discounts.</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Tip</h5>
+                            <p class="mb-0">When comparing discounts between different stores, always calculate the final price rather than just looking at the discount percentage. A 20% discount on a higher-priced item might still result in a higher final price than a 10% discount at a store with lower base prices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-container sidebar-ad">
+                    <!-- Ad code will go here -->
+                  <!-- <div class="placeholder-ad"> --> 
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                    </div>
+                </div>
+                
+                <!-- More Calculators -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">More Calculators</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/calculators/age-calculator.html">Age Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/bmi-calculator.html">BMI Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/loan-emi-calculator.html">Loan EMI Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/percentage-calculator.html">Percentage Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/tip-calculator.html">Tip Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const discountForm = document.getElementById('discount-form');
+            const originalPrice = document.getElementById('original-price');
+            const discountType = document.getElementById('discount-type');
+            const percentageDiscountContainer = document.getElementById('percentage-discount-container');
+            const amountDiscountContainer = document.getElementById('amount-discount-container');
+            const discountPercentage = document.getElementById('discount-percentage');
+            const discountPercentageRange = document.getElementById('discount-percentage-range');
+            const discountPercentageValue = document.getElementById('discount-percentage-value');
+            const discountAmount = document.getElementById('discount-amount');
+            const includeTax = document.getElementById('include-tax');
+            const taxContainer = document.getElementById('tax-container');
+            const taxRate = document.getElementById('tax-rate');
+            const resultContainer = document.getElementById('result-container');
+            const finalPrice = document.getElementById('final-price');
+            const youSave = document.getElementById('you-save');
+            const savingsPercentage = document.getElementById('savings-percentage');
+            const step1 = document.getElementById('step-1');
+            const step2 = document.getElementById('step-2');
+            const step3 = document.getElementById('step-3');
+            const step4 = document.getElementById('step-4');
+            const step5 = document.getElementById('step-5');
+            
+            // Toggle discount type
+            discountType.addEventListener('change', function() {
+                if (this.value === 'percentage') {
+                    percentageDiscountContainer.style.display = 'block';
+                    amountDiscountContainer.style.display = 'none';
+                } else {
+                    percentageDiscountContainer.style.display = 'none';
+                    amountDiscountContainer.style.display = 'block';
+                }
+            });
+            
+            // Toggle tax container
+            includeTax.addEventListener('change', function() {
+                if (this.checked) {
+                    taxContainer.style.display = 'block';
+                } else {
+                    taxContainer.style.display = 'none';
+                }
+            });
+            
+            // Sync percentage input and range
+            discountPercentage.addEventListener('input', function() {
+                discountPercentageRange.value = this.value;
+                discountPercentageValue.textContent = this.value + '%';
+            });
+            
+            discountPercentageRange.addEventListener('input', function() {
+                discountPercentage.value = this.value;
+                discountPercentageValue.textContent = this.value + '%';
+            });
+            
+            // Calculate discount
+            discountForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get input values
+                const price = parseFloat(originalPrice.value);
+                
+                if (isNaN(price) || price <= 0) {
+                    alert('Please enter a valid original price.');
+                    return;
+                }
+                
+                let discountVal, discountAmountVal, discountPercentageVal, finalPriceVal, taxAmountVal, finalPriceWithTaxVal;
+                
+                // Calculate discount based on type
+                if (discountType.value === 'percentage') {
+                    discountPercentageVal = parseFloat(discountPercentage.value);
+                    
+                    if (isNaN(discountPercentageVal) || discountPercentageVal < 0 || discountPercentageVal > 100) {
+                        alert('Please enter a valid discount percentage between 0 and 100.');
+                        return;
+                    }
+                    
+                    discountAmountVal = price * (discountPercentageVal / 100);
+                } else {
+                    discountAmountVal = parseFloat(discountAmount.value);
+                    
+                    if (isNaN(discountAmountVal) || discountAmountVal < 0) {
+                        alert('Please enter a valid discount amount.');
+                        return;
+                    }
+                    
+                    // Ensure discount amount doesn't exceed original price
+                    if (discountAmountVal > price) {
+                        discountAmountVal = price;
+                    }
+                    
+                    discountPercentageVal = (discountAmountVal / price) * 100;
+                }
+                
+                // Calculate final price
+                finalPriceVal = price - discountAmountVal;
+                
+                // Calculate with tax if included
+                if (includeTax.checked) {
+                    const taxRateVal = parseFloat(taxRate.value);
+                    
+                    if (isNaN(taxRateVal) || taxRateVal < 0) {
+                        alert('Please enter a valid tax rate.');
+                        return;
+                    }
+                    
+                    taxAmountVal = finalPriceVal * (taxRateVal / 100);
+                    finalPriceWithTaxVal = finalPriceVal + taxAmountVal;
+                }
+                
+                // Format values for display
+                const formattedOriginalPrice = formatCurrency(price);
+                const formattedDiscountAmount = formatCurrency(discountAmountVal);
+                const formattedFinalPrice = formatCurrency(finalPriceVal);
+                const formattedDiscountPercentage = discountPercentageVal.toFixed(2) + '%';
+                
+                // Display results
+                finalPrice.textContent = includeTax.checked ? formatCurrency(finalPriceWithTaxVal) : formattedFinalPrice;
+                youSave.textContent = formattedDiscountAmount;
+                savingsPercentage.textContent = formattedDiscountPercentage + ' OFF';
+                
+                // Display calculation steps
+                step1.textContent = `Original Price: ${formattedOriginalPrice}`;
+                
+                if (discountType.value === 'percentage') {
+                    step2.textContent = `Discount: ${formattedDiscountPercentage} of ${formattedOriginalPrice} = ${formattedDiscountAmount}`;
+                } else {
+                    step2.textContent = `Discount Amount: ${formattedDiscountAmount} (${formattedDiscountPercentage} of ${formattedOriginalPrice})`;
+                }
+                
+                step3.textContent = `Final Price before Tax: ${formattedOriginalPrice} - ${formattedDiscountAmount} = ${formattedFinalPrice}`;
+                
+                if (includeTax.checked) {
+                    const formattedTaxRate = taxRate.value + '%';
+                    const formattedTaxAmount = formatCurrency(taxAmountVal);
+                    const formattedFinalPriceWithTax = formatCurrency(finalPriceWithTaxVal);
+                    
+                    step4.textContent = `Tax: ${formattedTaxRate} of ${formattedFinalPrice} = ${formattedTaxAmount}`;
+                    step5.textContent = `Final Price with Tax: ${formattedFinalPrice} + ${formattedTaxAmount} = ${formattedFinalPriceWithTax}`;
+                    
+                    step4.style.display = 'block';
+                    step5.style.display = 'block';
+                } else {
+                    step4.style.display = 'none';
+                    step5.style.display = 'none';
+                }
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Reset form
+            discountForm.addEventListener('reset', function() {
+                resultContainer.style.display = 'none';
+                discountPercentageValue.textContent = '20%';
+                discountPercentage.value = 20;
+                discountPercentageRange.value = 20;
+                percentageDiscountContainer.style.display = 'block';
+                amountDiscountContainer.style.display = 'none';
+                taxContainer.style.display = 'none';
+                includeTax.checked = false;
+                discountType.value = 'percentage';
+            });
+            
+            // Format currency
+            function formatCurrency(value) {
+                return '$' + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+        });
+    </script>
+</body>
+</html>

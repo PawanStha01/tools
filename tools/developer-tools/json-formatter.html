@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JSON Formatter and other developer tools with a clean, responsive interface.">
+    <meta name="keywords" content="JSON Formatter, developer tools, code formatter, web tools">
+    <meta name="author" content="Tool Suite">
+    <title>JSON Formatter - Developer Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+        }
+        .tool-card {
+            transition: transform 0.2s;
+        }
+        .tool-card:hover {
+            transform: scale(1.05);
+        }
+        .ad-space {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .sidebar-ad {
+            min-height: 250px;
+        }
+        .footer-ad {
+            min-height: 100px;
+        }
+        @media (max-width: 768px) {
+            .sidebar-ad {
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+<script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <main class="main-content container my-4">
+        <div class="row">
+            <!-- Sidebar Ad -->
+            <aside class="col-md-3 mb-4">
+                <div class="ad-space sidebar-ad">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+           
+
+                    
+                </div>
+            </aside>
+
+            <!-- Tools Section -->
+            <div class="col-md-9">
+                <div class="row row-cols-1 row-cols-md-2 g-4" id="toolList">
+                    <div class="col tool-item" data-tool-name="JSON Formatter">
+                        
+                    </div>
+                    <!-- Add more tools here as needed -->
+                </div>
+
+                <!-- JSON Formatter Tool Section -->
+                <section id="json-formatter" class="mt-5">
+                    <h2>JSON Formatter</h2>
+                    <div class="ad-space mb-3">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea id="jsonInput" class="form-control mb-3" rows="10" placeholder="Enter JSON here..."></textarea>
+                            <div class="d-flex gap-2 mb-3">
+                                <button id="formatBtn" class="btn btn-primary">Format JSON</button>
+                                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                                <button id="copyBtn" class="btn btn-success">Copy Output</button>
+                            </div>
+                            <textarea id="jsonOutput" class="form-control" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                </section>
+                <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script>
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        const toolItems = document.querySelectorAll('.tool-item');
+
+        // Check if searchInput exists before adding event listener
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase();
+                toolItems.forEach(item => {
+                    const toolName = item.dataset.toolName.toLowerCase();
+                    item.style.display = toolName.includes(query) ? '' : 'none';
+                });
+            });
+        }
+
+        // JSON Formatter Functionality
+        const formatBtn = document.getElementById('formatBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const jsonInput = document.getElementById('jsonInput');
+        const jsonOutput = document.getElementById('jsonOutput');
+
+        formatBtn.addEventListener('click', () => {
+            try {
+                const input = jsonInput.value;
+                if (!input) {
+                    jsonOutput.value = 'Please enter JSON data.';
+                    return;
+                }
+                const parsed = JSON.parse(input);
+                jsonOutput.value = JSON.stringify(parsed, null, 2);
+            } catch (e) {
+                jsonOutput.value = 'Invalid JSON: ' + e.message;
+            }
+        });
+
+        clearBtn.addEventListener('click', () => {
+            jsonInput.value = '';
+            jsonOutput.value = '';
+        });
+
+        copyBtn.addEventListener('click', () => {
+            if (!jsonOutput.value) {
+                alert('No output to copy.');
+                return;
+            }
+
+            // Try modern Clipboard API first
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(jsonOutput.value).then(() => {
+                    alert('Output copied to clipboard!');
+                }).catch(err => {
+                    // Fallback to execCommand if Clipboard API fails
+                    try {
+                        jsonOutput.select();
+                        document.execCommand('copy');
+                        alert('Output copied to clipboard!');
+                    } catch (fallbackErr) {
+                        console.error('Failed to copy: ', fallbackErr);
+                        alert('Failed to copy output. Please copy manually.');
+                    }
+                });
+            } else {
+                // Fallback for non-secure contexts or older browsers
+                try {
+                    jsonOutput.select();
+                    document.execCommand('copy');
+                    alert('Output copied to clipboard!');
+                } catch (err) {
+                    console.error('Failed to copy: ', err);
+                    alert('Failed to copy output. Please copy manually.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

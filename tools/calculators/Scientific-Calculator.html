@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced scientific calculator with beautiful design, multiple themes, and comprehensive mathematical functions">
+    <meta name="keywords" content="scientific calculator, math tools, online calculator, responsive calculator">
+    <title>Scientific Calculator</title>
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #6c757d;
+            --accent-color: #ff6b6b;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --display-bg: #f0f4f8;
+            --button-bg: #e9ecef;
+            --button-text: #212529;
+            --button-hover: #d8dee2;
+            --operator-bg: #4a6bff;
+            --operator-text: white;
+            --operator-hover: #3a5bef;
+            --function-bg: #6c757d;
+            --function-text: white;
+            --function-hover: #5a6268;
+            --equals-bg: #28a745;
+            --equals-text: white;
+            --equals-hover: #218838;
+            --clear-bg: #dc3545;
+            --clear-text: white;
+            --clear-hover: #c82333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 10px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--dark-color);
+        }
+
+        .calculator-container {
+            max-width: 700px; /* Increased to accommodate more buttons */
+            margin: 0 auto;
+            padding:tiles/ 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calculator-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .calculator-display {
+            width: 100%;
+            height: 80px;
+            font-size: 2.2rem;
+            text-align: right;
+            padding: 15px;
+            border: none;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            background: var(--display-bg);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            color: var(--dark-color);
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* Adjusted for new buttons */
+            gap: 10px;
+        }
+
+        .calculator-buttons button {
+            padding: 15px 10px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background: var(--button-bg);
+            color: var(--button-text);
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calculator-buttons button:active {
+            transform: scale(0.95);
+        }
+
+        .calculator-buttons button:hover {
+            background: var(--button-hover);
+        }
+
+        .calculator-buttons button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .calculator-buttons button:focus:not(:active)::after {
+            animation: ripple 0.6s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        .number {
+            font-weight: 500;
+        }
+
+        .operator {
+            background: var(--operator-bg);
+            color: var(--operator-text);
+        }
+
+        .operator:hover {
+            background: var(--operator-hover);
+        }
+
+        .function {
+            background: var(--function-bg);
+            color: var(--function-text);
+            font-size: 0.9rem;
+        }
+
+        .function:hover {
+            background: var(--function-hover);
+        }
+
+        .equals {
+            background: var(--equals-bg);
+            color: var(--equals-text);
+            grid-column: span 2;
+        }
+
+        .equals:hover {
+            background: var(--equals-hover);
+        }
+
+        .clear {
+            background: var(--clear-bg);
+            color: var(--clear-text);
+        }
+
+        .clear:hover {
+            background: var(--clear-hover);
+        }
+
+        .mode-indicator {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            text-align: right;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            height: 15px;
+        }
+
+        .history-container {
+            margin-top: 20px;
+            max-height: 150px;
+            overflow-y: auto;
+            padding: 10px;
+            background: var(--display-bg);
+            border-radius: var(--border-radius);
+            display: none;
+        }
+
+        .history-item {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-family: 'Courier New', monospace;
+            cursor: pointer;
+        }
+
+        .history-item:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .history-toggle {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Dark theme */
+        .dark-theme {
+            --primary-color: #6c8eff;
+            --secondary-color: #adb5bd;
+            --accent-color: #ff8787;
+            --dark-color: #f8f9fa;
+            --light-color: #343a40;
+            --display-bg: #2d3748;
+            --button-bg: #4a5568;
+            --button-text: #f8f9fa;
+            --button-hover: #3d4859;
+            --operator-bg: #6c8eff;
+            --operator-hover: #5b7eff;
+            --function-bg: #adb5bd;
+            --function-hover: #9aa1a9;
+            --equals-bg: #38a169;
+            --equals-hover: #2f855a;
+            --clear-bg: #e53e3e;
+            --clear-hover: #c53030;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-theme body {
+            background: linear-gradient(135deg, #2d3748, #1a202c);
+        }
+
+        .dark-theme .calculator-container {
+            background: #2d3748;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .calculator-buttons {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 8px;
+            }
+
+            .calculator-buttons button {
+                padding: 12px 8px;
+                font-size: 1rem;
+            }
+
+            .calculator-display {
+                height: 70px;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .calculator-buttons {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 6px;
+            }
+
+            .calculator-buttons button {
+                padding: 10px 6px;
+                font-size: 0.9rem;
+            }
+
+            .calculator-display {
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+      <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    
+    </div>
+
+    <div class="calculator-container">
+         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+        <div class="calculator-header">
+            <h1 class="calculator-title"><i class="fas fa-calculator me-2">  </i>Scientific Calculator</h1>
+           
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <div class="mode-indicator" id="modeIndicator">DEG</div>
+        <input type="text" class="calculator-display form-control" id="display" readonly value="0">
+        
+        <div class="calculator-buttons">
+            <!-- First Row -->
+            <button class="function" onclick="calculateFunction('sin')">sin</button>
+            <button class="function" onclick="calculateFunction('cos')">cos</button>
+            <button class="function" onclick="calculateFunction('tan')">tan</button>
+            <button class="clear" onclick="clearDisplay()">AC</button>
+            <button class="function" onclick="backspace()"><i class="fas fa-backspace"></i></button>
+            <button class="function" onclick="calculateFunction('sinh')">sin</button>
+
+            <!-- Second Row -->
+            <button class="function" onclick="calculateFunction('arcsin')">sin⁻¹</button>
+            <button class="function" onclick="calculateFunction('arccos')">cos⁻¹</button>
+            <button class="function" onclick="calculateFunction('arctan')">tan⁻¹</button>
+            <button class="function" onclick="appendToDisplay('(')">(</button>
+            <button class="function" onclick="appendToDisplay(')')">)</button>
+            <button class="function" onclick="calculateFunction('cosh')">cos</button>
+
+            <!-- Third Row -->
+            <button class="function" onclick="calculateFunction('log')">log</button>
+            <button class="function" onclick="calculateFunction('ln')">ln</button>
+            <button class="function" onclick="calculateFunction('sqrt')">√</button>
+            <button class="function" onclick="appendToDisplay('Math.PI')">π</button>
+            <button class="function" onclick="appendToDisplay('Math.E')">e</button>
+            <button class="function" onclick="calculateFunction('tanh')">tan</button>
+
+            <!-- Fourth Row -->
+            <button class="function" onclick="calculateFunction('square')">x²</button>
+            <button class="function" onclick="calculateFunction('cube')">x³</button>
+            <button class="function" onclick="appendToDisplay('**')">x^y</button>
+            <button class="function" onclick="calculateFunction('factorial')">x!</button>
+            <button class="function" onclick="calculateFunction('inverse')">1/x</button>
+            <button class="function" onclick="calculateFunction('abs')">|x|</button>
+
+            <!-- Fifth Row -->
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">÷</button>
+            <button class="function" onclick="toggleMode()">DEG/RAD</button>
+            <button class="function" onclick="appendToDisplay('%')">mod</button>
+
+            <!-- Sixth Row -->
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
+            <button class="function" onclick="toggleHistory()"><i class="fas fa-history"></i></button>
+            <button class="function" onclick="calculateFunction('nCr')">nCr</button>
+
+            <!-- Seventh Row -->
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="function" onclick="memoryStore()">MS</button>
+            <button class="function" onclick="calculateFunction('nPr')">nPr</button>
+
+            <!-- Eighth Row -->
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="number" onclick="appendToDisplay('.')">.</button>
+            <button class="operator" onclick="appendToDisplay('%')">%</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="function" onclick="memoryRecall()">MR</button>
+            <button class="function" onclick="memoryClear()">MC</button>
+
+            <!-- Ninth Row -->
+            <button class="equals" onclick="calculate()" style="grid-column: span 6;">=</button>
+        </div>
+
+        <div class="history-container" id="historyContainer"></div>
+        <button class="history-toggle" id="historyToggle">
+            <i class="fas fa-chevron-down"></i> Show History
+        </button>
+
+        <div class="d-grid gap-2 mt-3">
+            <button class="btn btn-success" onclick="downloadResult()">
+                <i class="fas fa-download me-2"></i>Download Result
+            </button>
+        </div>
+        <div class="ad-space ad-space-sidebar">
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                    </div>
+                     <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+    </div>
+    
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/e09fafe6db00d9ca52133c5076bd2417/invoke.js"></script>
+         <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Calculator JavaScript -->
+    <script>
+        // DOM Elements
+        const display = document.getElementById('display');
+        const modeIndicator = document.getElementById('modeIndicator');
+        const themeToggle = document.getElementById('themeToggle');
+        const historyContainer = document.getElementById('historyContainer');
+        const historyToggle = document.getElementById('historyToggle');
+        
+        // Calculator State
+        let isDegreeMode = true;
+        let memoryValue = null;
+        let calculationHistory = [];
+        let isHistoryVisible = false;
+
+        // Initialize calculator
+        function initCalculator() {
+            // Load theme preference from localStorage
+            const savedTheme = localStorage.getItem('calculatorTheme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            // Load history from localStorage
+            const savedHistory = localStorage.getItem('calculatorHistory');
+            if (savedHistory) {
+                calculationHistory = JSON.parse(savedHistory);
+                updateHistoryDisplay();
+            }
+
+            // Set up keyboard event listener
+            document.addEventListener('keydown', handleKeyPress);
+        }
+
+        // Handle keyboard input
+        function handleKeyPress(e) {
+            const key = e.key;
+            
+            if (/[0-9]/.test(key)) {
+                appendToDisplay(key);
+            } else if (key === '.') {
+                appendToDisplay('.');
+            } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+                appendToDisplay(key);
+            } else if (key === '(' || key === ')') {
+                appendToDisplay(key);
+            } else if (key === 'Enter') {
+                calculate();
+            } else if (key === 'Escape') {
+                clearDisplay();
+            } else if (key === 'Backspace') {
+                backspace();
+            } else if (key === '%') {
+                appendToDisplay('%');
+            } else if (key === '^') {
+                appendToDisplay('**');
+            } else if (key === '!') {
+                calculateFunction('factorial');
+            }
+        }
+
+        // Append value to display
+        function appendToDisplay(value) {
+            if (display.value === '0' && value !== '.' && !['+', '-', '*', '/', '(', ')', '%', '**', 'mod'].includes(value)) {
+                display.value = '';
+            }
+            
+            // Handle special values
+            if (value === 'Math.PI') {
+                display.value += Math.PI;
+            } else if (value === 'Math.E') {
+                display.value += Math.E;
+            } else {
+                display.value += value;
+            }
+            
+            // Auto-scroll display to the right
+            display.scrollLeft = display.scrollWidth;
+        }
+
+        // Clear display
+        function clearDisplay() {
+            display.value = '0';
+        }
+
+        // Backspace function
+        function backspace() {
+            if (display.value.length === 1 || (display.value.length === 2 && display.value.startsWith('-'))) {
+                display.value = '0';
+            } else {
+                display.value = display.value.slice(0, -1);
+            }
+        }
+
+        // Calculate result
+        function calculate() {
+            try {
+                let expression = display.value;
+                
+                // Replace special constants and functions
+                expression = expression.replace(/Math\.PI/g, Math.PI);
+                expression = expression.replace(/Math\.E/g, Math.E);
+                expression = expression.replace(/%/g, '/100');
+                expression = expression.replace(/mod/g, '%');
+                
+                // Evaluate the expression
+                const result = eval(expression);
+                
+                // Add to history
+                addToHistory(display.value, result);
+                
+                // Display result
+                display.value = Number.isInteger(result) ? result.toString() : result.toFixed(6).replace(/\.?0+$/, '');
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        // Calculate mathematical functions
+        function calculateFunction(func) {
+            try {
+                let value = parseFloat(display.value) || 0;
+                let result;
+                
+                switch(func) {
+                    case 'sin':
+                        result = isDegreeMode ? Math.sin(value * Math.PI / 180) : Math.sin(value);
+                        break;
+                    case 'cos':
+                        result = isDegreeMode ? Math.cos(value * Math.PI / 180) : Math.cos(value);
+                        break;
+                    case 'tan':
+                        result = isDegreeMode ? Math.tan(value * Math.PI / 180) : Math.tan(value);
+                        break;
+                    case 'arcsin':
+                        result = isDegreeMode ? Math.asin(value) * 180 / Math.PI : Math.asin(value);
+                        break;
+                    case 'arccos':
+                        result = isDegreeMode ? Math.acos(value) * 180 / Math.PI : Math.acos(value);
+                        break;
+                    case 'arctan':
+                        result = isDegreeMode ? Math.atan(value) * 180 / Math.PI : Math.atan(value);
+                        break;
+                    case 'sinh':
+                        result = Math.sinh(value);
+                        break;
+                    case 'cosh':
+                        result = Math.cosh(value);
+                        break;
+                    case 'tanh':
+                        result = Math.tanh(value);
+                        break;
+                    case 'log':
+                        result = Math.log10(value);
+                        break;
+                    case 'ln':
+                        result = Math.log(value);
+                        break;
+                    case 'sqrt':
+                        result = Math.sqrt(value);
+                        break;
+                    case 'square':
+                        result = value * value;
+                        break;
+                    case 'cube':
+                        result = value * value * value;
+                        break;
+                    case 'inverse':
+                        result = 1 / value;
+                        break;
+                    case 'factorial':
+                        if (value < 0 || !Number.isInteger(value)) {
+                            display.value = 'Error';
+                            return;
+                        }
+                        result = 1;
+                        for (let i = 2; i <= value; i++) result *= i;
+                        break;
+                    case 'abs':
+                        result = Math.abs(value);
+                        break;
+                    case 'nCr':
+                        if (!Number.isInteger(value) || value < 0) {
+                            display.value = 'Error';
+                            return;
+                        }
+                        result = combination(value, parseFloat(prompt('Enter r for nCr:') || 0));
+                        break;
+                    case 'nPr':
+                        if (!Number.isInteger(value) || value < 0) {
+                            display.value = 'Error';
+                            return;
+                        }
+                        result = permutation(value, parseFloat(prompt('Enter r for nPr:') || 0));
+                        break;
+                    default:
+                        return;
+                }
+                
+                // Add to history
+                addToHistory(`${func}(${value})`, result);
+                
+                // Display result
+                display.value = Number.isInteger(result) ? result.toString() : result.toFixed(6).replace(/\.?0+$/, '');
+            } catch (e) {
+                display.value = 'Error';
+            }
+        }
+
+        // Combination (nCr) calculation
+        function combination(n, r) {
+            if (r < 0 || n < r || !Number.isInteger(n) || !Number.isInteger(r)) return 'Error';
+            return factorial(n) / (factorial(r) * factorial(n - r));
+        }
+
+        // Permutation (nPr) calculation
+        function permutation(n, r) {
+            if (r < 0 || n < r || !Number.isInteger(n) || !Number.isInteger(r)) return 'Error';
+            return factorial(n) / factorial(n - r);
+        }
+
+        // Factorial helper function
+        function factorial(n) {
+            if (n === 0 || n === 1) return 1;
+            let result = 1;
+            for (let i = 2; i <= n; i++) result *= i;
+            return result;
+        }
+
+        // Toggle degree/radian mode
+        function toggleMode() {
+            isDegreeMode = !isDegreeMode;
+            modeIndicator.textContent = isDegreeMode ? 'DEG' : 'RAD';
+        }
+
+        // Memory functions
+        function memoryStore() {
+            memoryValue = parseFloat(display.value) || 0;
+        }
+
+        function memoryRecall() {
+            if (memoryValue !== null) {
+                display.value = memoryValue.toString();
+            }
+        }
+
+        function memoryClear() {
+            memoryValue = null;
+        }
+
+        // History functions
+        function addToHistory(expression, result) {
+            calculationHistory.unshift({
+                expression,
+                result,
+                timestamp: new Date().toLocaleString()
+            });
+            
+            // Keep only last 10 items
+            if (calculationHistory.length > 10) {
+                calculationHistory.pop();
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('calculatorHistory', JSON.stringify(calculationHistory));
+            
+            // Update display
+            updateHistoryDisplay();
+        }
+
+        function updateHistoryDisplay() {
+            historyContainer.innerHTML = '';
+            
+            if (calculationHistory.length === 0) {
+                historyContainer.innerHTML = '<p class="text-muted text-center">No history yet</p>';
+                return;
+            }
+            
+            calculationHistory.forEach((item, index) => {
+                const historyItem = document.createElement('div');
+                historyItem.className = 'history-item';
+                historyItem.innerHTML = `
+                    <div><strong>${item.expression}</strong> = ${item.result}</div>
+                    <small class="text-muted">${item.timestamp}</small>
+                `;
+                
+                historyItem.addEventListener('click', () => {
+                    display.value = item.result.toString();
+                });
+                
+                historyContainer.appendChild(historyItem);
+            });
+        }
+
+        function toggleHistory() {
+            isHistoryVisible = !isHistoryVisible;
+            
+            if (isHistoryVisible) {
+                historyContainer.style.display = 'block';
+                historyToggle.innerHTML = '<i class="fas fa-chevron-up"></i> Hide History';
+            } else {
+                historyContainer.style.display = 'none';
+                historyToggle.innerHTML = '<i class="fas fa-chevron-down"></i> Show History';
+            }
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('calculatorTheme', 'dark');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('calculatorTheme', 'light');
+            }
+        }
+
+        // Download result
+        function downloadResult() {
+            const blob = new Blob([`Calculation Result: ${display.value}`], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `calculator_result_${new Date().toISOString().slice(0, 10)}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize calculator when page loads
+        document.addEventListener('DOMContentLoaded', initCalculator);
+        
+        // Event listeners
+        themeToggle.addEventListener('click', toggleTheme);
+        historyToggle.addEventListener('click', toggleHistory);
+    </script>
+</body>
+</html>

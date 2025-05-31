@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan EMI Calculator - Calculate Monthly Loan Payments | Multi-Tools</title>
+    <meta name="description" content="Free online loan EMI calculator. Calculate your monthly loan payments, total interest, and view amortization schedule for home loans, car loans, and personal loans.">
+    <meta name="keywords" content="loan calculator, emi calculator, loan payment calculator, mortgage calculator, car loan calculator, amortization schedule">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .emi-result {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .loan-summary {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-value {
+            font-weight: 700;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1.5rem 0;
+        }
+        
+        .amortization-table {
+            font-size: 0.9rem;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-ms-thumb {
+            background: var(--primary-color);
+        }
+        
+        .range-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+      <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+
+                     <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Loan EMI Calculator</h1>
+                        <p class="tool-description">Calculate your monthly loan payments (EMI), total interest, and view amortization schedule for home loans, car loans, and personal loans.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <form id="loan-form">
+                        <div class="mb-3">
+                            <label for="loan-amount" class="form-label">Loan Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="loan-amount" placeholder="Enter loan amount" min="1000" max="10000000" value="100000" required>
+                            </div>
+                            <input type="range" class="form-range mt-2" id="loan-amount-range" min="1000" max="1000000" step="1000" value="100000">
+                            <div class="d-flex justify-content-between">
+                                <small>$1,000</small>
+                                <small class="range-value" id="loan-amount-value">$100,000</small>
+                                <small>$1,000,000</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="interest-rate" class="form-label">Interest Rate (% per annum)</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="interest-rate" placeholder="Enter interest rate" min="0.1" max="30" step="0.1" value="5" required>
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <input type="range" class="form-range mt-2" id="interest-rate-range" min="0.1" max="30" step="0.1" value="5">
+                            <div class="d-flex justify-content-between">
+                                <small>0.1%</small>
+                                <small class="range-value" id="interest-rate-value">5.0%</small>
+                                <small>30%</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="loan-term" class="form-label">Loan Term</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="loan-term" placeholder="Enter loan term" min="1" max="30" value="20" required>
+                                <select class="form-select" id="term-type" style="max-width: 120px;">
+                                    <option value="year" selected>Years</option>
+                                    <option value="month">Months</option>
+                                </select>
+                            </div>
+                            <input type="range" class="form-range mt-2" id="loan-term-range" min="1" max="30" step="1" value="20">
+                            <div class="d-flex justify-content-between">
+                                <small>1 Year</small>
+                                <small class="range-value" id="loan-term-value">20 Years</small>
+                                <small>30 Years</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="loan-start-date" class="form-label">Loan Start Date</label>
+                            <input type="date" class="form-control" id="loan-start-date">
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Calculate EMI</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container mt-4" id="result-container" style="display: none;">
+                        <h4>Loan EMI Results</h4>
+                        
+                        <div class="card mb-4">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Monthly EMI</h5>
+                                <div class="emi-result" id="monthly-emi">$0</div>
+                            </div>
+                        </div>
+                        
+                        <div class="loan-summary">
+                            <h5>Loan Summary</h5>
+                            <div class="summary-item">
+                                <span>Principal Amount:</span>
+                                <span class="summary-value" id="principal-amount">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Total Interest:</span>
+                                <span class="summary-value" id="total-interest">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Total Amount (Principal + Interest):</span>
+                                <span class="summary-value" id="total-amount">$0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Loan Term:</span>
+                                <span class="summary-value" id="loan-term-summary">0 years (0 months)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <canvas id="loan-chart"></canvas>
+                        </div>
+                        
+                        <ul class="nav nav-tabs" id="loanTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly-content" type="button" role="tab" aria-controls="yearly-content" aria-selected="true">
+                                    Yearly Schedule
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly-content" type="button" role="tab" aria-controls="monthly-content" aria-selected="false">
+                                    Monthly Schedule
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="loanTabContent">
+                            <div class="tab-pane fade show active" id="yearly-content" role="tabpanel" aria-labelledby="yearly-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped table-hover amortization-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Principal Paid</th>
+                                                <th>Interest Paid</th>
+                                                <th>Total Payment</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="yearly-schedule">
+                                            <!-- Yearly schedule will be populated here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="monthly-content" role="tabpanel" aria-labelledby="monthly-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-striped table-hover amortization-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Month</th>
+                                                <th>Payment Date</th>
+                                                <th>Principal</th>
+                                                <th>Interest</th>
+                                                <th>EMI</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="monthly-schedule">
+                                            <!-- Monthly schedule will be populated here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Loan EMI Calculation</h4>
+                        <p>EMI (Equated Monthly Installment) is a fixed payment amount made by a borrower to a lender at a specified date each month. EMIs are used to pay off both interest and principal each month so that over a specified number of years, the loan is paid off in full.</p>
+                        
+                        <h5>EMI Formula</h5>
+                        <p>The mathematical formula to calculate EMI is:</p>
+                        <div class="alert alert-light">
+                            <strong>EMI = [P × r × (1 + r)<sup>n</sup>] ÷ [(1 + r)<sup>n</sup> - 1]</strong>
+                            <p class="mb-0 mt-2">Where:</p>
+                            <ul class="mb-0">
+                                <li>P = Principal loan amount</li>
+                                <li>r = Monthly interest rate (annual interest rate ÷ 12 ÷ 100)</li>
+                                <li>n = Loan term in months</li>
+                            </ul>
+                        </div>
+                        
+                        <h5>Types of Loans</h5>
+                        <ul>
+                            <li><strong>Home Loans:</strong> Used to purchase residential property, typically with longer terms (15-30 years) and lower interest rates.</li>
+                            <li><strong>Car Loans:</strong> Used to purchase vehicles, typically with shorter terms (3-7 years) and moderate interest rates.</li>
+                            <li><strong>Personal Loans:</strong> General-purpose loans, typically with shorter terms (1-5 years) and higher interest rates.</li>
+                            <li><strong>Education Loans:</strong> Used to finance education, often with deferred payment options and moderate interest rates.</li>
+                        </ul>
+                        
+                        <h5>Factors Affecting EMI</h5>
+                        <ul>
+                            <li><strong>Loan Amount:</strong> Higher loan amounts result in higher EMIs.</li>
+                            <li><strong>Interest Rate:</strong> Higher interest rates increase the EMI amount.</li>
+                            <li><strong>Loan Term:</strong> Longer loan terms reduce the EMI amount but increase the total interest paid.</li>
+                            <li><strong>Repayment Schedule:</strong> Monthly, quarterly, or annual repayment options affect the EMI calculation.</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Note</h5>
+                            <p class="mb-0">This calculator provides an estimate based on the information you provide. Actual loan terms, interest rates, and fees may vary based on lender policies, your credit score, and other factors. Always consult with a financial advisor or lender for personalized advice.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-container sidebar-ad">
+                    <!-- Ad code will go here -->
+                    
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                    </div>
+                </div>
+                
+                <!-- More Calculators -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">More Calculators</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/calculators/age-calculator.html">Age Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/bmi-calculator.html">BMI Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/discount-calculator.html">Discount Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/percentage-calculator.html">Percentage Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/tip-calculator.html">Tip Calculator</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loanForm = document.getElementById('loan-form');
+            const loanAmount = document.getElementById('loan-amount');
+            const loanAmountRange = document.getElementById('loan-amount-range');
+            const loanAmountValue = document.getElementById('loan-amount-value');
+            const interestRate = document.getElementById('interest-rate');
+            const interestRateRange = document.getElementById('interest-rate-range');
+            const interestRateValue = document.getElementById('interest-rate-value');
+            const loanTerm = document.getElementById('loan-term');
+            const loanTermRange = document.getElementById('loan-term-range');
+            const loanTermValue = document.getElementById('loan-term-value');
+            const termType = document.getElementById('term-type');
+            const loanStartDate = document.getElementById('loan-start-date');
+            const resultContainer = document.getElementById('result-container');
+            
+            // Result elements
+            const monthlyEmi = document.getElementById('monthly-emi');
+            const principalAmount = document.getElementById('principal-amount');
+            const totalInterest = document.getElementById('total-interest');
+            const totalAmount = document.getElementById('total-amount');
+            const loanTermSummary = document.getElementById('loan-term-summary');
+            const yearlySchedule = document.getElementById('yearly-schedule');
+            const monthlySchedule = document.getElementById('monthly-schedule');
+            
+            // Chart
+            let loanChart;
+            
+            // Set default loan start date to today
+            const today = new Date();
+            loanStartDate.value = today.toISOString().split('T')[0];
+            
+            // Sync input fields with range sliders
+            loanAmount.addEventListener('input', function() {
+                loanAmountRange.value = this.value;
+                loanAmountValue.textContent = formatCurrency(this.value);
+            });
+            
+            loanAmountRange.addEventListener('input', function() {
+                loanAmount.value = this.value;
+                loanAmountValue.textContent = formatCurrency(this.value);
+            });
+            
+            interestRate.addEventListener('input', function() {
+                interestRateRange.value = this.value;
+                interestRateValue.textContent = this.value + '%';
+            });
+            
+            interestRateRange.addEventListener('input', function() {
+                interestRate.value = this.value;
+                interestRateValue.textContent = this.value + '%';
+            });
+            
+            loanTerm.addEventListener('input', function() {
+                updateTermRange();
+            });
+            
+            loanTermRange.addEventListener('input', function() {
+                loanTerm.value = this.value;
+                updateTermValue();
+            });
+            
+            termType.addEventListener('change', function() {
+                updateTermRange();
+                updateTermValue();
+            });
+            
+            function updateTermRange() {
+                if (termType.value === 'year') {
+                    loanTermRange.min = 1;
+                    loanTermRange.max = 30;
+                    loanTermRange.step = 1;
+                    if (loanTerm.value > 30) loanTerm.value = 30;
+                } else {
+                    loanTermRange.min = 1;
+                    loanTermRange.max = 360;
+                    loanTermRange.step = 1;
+                }
+                loanTermRange.value = loanTerm.value;
+                updateTermValue();
+            }
+            
+            function updateTermValue() {
+                if (termType.value === 'year') {
+                    loanTermValue.textContent = loanTerm.value + ' ' + (loanTerm.value == 1 ? 'Year' : 'Years');
+                } else {
+                    loanTermValue.textContent = loanTerm.value + ' ' + (loanTerm.value == 1 ? 'Month' : 'Months');
+                }
+            }
+            
+            // Calculate EMI
+            loanForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get input values
+                const principal = parseFloat(loanAmount.value);
+                const rate = parseFloat(interestRate.value);
+                let years = parseFloat(loanTerm.value);
+                
+                // Convert to years if term is in months
+                if (termType.value === 'month') {
+                    years = years / 12;
+                }
+                
+                // Calculate EMI
+                const monthlyRate = rate / 12 / 100;
+                const months = years * 12;
+                const emi = calculateEMI(principal, monthlyRate, months);
+                
+                // Calculate total interest and total amount
+                const totalInterestAmount = (emi * months) - principal;
+                const totalAmountValue = emi * months;
+                
+                // Display results
+                monthlyEmi.textContent = formatCurrency(emi);
+                principalAmount.textContent = formatCurrency(principal);
+                totalInterest.textContent = formatCurrency(totalInterestAmount);
+                totalAmount.textContent = formatCurrency(totalAmountValue);
+                loanTermSummary.textContent = `${years.toFixed(years % 1 === 0 ? 0 : 2)} years (${months} months)`;
+                
+                // Generate amortization schedule
+                const schedule = generateAmortizationSchedule(principal, monthlyRate, months, emi, loanStartDate.value);
+                
+                // Display yearly schedule
+                displayYearlySchedule(schedule);
+                
+                // Display monthly schedule
+                displayMonthlySchedule(schedule);
+                
+                // Create or update chart
+                createLoanChart(principal, totalInterestAmount);
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Reset form
+            loanForm.addEventListener('reset', function() {
+                resultContainer.style.display = 'none';
+                
+                // Reset range values
+                setTimeout(() => {
+                    loanAmountValue.textContent = formatCurrency(loanAmount.value);
+                    interestRateValue.textContent = interestRate.value + '%';
+                    updateTermValue();
+                }, 0);
+            });
+            
+            // Calculate EMI function
+            function calculateEMI(principal, monthlyRate, months) {
+                if (monthlyRate === 0) {
+                    return principal / months;
+                }
+                
+                return principal * monthlyRate * Math.pow(1 + monthlyRate, months) / (Math.pow(1 + monthlyRate, months) - 1);
+            }
+            
+            // Generate amortization schedule
+            function generateAmortizationSchedule(principal, monthlyRate, months, emi, startDate) {
+                const schedule = [];
+                let balance = principal;
+                let startDateObj = new Date(startDate);
+                
+                for (let i = 1; i <= months; i++) {
+                    const interest = balance * monthlyRate;
+                    const principalPaid = emi - interest;
+                    balance -= principalPaid;
+                    
+                    // Ensure balance doesn't go below zero due to rounding
+                    if (balance < 0) balance = 0;
+                    
+                    // Calculate payment date
+                    const paymentDate = new Date(startDateObj);
+                    paymentDate.setMonth(startDateObj.getMonth() + i);
+                    
+                    schedule.push({
+                        month: i,
+                        paymentDate: paymentDate,
+                        principalPaid: principalPaid,
+                        interest: interest,
+                        emi: emi,
+                        balance: balance
+                    });
+                }
+                
+                return schedule;
+            }
+            
+            // Display yearly schedule
+            function displayYearlySchedule(schedule) {
+                yearlySchedule.innerHTML = '';
+                
+                // Group by year
+                const yearlyData = {};
+                let currentYear = 0;
+                
+                schedule.forEach((payment, index) => {
+                    const year = Math.floor(index / 12) + 1;
+                    
+                    if (!yearlyData[year]) {
+                        yearlyData[year] = {
+                            principalPaid: 0,
+                            interest: 0,
+                            total: 0,
+                            balance: payment.balance
+                        };
+                    }
+                    
+                    yearlyData[year].principalPaid += payment.principalPaid;
+                    yearlyData[year].interest += payment.interest;
+                    yearlyData[year].total += payment.emi;
+                    yearlyData[year].balance = payment.balance;
+                });
+                
+                // Create table rows
+                Object.keys(yearlyData).forEach(year => {
+                    const data = yearlyData[year];
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${year}</td>
+                        <td>${formatCurrency(data.principalPaid)}</td>
+                        <td>${formatCurrency(data.interest)}</td>
+                        <td>${formatCurrency(data.total)}</td>
+                        <td>${formatCurrency(data.balance)}</td>
+                    `;
+                    
+                    yearlySchedule.appendChild(row);
+                });
+            }
+            
+            // Display monthly schedule
+            function displayMonthlySchedule(schedule) {
+                monthlySchedule.innerHTML = '';
+                
+                // Show first 12 months, then every 12th month
+                const displayMonths = schedule.filter((payment, index) => index < 12 || index % 12 === 0);
+                
+                // Create table rows
+                displayMonths.forEach(payment => {
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>${payment.month}</td>
+                        <td>${payment.paymentDate.toLocaleDateString()}</td>
+                        <td>${formatCurrency(payment.principalPaid)}</td>
+                        <td>${formatCurrency(payment.interest)}</td>
+                        <td>${formatCurrency(payment.emi)}</td>
+                        <td>${formatCurrency(payment.balance)}</td>
+                    `;
+                    
+                    monthlySchedule.appendChild(row);
+                });
+                
+                // Add a note if not all months are shown
+                if (schedule.length > displayMonths.length) {
+                    const noteRow = document.createElement('tr');
+                    noteRow.innerHTML = `
+                        <td colspan="6" class="text-center">
+                            <small class="text-muted">Showing first 12 months and then every 12th month. ${schedule.length} total payments.</small>
+                        </td>
+                    `;
+                    monthlySchedule.appendChild(noteRow);
+                }
+            }
+            
+            // Create loan chart
+            function createLoanChart(principal, totalInterest) {
+                const ctx = document.getElementById('loan-chart').getContext('2d');
+                
+                // Destroy existing chart if it exists
+                if (loanChart) {
+                    loanChart.destroy();
+                }
+                
+                // Create new chart
+                loanChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Principal', 'Interest'],
+                        datasets: [{
+                            data: [principal, totalInterest],
+                            backgroundColor: ['#4a6bff', '#ff6b6b'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.raw || 0;
+                                        const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        const percentage = Math.round((value / total) * 100);
+                                        return `${label}: ${formatCurrency(value)} (${percentage}%)`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Format currency
+            function formatCurrency(value) {
+                return '$' + parseFloat(value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+        });
+    </script>
+</body>
+</html>

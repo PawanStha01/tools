@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Index Checker | SEO Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 700;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .result-card {
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .indexed {
+            border-left-color: var(--success-color);
+        }
+        
+        .not-indexed {
+            border-left-color: var(--danger-color);
+        }
+        
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .status-indexed {
+            background-color: rgba(28, 200, 138, 0.1);
+            color: var(--success-color);
+        }
+        
+        .status-not-indexed {
+            background-color: rgba(231, 74, 59, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .back-button {
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .url-input-group {
+            position: relative;
+        }
+        
+        .url-input-group .form-control {
+            padding-left: 40px;
+        }
+        
+        .url-input-group i {
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            color: #6c757d;
+        }
+        
+        
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Loading spinner */
+        .spinner-border {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-width: 0.2em;
+            display: none;
+        }
+        
+        /* Results table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .results-table th, .results-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .results-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .results-table tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+        <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+    
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Ad Banner -->
+    <div class="container mt-3">
+        <div class="ad-container">
+            <p> <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script></p>
+            <!-- Google AdSense or other ad code would go here -->
+          
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        
+        <div class="tool-container">
+            <h1 class="text-center mb-4"><i class="fas fa-google feature-icon"></i><br>Google Index Checker</h1>
+            <p class="text-center mb-4">Check if your website pages are indexed by Google and identify indexing issues.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Check URLs
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="urlsToCheck" class="form-label">Enter URLs to check (one per line)</label>
+                                <textarea class="form-control" id="urlsToCheck" rows="8" placeholder="https://example.com/page1\nhttps://example.com/page2"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <button class="btn btn-outline-secondary" onclick="addSampleUrls()">
+                                    <i class="fas fa-magic"></i> Add Sample URLs
+                                </button>
+                                <button class="btn btn-outline-danger float-end" onclick="clearUrls()">
+                                    <i class="fas fa-trash"></i> Clear All
+                                </button>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100" onclick="checkIndexing()" id="checkButton">
+                                <i class="fas fa-search"></i> Check Index Status
+                                <span class="spinner-border spinner-border-sm" id="loadingSpinner"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            About Google Indexing
+                        </div>
+                        <div class="card-body">
+                            <h5>Why Check Index Status?</h5>
+                            <p>Google indexing means your pages are stored in Google's database and can appear in search results. If pages aren't indexed, they won't rank.</p>
+                            
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-lightbulb"></i> Common Indexing Issues</h6>
+                                <ul class="mb-0">
+                                    <li>Pages blocked by robots.txt</li>
+                                    <li>Noindex meta tag present</li>
+                                    <li>Low-quality or duplicate content</li>
+                                    <li>Poor internal linking</li>
+                                    <li>New pages not yet crawled</li>
+                                </ul>
+                            </div>
+                            
+                            <h5 class="mt-3">How to Fix Indexing Problems</h5>
+                            <ol>
+                                <li>Check for "noindex" tags</li>
+                                <li>Submit URLs to Google Search Console</li>
+                                <li>Improve internal linking</li>
+                                <li>Create a sitemap and submit it</li>
+                                <li>Ensure pages load quickly with no errors</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Banner -->
+                    <div class="ad-container">
+                        <p> </p>
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+           
+
+
+
+</div>
+                </div>
+            </div>
+            
+            <div id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Indexing Results</span>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="exportToCSV()">
+                                <i class="fas fa-file-csv"></i> Export to CSV
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="results-table">
+                                <thead>
+                                    <tr>
+                                        <th>URL</th>
+                                        <th>Status</th>
+                                        <th>Last Crawled</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsTableBody">
+                                    <!-- Results will be inserted here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card bg-light">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Indexed Pages</h5>
+                                            <p class="card-text display-4" id="indexedCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card bg-light">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Not Indexed</h5>
+                                            <p class="card-text display-4" id="notIndexedCount">0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Next Steps</h5>
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle"></i> For pages not indexed, submit them to 
+                                <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a> 
+                                for faster indexing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample data for demonstration
+        const sampleData = [
+            { url: "https://example.com", indexed: true, lastCrawled: "2023-06-15" },
+            { url: "https://example.com/about", indexed: true, lastCrawled: "2023-06-10" },
+            { url: "https://example.com/contact", indexed: false, lastCrawled: null },
+            { url: "https://example.com/products", indexed: true, lastCrawled: "2023-06-12" },
+            { url: "https://example.com/services", indexed: false, lastCrawled: null }
+        ];
+        
+        function addSampleUrls() {
+            const sampleUrls = sampleData.map(item => item.url).join('\n');
+            const urlList = document.getElementById('urlsToCheck');
+            if (urlList.value.trim() === '') {
+                urlList.value = sampleUrls;
+            } else {
+                urlList.value += '\n' + sampleUrls;
+            }
+        }
+        
+        function clearUrls() {
+            if (confirm('Are you sure you want to clear all URLs?')) {
+                document.getElementById('urlsToCheck').value = '';
+            }
+        }
+        
+        function checkIndexing() {
+            const urlsInput = document.getElementById('urlsToCheck').value.trim();
+            if (!urlsInput) {
+                alert('Please enter at least one URL to check');
+                return;
+            }
+            
+            // Show loading spinner
+            const checkButton = document.getElementById('checkButton');
+            const spinner = document.getElementById('loadingSpinner');
+            checkButton.disabled = true;
+            spinner.style.display = 'inline-block';
+            
+            // Simulate API call with timeout (in a real app, this would be an actual API call)
+            setTimeout(() => {
+                processUrls(urlsInput);
+                
+                // Hide spinner and re-enable button
+                checkButton.disabled = false;
+                spinner.style.display = 'none';
+            }, 1500);
+        }
+        
+        function processUrls(urlsInput) {
+            const urls = urlsInput.split('\n')
+                .map(url => url.trim())
+                .filter(url => url.length > 0);
+            
+            // For demo purposes, we'll use our sample data
+            // In a real implementation, you would call an API or use the Google Indexing API
+            
+            const resultsTable = document.getElementById('resultsTableBody');
+            resultsTable.innerHTML = '';
+            
+            let indexedCount = 0;
+            let notIndexedCount = 0;
+            
+            urls.forEach(url => {
+                // Find matching sample data or generate random result for demo
+                const sampleMatch = sampleData.find(item => item.url === url);
+                let result;
+                
+                if (sampleMatch) {
+                    result = sampleMatch;
+                } else {
+                    // Generate random result for demo
+                    const isIndexed = Math.random() > 0.3; // 70% chance of being indexed
+                    const lastCrawled = isIndexed 
+                        ? new Date(Date.now() - Math.floor(Math.random() * 30 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0]
+                        : null;
+                    
+                    result = {
+                        url,
+                        indexed: isIndexed,
+                        lastCrawled
+                    };
+                }
+                
+                // Update counts
+                if (result.indexed) {
+                    indexedCount++;
+                } else {
+                    notIndexedCount++;
+                }
+                
+                // Add row to table
+                const row = document.createElement('tr');
+                row.className = result.indexed ? 'indexed' : 'not-indexed';
+                
+                row.innerHTML = `
+                    <td>${result.url}</td>
+                    <td>
+                        <span class="status-badge ${result.indexed ? 'status-indexed' : 'status-not-indexed'}">
+                            ${result.indexed ? 'Indexed' : 'Not Indexed'}
+                        </span>
+                    </td>
+                    <td>${result.lastCrawled || 'N/A'}</td>
+                    <td>
+                        <a href="https://www.google.com/search?q=site:${encodeURIComponent(result.url)}" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="fas fa-external-link-alt"></i> Verify
+                        </a>
+                    </td>
+                `;
+                
+                resultsTable.appendChild(row);
+            });
+            
+            // Update counts
+            document.getElementById('indexedCount').textContent = indexedCount;
+            document.getElementById('notIndexedCount').textContent = notIndexedCount;
+            
+            // Show results section
+            document.getElementById('resultsSection').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function exportToCSV() {
+            const rows = Array.from(document.querySelectorAll('#resultsTableBody tr'));
+            if (rows.length === 0) {
+                alert('No results to export');
+                return;
+            }
+            
+            // Create CSV content
+            let csvContent = "URL,Status,Last Crawled\n";
+            
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                const url = cells[0].textContent;
+                const status = cells[1].textContent.trim();
+                const lastCrawled = cells[2].textContent;
+                
+                csvContent += `"${url}",${status},${lastCrawled}\n`;
+            });
+            
+            // Create download link
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'google_index_results.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>

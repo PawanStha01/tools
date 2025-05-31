@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Backlink Checker | Analyze & Improve Your Link Profile</title>
+    <meta name="description" content="Check your website's backlinks for free. Analyze dofollow/nofollow links, find toxic backlinks, and compare with competitors. Get actionable SEO insights.">
+    <meta name="keywords" content="backlink checker, free backlink checker, backlink analysis tool, website backlinks checker, Ahrefs backlink checker, Moz backlink checker, check backlinks for free, backlink profile checker, toxic backlink checker, competitor backlink analysis">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+        
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 700;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .backlink-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .backlink-item:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+        
+        .backlink-status {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-success {
+            background-color: var(--success-color);
+        }
+        
+        .status-warning {
+            background-color: #f6c23e;
+        }
+        
+        .status-danger {
+            background-color: var(--danger-color);
+        }
+        
+        .backlink-meta {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .back-button {
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .progress {
+            height: 10px;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+            
+            .backlink-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .backlink-meta {
+                margin-top: 5px;
+            }
+        }
+        
+        /* Domain authority indicator */
+        .da-indicator {
+            display: inline-block;
+            width: 60px;
+            height: 6px;
+            background-color: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        
+        .da-fill {
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        /* Loading animation */
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Ad Banner -->
+    <div class="container mt-3">
+        <div class="ad-container">
+            
+           <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        
+        <div class="tool-container">
+            <h1 class="text-center mb-4"><i class="fas fa-link feature-icon"></i><br>Backlink Checker</h1>
+            <p class="text-center mb-4">Analyze backlinks to your website and evaluate their quality.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Website Analysis
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="websiteUrl" class="form-label">Website URL</label>
+                                <input type="url" class="form-control" id="websiteUrl" placeholder="https://example.com" required>
+                                <div class="form-text">Enter the full URL including http:// or https://</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="apiKey" class="form-label">API Key (Optional)</label>
+                                <input type="text" class="form-control" id="apiKey" placeholder="Enter your API key for more detailed results">
+                                <div class="form-text">Using an API key will provide more accurate metrics like Domain Authority</div>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="checkInternalLinks" checked>
+                                <label class="form-check-label" for="checkInternalLinks">Include internal links</label>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="checkNofollow" checked>
+                                <label class="form-check-label" for="checkNofollow">Include nofollow links</label>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100" onclick="checkBacklinks()">
+                                <i class="fas fa-search"></i> Check Backlinks
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Banner -->
+                    <div class="ad-container">
+                        <p> </p>
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Quick Tips
+                        </div>
+                        <div class="card-body">
+                            <h5>About Backlinks</h5>
+                            <p>Backlinks are links from other websites that point to your site. Search engines use them as a ranking factor.</p>
+                            
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-lightbulb"></i> Quality Over Quantity</h6>
+                                <ul class="mb-0">
+                                    <li>Focus on getting links from authoritative sites</li>
+                                    <li>Natural link profiles have a mix of follow/nofollow</li>
+                                    <li>Relevant links from industry sites are most valuable</li>
+                                </ul>
+                            </div>
+                            
+                            <h5 class="mt-3">How to Use This Tool</h5>
+                            <ol>
+                                <li>Enter your website URL</li>
+                                <li>Optionally add an API key for detailed metrics</li>
+                                <li>Click "Check Backlinks"</li>
+                                <li>Review the results and identify opportunities</li>
+                            </ol>
+                            
+                            <div class="alert alert-warning mt-3">
+                                <h6><i class="fas fa-exclamation-triangle"></i> Note</h6>
+                                <p class="mb-0">This tool provides simulated results. For comprehensive backlink analysis, consider using professional SEO tools like Ahrefs, Moz, or SEMrush.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner"></div>
+                <p class="mt-3">Analyzing backlinks. This may take a few moments...</p>
+            </div>
+            
+            <div id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Backlink Analysis Results</span>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="exportToCSV()">
+                                <i class="fas fa-file-csv"></i> Export
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary" onclick="printResults()">
+                                <i class="fas fa-print"></i> Print
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Total Backlinks</h5>
+                                        <p class="card-text display-6" id="totalBacklinks">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Referring Domains</h5>
+                                        <p class="card-text display-6" id="referringDomains">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card bg-light">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Avg. Domain Authority</h5>
+                                        <p class="card-text display-6" id="avgDomainAuthority">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5>Backlink Details</h5>
+                            <div class="form-group">
+                                <select class="form-select form-select-sm" id="filterResults" onchange="filterBacklinks()">
+                                    <option value="all">All Backlinks</option>
+                                    <option value="dofollow">Dofollow Only</option>
+                                    <option value="nofollow">Nofollow Only</option>
+                                    <option value="highDA">High DA (>50)</option>
+                                    <option value="lowDA">Low DA (<20)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div id="backlinkResults" class="results-container"></div>
+                        
+                        <div class="mt-4">
+                            <h5>Backlink Distribution</h5>
+                            <canvas id="backlinkChart" height="200"></canvas>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Recommendations</h5>
+                            <div id="recommendations">
+                                <div class="alert alert-success">
+                                    <h6><i class="fas fa-check-circle"></i> Good Signs</h6>
+                                    <ul id="goodSigns"></ul>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <h6><i class="fas fa-exclamation-triangle"></i> Areas for Improvement</h6>
+                                    <ul id="improvementAreas"></ul>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Footer -->
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for demonstration
+        const sampleBacklinks = [
+            {
+                url: "https://exampleblog.com/seo-tips",
+                domain: "exampleblog.com",
+                anchorText: "great SEO tools",
+                isDofollow: true,
+                domainAuthority: 68,
+                lastSeen: "2023-05-15",
+                status: "active"
+            },
+            {
+                url: "https://technews.org/industry-updates",
+                domain: "technews.org",
+                anchorText: "visit this site",
+                isDofollow: false,
+                domainAuthority: 82,
+                lastSeen: "2023-04-22",
+                status: "active"
+            },
+            {
+                url: "https://smallbusiness.net/resources",
+                domain: "smallbusiness.net",
+                anchorText: "helpful resources",
+                isDofollow: true,
+                domainAuthority: 45,
+                lastSeen: "2023-06-10",
+                status: "active"
+            },
+            {
+                url: "https://bloggerhub.com/web-tools",
+                domain: "bloggerhub.com",
+                anchorText: "check out these tools",
+                isDofollow: true,
+                domainAuthority: 32,
+                lastSeen: "2023-03-18",
+                status: "active"
+            },
+            {
+                url: "https://spammysite.com/buy-links",
+                domain: "spammysite.com",
+                anchorText: "click here",
+                isDofollow: true,
+                domainAuthority: 12,
+                lastSeen: "2023-01-05",
+                status: "lost"
+            },
+            {
+                url: "https://industryforum.com/discussion",
+                domain: "industryforum.com",
+                anchorText: "discussion about tools",
+                isDofollow: true,
+                domainAuthority: 76,
+                lastSeen: "2023-06-28",
+                status: "active"
+            },
+            {
+                url: "https://newsaggregator.com/daily-digest",
+                domain: "newsaggregator.com",
+                anchorText: "source",
+                isDofollow: false,
+                domainAuthority: 88,
+                lastSeen: "2023-05-30",
+                status: "active"
+            },
+            {
+                url: "https://startupguide.io/marketing-tools",
+                domain: "startupguide.io",
+                anchorText: "marketing tools list",
+                isDofollow: true,
+                domainAuthority: 54,
+                lastSeen: "2023-04-15",
+                status: "active"
+            },
+            {
+                url: "https://lowqualitylinks.net/free-stuff",
+                domain: "lowqualitylinks.net",
+                anchorText: "free tools",
+                isDofollow: true,
+                domainAuthority: 8,
+                lastSeen: "2022-12-20",
+                status: "lost"
+            },
+            {
+                url: "https://authoritysite.com/recommendations",
+                domain: "authoritysite.com",
+                anchorText: "recommended tools",
+                isDofollow: true,
+                domainAuthority: 93,
+                lastSeen: "2023-07-05",
+                status: "active"
+            }
+        ];
+        
+        let currentBacklinks = [];
+        let backlinkChart = null;
+        
+        function checkBacklinks() {
+            const websiteUrl = document.getElementById('websiteUrl').value.trim();
+            if (!websiteUrl) {
+                alert('Please enter a website URL');
+                return;
+            }
+            
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'none';
+            
+            // Simulate API call with timeout
+            setTimeout(() => {
+                // For demo purposes, we'll use sample data
+                currentBacklinks = [...sampleBacklinks];
+                
+                // Update with the entered domain
+                const domain = new URL(websiteUrl).hostname;
+                currentBacklinks.forEach(link => {
+                    link.targetUrl = websiteUrl;
+                    link.targetDomain = domain;
+                });
+                
+                // Display results
+                displayResults();
+                
+                // Hide loading spinner
+                document.getElementById('loadingSpinner').style.display = 'none';
+                
+                // Scroll to results
+                document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        }
+        
+        function displayResults() {
+            // Calculate summary stats
+            const totalBacklinks = currentBacklinks.length;
+            const referringDomains = [...new Set(currentBacklinks.map(link => link.domain))].length;
+            const avgDomainAuthority = currentBacklinks.reduce((sum, link) => sum + link.domainAuthority, 0) / totalBacklinks;
+            
+            // Update summary
+            document.getElementById('totalBacklinks').textContent = totalBacklinks;
+            document.getElementById('referringDomains').textContent = referringDomains;
+            document.getElementById('avgDomainAuthority').textContent = avgDomainAuthority.toFixed(1);
+            
+            // Display backlinks
+            renderBacklinks(currentBacklinks);
+            
+            // Create chart
+            createChart();
+            
+            // Generate recommendations
+            generateRecommendations();
+            
+            // Show results section
+            document.getElementById('resultsSection').style.display = 'block';
+        }
+        
+        function renderBacklinks(backlinks) {
+            const resultsContainer = document.getElementById('backlinkResults');
+            resultsContainer.innerHTML = '';
+            
+            if (backlinks.length === 0) {
+                resultsContainer.innerHTML = '<div class="alert alert-info">No backlinks found matching your criteria.</div>';
+                return;
+            }
+            
+            backlinks.forEach(backlink => {
+                const item = document.createElement('div');
+                item.className = 'backlink-item';
+                
+                // Determine status color
+                let statusClass = '';
+                if (backlink.status === 'lost') {
+                    statusClass = 'status-danger';
+                } else if (backlink.domainAuthority < 30) {
+                    statusClass = 'status-warning';
+                } else {
+                    statusClass = 'status-success';
+                }
+                
+                // DA indicator
+                const daIndicator = `<span class="da-indicator"><span class="da-fill" style="width: ${backlink.domainAuthority}%"></span></span>`;
+                
+                item.innerHTML = `
+                    <div>
+                        <span class="backlink-status ${statusClass}"></span>
+                        <strong>${backlink.domain}</strong>
+                        <div class="backlink-meta">
+                            Linking from: <a href="${backlink.url}" target="_blank">${backlink.url}</a><br>
+                            Anchor: "${backlink.anchorText}" | 
+                            ${backlink.isDofollow ? 'Dofollow' : 'Nofollow'} | 
+                            DA: ${backlink.domainAuthority}${daIndicator}
+                        </div>
+                    </div>
+                    <div class="backlink-meta">
+                        Last seen: ${backlink.lastSeen}<br>
+                        Status: ${backlink.status === 'active' ? 'Active' : 'Lost'}
+                    </div>
+                `;
+                
+                resultsContainer.appendChild(item);
+            });
+        }
+        
+        function filterBacklinks() {
+            const filterValue = document.getElementById('filterResults').value;
+            let filteredLinks = [];
+            
+            switch(filterValue) {
+                case 'all':
+                    filteredLinks = currentBacklinks;
+                    break;
+                case 'dofollow':
+                    filteredLinks = currentBacklinks.filter(link => link.isDofollow);
+                    break;
+                case 'nofollow':
+                    filteredLinks = currentBacklinks.filter(link => !link.isDofollow);
+                    break;
+                case 'highDA':
+                    filteredLinks = currentBacklinks.filter(link => link.domainAuthority > 50);
+                    break;
+                case 'lowDA':
+                    filteredLinks = currentBacklinks.filter(link => link.domainAuthority < 20);
+                    break;
+                default:
+                    filteredLinks = currentBacklinks;
+            }
+            
+            renderBacklinks(filteredLinks);
+        }
+        
+        function createChart() {
+            const ctx = document.getElementById('backlinkChart').getContext('2d');
+            
+            // Destroy previous chart if exists
+            if (backlinkChart) {
+                backlinkChart.destroy();
+            }
+            
+            // Group by DA ranges
+            const daRanges = {
+                '0-10': currentBacklinks.filter(link => link.domainAuthority <= 10).length,
+                '11-30': currentBacklinks.filter(link => link.domainAuthority > 10 && link.domainAuthority <= 30).length,
+                '31-50': currentBacklinks.filter(link => link.domainAuthority > 30 && link.domainAuthority <= 50).length,
+                '51-70': currentBacklinks.filter(link => link.domainAuthority > 50 && link.domainAuthority <= 70).length,
+                '71+': currentBacklinks.filter(link => link.domainAuthority > 70).length
+            };
+            
+            // Group by follow status
+            const followStatus = {
+                'Dofollow': currentBacklinks.filter(link => link.isDofollow).length,
+                'Nofollow': currentBacklinks.filter(link => !link.isDofollow).length
+            };
+            
+            backlinkChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(daRanges),
+                    datasets: [{
+                        label: 'Backlinks by Domain Authority',
+                        data: Object.values(daRanges),
+                        backgroundColor: [
+                            'rgba(231, 74, 59, 0.7)',
+                            'rgba(246, 194, 62, 0.7)',
+                            'rgba(78, 115, 223, 0.7)',
+                            'rgba(28, 200, 138, 0.7)',
+                            'rgba(54, 185, 204, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(231, 74, 59, 1)',
+                            'rgba(246, 194, 62, 1)',
+                            'rgba(78, 115, 223, 1)',
+                            'rgba(28, 200, 138, 1)',
+                            'rgba(54, 185, 204, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.parsed.y} backlinks (${((context.parsed.y / currentBacklinks.length) * 100).toFixed(1)}%)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Backlinks'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Domain Authority Range'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function generateRecommendations() {
+            const goodSignsList = document.getElementById('goodSigns');
+            const improvementAreasList = document.getElementById('improvementAreas');
+            
+            goodSignsList.innerHTML = '';
+            improvementAreasList.innerHTML = '';
+            
+            // Calculate stats
+            const highDACount = currentBacklinks.filter(link => link.domainAuthority > 50).length;
+            const dofollowCount = currentBacklinks.filter(link => link.isDofollow).length;
+            const lostCount = currentBacklinks.filter(link => link.status === 'lost').length;
+            const lowDACount = currentBacklinks.filter(link => link.domainAuthority < 20).length;
+            
+            // Good signs
+            if (highDACount > 0) {
+                goodSignsList.innerHTML += `<li>You have ${highDACount} backlinks from high authority domains (DA > 50)</li>`;
+            }
+            
+            if (dofollowCount > 0) {
+                goodSignsList.innerHTML += `<li>You have ${dofollowCount} dofollow backlinks that pass link equity</li>`;
+            }
+            
+            const uniqueDomains = [...new Set(currentBacklinks.map(link => link.domain))].length;
+            if (uniqueDomains > 5) {
+                goodSignsList.innerHTML += `<li>Your backlinks come from ${uniqueDomains} different domains, indicating diversity</li>`;
+            }
+            
+            // Areas for improvement
+            if (lostCount > 0) {
+                improvementAreasList.innerHTML += `<li>You've lost ${lostCount} backlinks. Consider reaching out to these sites to restore them.</li>`;
+            }
+            
+            if (lowDACount > 0) {
+                improvementAreasList.innerHTML += `<li>You have ${lowDACount} backlinks from low authority domains (DA < 20). These may not provide much SEO value.</li>`;
+            }
+            
+            const nofollowCount = currentBacklinks.length - dofollowCount;
+            if (nofollowCount === 0) {
+                improvementAreasList.innerHTML += `<li>You have no nofollow backlinks. A natural link profile includes a mix of follow and nofollow links.</li>`;
+            }
+            
+            // Fallback if no recommendations
+            if (goodSignsList.innerHTML === '') {
+                goodSignsList.innerHTML = '<li>No significant positive patterns detected in your backlink profile.</li>';
+            }
+            
+            if (improvementAreasList.innerHTML === '') {
+                improvementAreasList.innerHTML = '<li>No major issues detected in your backlink profile.</li>';
+            }
+        }
+        
+        function exportToCSV() {
+            if (currentBacklinks.length === 0) {
+                alert('No backlinks to export');
+                return;
+            }
+            
+            // Create CSV content
+            let csvContent = "Source URL,Source Domain,Anchor Text,Follow Status,Domain Authority,Last Seen,Status\n";
+            
+            currentBacklinks.forEach(link => {
+                csvContent += `"${link.url}","${link.domain}","${link.anchorText}",${link.isDofollow ? 'Dofollow' : 'Nofollow'},${link.domainAuthority},${link.lastSeen},${link.status}\n`;
+            });
+            
+            // Create download link
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'backlink_report.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        function printResults() {
+            const printContent = document.getElementById('resultsSection').innerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            document.body.innerHTML = `
+                <h1 class="text-center mb-4">Backlink Analysis Report</h1>
+                <div class="container">
+                    <div class="mb-4">
+                        <strong>Website Analyzed:</strong> ${document.getElementById('websiteUrl').value || 'Not specified'}
+                    </div>
+                    ${printContent}
+                    <div class="text-center mt-4">
+                        <p>Generated by SEO Tools (https://seotools.example.com)</p>
+                        <p>${new Date().toLocaleString()}</p>
+                    </div>
+                </div>
+            `;
+            
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+</body>
+</html>

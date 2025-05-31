@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Encoder & Decoder - Encode and Decode URLs | Multi-Tools</title>
+    <meta name="description" content="Free online URL encoder and decoder tool. Encode special characters for use in URLs or decode URL-encoded strings. Perfect for web developers and SEO professionals.">
+    <meta name="keywords" content="url encoder, url decoder, encode url, decode url, url encoding, url decoding, percent encoding, url escape, url unescape">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .encode-decode-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .encode-decode-container {
+                flex-direction: row;
+            }
+        }
+        
+        .encode-decode-box {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .arrow-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 767px) {
+            .arrow-container {
+                transform: rotate(90deg);
+            }
+        }
+        
+        .example-table {
+            font-size: 0.9rem;
+        }
+        
+        .example-table th, .example-table td {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+   
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+                    <div class="tool-header">
+                        <h1>URL Encoder & Decoder</h1>
+                        <p class="tool-description">Encode special characters for use in URLs or decode URL-encoded strings. Essential for web developers and SEO professionals.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <div class="mb-4">
+                        <ul class="nav nav-tabs" id="encoderDecoderTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="encode-tab" data-bs-toggle="tab" data-bs-target="#encode" type="button" role="tab" aria-controls="encode" aria-selected="true">Encode URL</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="decode-tab" data-bs-toggle="tab" data-bs-target="#decode" type="button" role="tab" aria-controls="decode" aria-selected="false">Decode URL</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content mt-3" id="encoderDecoderTabContent">
+                            <!-- Encode Tab -->
+                            <div class="tab-pane fade show active" id="encode" role="tabpanel" aria-labelledby="encode-tab">
+                                <div class="mb-3">
+                                    <label for="encode-input" class="form-label">Enter text to encode:</label>
+                                    <textarea class="form-control" id="encode-input" rows="5" placeholder="Enter text to encode..."></textarea>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between mb-3">
+                                    <button class="btn btn-primary" id="encode-btn">Encode URL</button>
+                                    <button class="btn btn-outline-secondary" id="encode-clear-btn">Clear</button>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="encode-output" class="form-label">Encoded URL:</label>
+                                    <div class="input-group">
+                                        <textarea class="form-control" id="encode-output" rows="5" readonly></textarea>
+                                        <button class="btn btn-outline-primary" type="button" id="encode-copy-btn">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Decode Tab -->
+                            <div class="tab-pane fade" id="decode" role="tabpanel" aria-labelledby="decode-tab">
+                                <div class="mb-3">
+                                    <label for="decode-input" class="form-label">Enter URL-encoded text to decode:</label>
+                                    <textarea class="form-control" id="decode-input" rows="5" placeholder="Enter URL-encoded text to decode..."></textarea>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between mb-3">
+                                    <button class="btn btn-primary" id="decode-btn">Decode URL</button>
+                                    <button class="btn btn-outline-secondary" id="decode-clear-btn">Clear</button>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="decode-output" class="form-label">Decoded text:</label>
+                                    <div class="input-group">
+                                        <textarea class="form-control" id="decode-output" rows="5" readonly></textarea>
+                                        <button class="btn btn-outline-primary" type="button" id="decode-copy-btn">
+                                            <i class="bi bi-clipboard"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About URL Encoding & Decoding</h4>
+                        <p>URL encoding is the process of converting characters into a format that can be transmitted over the Internet. URLs can only be sent over the Internet using the ASCII character-set, so URL encoding replaces unsafe ASCII characters with a "%" followed by two hexadecimal digits.</p>
+                        
+                        <h5>Common URL Encoding Examples</h5>
+                        <div class="table-responsive">
+                            <table class="table table-bordered example-table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Character</th>
+                                        <th>URL Encoded</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Space</td>
+                                        <td>%20</td>
+                                        <td>Space characters are encoded as %20 (or + for query parameters)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>!</td>
+                                        <td>%21</td>
+                                        <td>Exclamation mark</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>%23</td>
+                                        <td>Number sign (hash)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$</td>
+                                        <td>%24</td>
+                                        <td>Dollar sign</td>
+                                    </tr>
+                                    <tr>
+                                        <td>&</td>
+                                        <td>%26</td>
+                                        <td>Ampersand</td>
+                                    </tr>
+                                    <tr>
+                                        <td>'</td>
+                                        <td>%27</td>
+                                        <td>Single quote</td>
+                                    </tr>
+                                    <tr>
+                                        <td>(</td>
+                                        <td>%28</td>
+                                        <td>Opening parenthesis</td>
+                                    </tr>
+                                    <tr>
+                                        <td>)</td>
+                                        <td>%29</td>
+                                        <td>Closing parenthesis</td>
+                                    </tr>
+                                    <tr>
+                                        <td>+</td>
+                                        <td>%2B</td>
+                                        <td>Plus sign</td>
+                                    </tr>
+                                    <tr>
+                                        <td>,</td>
+                                        <td>%2C</td>
+                                        <td>Comma</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h5>When to Use URL Encoding</h5>
+                        <ul>
+                            <li><strong>Query Parameters:</strong> When passing parameters in a URL query string</li>
+                            <li><strong>Form Submissions:</strong> When submitting form data with application/x-www-form-urlencoded</li>
+                            <li><strong>API Requests:</strong> When making API requests that include special characters</li>
+                            <li><strong>Internationalization:</strong> When URLs contain non-ASCII characters</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Tip</h5>
+                            <p class="mb-0">Different programming languages have built-in functions for URL encoding and decoding. In JavaScript, you can use <code>encodeURIComponent()</code> and <code>decodeURIComponent()</code> functions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-container sidebar-ad">
+                    <!-- Ad code will go here -->
+                    
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+           
+
+                    </div>
+                </div>
+                
+                <!-- Related Tools 
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Related Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/text-tools/case-converter.html">Case Converter</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/character-counter.html">Character Counter</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/word-counter.html">Word Counter</a></li>
+                            <li class="list-group-item"><a href="/tools/developer-tools/base64-encoder-decoder.html">Base64 Encoder & Decoder</a></li>
+                            <li class="list-group-item"><a href="/tools/text-tools/fancy-text-generator.html">Fancy Text Generator</a></li>
+                        </ul>
+                    </div>
+                </div> -->
+                
+                <!-- Popular Tools 
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Popular Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/tools/image-tools/image-to-png.html">Image to PNG Converter</a></li>
+                            <li class="list-group-item"><a href="/tools/calculators/percentage-calculator.html">Percentage Calculator</a></li>
+                            <li class="list-group-item"><a href="/tools/developer-tools/json-formatter.html">JSON Formatter</a></li>
+                            <li class="list-group-item"><a href="/tools/seo-tools/meta-tag-generator.html">Meta Tag Generator</a></li>
+                            <li class="list-group-item"><a href="/tools/unit-converters/length-converter.html">Length Converter</a></li>
+                        </ul>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Encode elements
+            const encodeInput = document.getElementById('encode-input');
+            const encodeOutput = document.getElementById('encode-output');
+            const encodeBtn = document.getElementById('encode-btn');
+            const encodeClearBtn = document.getElementById('encode-clear-btn');
+            const encodeCopyBtn = document.getElementById('encode-copy-btn');
+            
+            // Decode elements
+            const decodeInput = document.getElementById('decode-input');
+            const decodeOutput = document.getElementById('decode-output');
+            const decodeBtn = document.getElementById('decode-btn');
+            const decodeClearBtn = document.getElementById('decode-clear-btn');
+            const decodeCopyBtn = document.getElementById('decode-copy-btn');
+            
+            // Encode functionality
+            encodeBtn.addEventListener('click', function() {
+                try {
+                    const input = encodeInput.value;
+                    const encoded = encodeURIComponent(input);
+                    encodeOutput.value = encoded;
+                } catch (error) {
+                    encodeOutput.value = 'Error: ' + error.message;
+                }
+            });
+            
+            encodeClearBtn.addEventListener('click', function() {
+                encodeInput.value = '';
+                encodeOutput.value = '';
+                encodeInput.focus();
+            });
+            
+            encodeCopyBtn.addEventListener('click', function() {
+                encodeOutput.select();
+                document.execCommand('copy');
+                
+                const originalHTML = encodeCopyBtn.innerHTML;
+                encodeCopyBtn.innerHTML = '<i class="bi bi-check"></i>';
+                setTimeout(() => {
+                    encodeCopyBtn.innerHTML = originalHTML;
+                }, 2000);
+            });
+            
+            // Decode functionality
+            decodeBtn.addEventListener('click', function() {
+                try {
+                    const input = decodeInput.value;
+                    const decoded = decodeURIComponent(input);
+                    decodeOutput.value = decoded;
+                } catch (error) {
+                    decodeOutput.value = 'Error: ' + error.message;
+                }
+            });
+            
+            decodeClearBtn.addEventListener('click', function() {
+                decodeInput.value = '';
+                decodeOutput.value = '';
+                decodeInput.focus();
+            });
+            
+            decodeCopyBtn.addEventListener('click', function() {
+                decodeOutput.select();
+                document.execCommand('copy');
+                
+                const originalHTML = decodeCopyBtn.innerHTML;
+                decodeCopyBtn.innerHTML = '<i class="bi bi-check"></i>';
+                setTimeout(() => {
+                    decodeCopyBtn.innerHTML = originalHTML;
+                }, 2000);
+            });
+            
+            // Auto-encode/decode on input (optional feature)
+            encodeInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    try {
+                        encodeOutput.value = encodeURIComponent(this.value);
+                    } catch (error) {
+                        encodeOutput.value = '';
+                    }
+                } else {
+                    encodeOutput.value = '';
+                }
+            });
+            
+            decodeInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    try {
+                        decodeOutput.value = decodeURIComponent(this.value);
+                    } catch (error) {
+                        decodeOutput.value = '';
+                    }
+                } else {
+                    decodeOutput.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

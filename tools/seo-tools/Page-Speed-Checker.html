@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Speed Checker | SEO Tools</title>
+    <meta name="keywords" content="page speed checker, website speed test, page speed test, website performance test, Google speed test, GTmetrix alternative, Pingdom speed test, free website speed checker, Core Web Vitals checker, LCP FID CLS tester, improve page load time, mobile page speed test, SEO speed optimization, why my website is slow">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+            --warning-color: #f6c23e;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            padding: 0.75rem 1rem;
+        }
+        
+        
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 700;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .speed-meter {
+            width: 100%;
+            height: 30px;
+            background-color: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .speed-fill {
+            height: 100%;
+            border-radius: 15px;
+            transition: width 1s ease-in-out, background-color 1s ease;
+        }
+        
+        .speed-score {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 3px rgba(0,0,0,0.5);
+        }
+        
+        .metric-card {
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .good {
+            color: var(--success-color);
+        }
+        
+        .average {
+            color: var(--warning-color);
+        }
+        
+        .poor {
+            color: var(--danger-color);
+        }
+        
+        .back-button {
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            width: 3rem;
+            height: 3rem;
+        }
+        
+        
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Waterfall chart styling */
+        .waterfall-chart {
+            margin-top: 30px;
+        }
+        
+        .waterfall-item {
+            display: flex;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+        
+        .waterfall-label {
+            width: 150px;
+            font-weight: 500;
+        }
+        
+        .waterfall-bar {
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+        
+        .waterfall-time {
+            margin-left: 10px;
+            font-family: monospace;
+        }
+        
+        /* Recommendations styling */
+        .recommendation {
+            padding: 15px;
+            border-left: 4px solid var(--warning-color);
+            background-color: #fff9e6;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .recommendation.good {
+            border-left-color: var(--success-color);
+            background-color: #e6f7ee;
+        }
+        
+        .recommendation.critical {
+            border-left-color: var(--danger-color);
+            background-color: #fce8e6;
+        }
+    </style>
+</head>
+<body>
+      <!-- Header Placeholder -->
+      <div id="header-placeholder"></div>
+      
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Ad Banner -->
+    <div class="container mt-3">
+        <div class="ad-container">
+           <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <div class="tool-container">
+            <h1 class="text-center mb-4"><i class="fas fa-tachometer-alt feature-icon"></i><br>Page Speed Checker</h1>
+            <p class="text-center mb-4">Analyze your website's loading speed and get optimization recommendations</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Website Analysis
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="websiteUrl" class="form-label">Website URL</label>
+                                <input type="url" class="form-control" id="websiteUrl" placeholder="https://example.com" required>
+                                <div class="form-text">Include http:// or https://</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Test Location</label>
+                                <select class="form-select" id="testLocation">
+                                    <option value="us">United States</option>
+                                    <option value="eu">Europe</option>
+                                    <option value="asia">Asia</option>
+                                    <option value="au">Australia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Device Type</label>
+                                <select class="form-select" id="deviceType">
+                                    <option value="desktop">Desktop</option>
+                                    <option value="mobile" selected>Mobile</option>
+                                </select>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" onclick="runSpeedTest()">
+                                    <i class="fas fa-play"></i> Run Speed Test
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Banner -->
+                    <div class="ad-container">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+
+
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Quick Tips
+                        </div>
+                        <div class="card-body">
+                            <h5>About Page Speed</h5>
+                            <p>Page speed affects user experience and search engine rankings. Google considers it a ranking factor.</p>
+                            
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-lightbulb"></i> Optimal Loading Times</h6>
+                                <ul class="mb-0">
+                                    <li>Under 2 seconds: Excellent</li>
+                                    <li>2-4 seconds: Good</li>
+                                    <li>4-6 seconds: Average</li>
+                                    <li>Over 6 seconds: Needs improvement</li>
+                                </ul>
+                            </div>
+                            
+                            <h5 class="mt-3">Common Speed Issues</h5>
+                            <ul>
+                                <li>Unoptimized images</li>
+                                <li>Too many HTTP requests</li>
+                                <li>No browser caching</li>
+                                <li>Render-blocking resources</li>
+                                <li>Unminified CSS/JS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loading-spinner" id="loadingSpinner">
+                <div class="spinner-border text-primary spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p>Analyzing website performance...</p>
+            </div>
+            
+            <div id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        Test Results for <span id="resultUrl"></span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <h4>Performance Score</h4>
+                                <div class="speed-meter">
+                                    <div class="speed-fill" id="speedFill"></div>
+                                    <div class="speed-score" id="speedScore">0</div>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <span id="speedRating" class="fw-bold"></span>
+                                    <p class="text-muted small" id="speedDescription"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Key Metrics</h4>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card metric-card">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-1 text-muted">Load Time</h6>
+                                                <p class="metric-value" id="loadTime">0s</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card metric-card">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-1 text-muted">Page Size</h6>
+                                                <p class="metric-value" id="pageSize">0 KB</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card metric-card">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-1 text-muted">Requests</h6>
+                                                <p class="metric-value" id="requests">0</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card metric-card">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-1 text-muted">First Paint</h6>
+                                                <p class="metric-value" id="firstPaint">0s</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="waterfall-chart" id="waterfallChart">
+                            <h5>Resource Loading Timeline</h5>
+                            <div id="waterfallItems"></div>
+                        </div>
+                        
+                        <div class="mt-4" id="recommendationsSection">
+                            <h5>Optimization Recommendations</h5>
+                            <div class="recommendation critical">
+                                <h6><i class="fas fa-exclamation-circle"></i> Enable Compression</h6>
+                                <p>Compress resources with gzip or brotli to reduce network transfer size.</p>
+                            </div>
+                            <div class="recommendation">
+                                <h6><i class="fas fa-lightbulb"></i> Optimize Images</h6>
+                                <p>Properly format and compress images to reduce their file size.</p>
+                            </div>
+                            <div class="recommendation good">
+                                <h6><i class="fas fa-check-circle"></i> Browser Caching</h6>
+                                <p>Your static assets are properly cached. Good job!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <button class="btn btn-outline-primary" onclick="runNewTest()">
+                                <i class="fas fa-sync-alt"></i> Run New Test
+                            </button>
+                            <button class="btn btn-outline-secondary" onclick="printResults()">
+                                <i class="fas fa-print"></i> Print Results
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+    </div>
+    
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample resource data for demonstration
+        const sampleResources = [
+            { name: "document", time: 1200 },
+            { name: "stylesheet.css", time: 800 },
+            { name: "app.js", time: 600 },
+            { name: "logo.png", time: 400 },
+            { name: "banner.jpg", time: 1500 },
+            { name: "analytics.js", time: 300 },
+            { name: "font.woff2", time: 200 },
+            { name: "social-icons.svg", time: 350 }
+        ];
+        
+        function runSpeedTest() {
+            const url = document.getElementById('websiteUrl').value.trim();
+            if (!url) {
+                alert('Please enter a website URL');
+                return;
+            }
+            
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+            document.getElementById('resultsSection').style.display = 'none';
+            
+            // Simulate API call with timeout
+            setTimeout(() => {
+                showResults(url);
+            }, 2000);
+        }
+        
+        function showResults(url) {
+            // Hide loading spinner
+            document.getElementById('loadingSpinner').style.display = 'none';
+            
+            // Set result URL
+            document.getElementById('resultUrl').textContent = url;
+            
+            // Generate random performance score (0-100)
+            const score = Math.floor(Math.random() * 100);
+            const speedFill = document.getElementById('speedFill');
+            const speedScore = document.getElementById('speedScore');
+            
+            // Update speed meter
+            speedFill.style.width = `${score}%`;
+            speedScore.textContent = score;
+            
+            // Set color based on score
+            if (score >= 80) {
+                speedFill.style.backgroundColor = 'var(--success-color)';
+                document.getElementById('speedRating').textContent = 'Excellent';
+                document.getElementById('speedRating').className = 'fw-bold good';
+                document.getElementById('speedDescription').textContent = 'Your page loads faster than 90% of tested websites';
+            } else if (score >= 50) {
+                speedFill.style.backgroundColor = 'var(--warning-color)';
+                document.getElementById('speedRating').textContent = 'Average';
+                document.getElementById('speedRating').className = 'fw-bold average';
+                document.getElementById('speedDescription').textContent = 'Your page speed is acceptable but could be improved';
+            } else {
+                speedFill.style.backgroundColor = 'var(--danger-color)';
+                document.getElementById('speedRating').textContent = 'Poor';
+                document.getElementById('speedRating').className = 'fw-bold poor';
+                document.getElementById('speedDescription').textContent = 'Your page loads slower than most websites - needs optimization';
+            }
+            
+            // Generate random metrics
+            document.getElementById('loadTime').textContent = `${(Math.random() * 5 + 1).toFixed(2)}s`;
+            document.getElementById('pageSize').textContent = `${Math.floor(Math.random() * 2000 + 500)} KB`;
+            document.getElementById('requests').textContent = Math.floor(Math.random() * 100 + 20);
+            document.getElementById('firstPaint').textContent = `${(Math.random() * 3 + 0.5).toFixed(2)}s`;
+            
+            // Generate waterfall chart
+            const waterfallItems = document.getElementById('waterfallItems');
+            waterfallItems.innerHTML = '';
+            
+            // Find max time for scaling
+            const maxTime = Math.max(...sampleResources.map(r => r.time));
+            
+            sampleResources.forEach(resource => {
+                const item = document.createElement('div');
+                item.className = 'waterfall-item';
+                
+                const widthPercentage = (resource.time / maxTime * 100) * 0.8; // Scale to 80% of container
+                
+                item.innerHTML = `
+                    <div class="waterfall-label">${resource.name}</div>
+                    <div class="waterfall-bar" style="width: ${widthPercentage}%"></div>
+                    <div class="waterfall-time">${resource.time}ms</div>
+                `;
+                
+                waterfallItems.appendChild(item);
+            });
+            
+            // Show results section
+            document.getElementById('resultsSection').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function runNewTest() {
+            document.getElementById('websiteUrl').value = '';
+            document.getElementById('resultsSection').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function printResults() {
+            const printContent = document.getElementById('resultsSection').innerHTML;
+            const originalContent = document.body.innerHTML;
+            
+            document.body.innerHTML = `
+                <h1 class="text-center mb-4">Page Speed Test Report</h1>
+                ${printContent}
+                <div class="text-center mt-4">
+                    <p>Generated by SEO Tools (https://seotools.example.com)</p>
+                </div>
+            `;
+            
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+</body>
+</html>

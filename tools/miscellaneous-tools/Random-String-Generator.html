@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate random strings with customizable length and character types. Download as a text file. Fast, free, and easy-to-use tool.">
+    <meta name="keywords" content="random string generator, text generator, string tool, free online tool">
+    <title>Random String Generator</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background-color: var(--success-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-success:hover {
+            background-color: #157347;
+            transform: translateY(-2px);
+        }
+        
+        .result-container {
+            margin-top: 1.5rem;
+            position: relative;
+        }
+        
+        #output {
+            min-height: 120px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background-color: white;
+        }
+        
+        .character-count {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+        
+        .settings-section {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-check-label {
+            user-select: none;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        @media (max-width: 767px) {
+            .tool-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+     <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+<body>
+
+     <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            <div class="tool-container">
+                <h1 class="text-center mb-4">Random String Generator</h1>
+                <p class="text-center text-muted mb-4">Create secure, random strings for passwords, tokens, and more</p>
+                
+                <div class="settings-section">
+                    <form id="stringForm">
+                        <div class="mb-4">
+                            <label for="length" class="form-label fw-semibold">String Length: <span id="lengthValue">16</span></label>
+                            <input type="range" class="form-range" id="length" min="1" max="1000" value="16">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Character Types</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="uppercase" checked>
+                                        <label class="form-check-label" for="uppercase">
+                                            <i class="fas fa-font me-2"></i>Uppercase (A-Z)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="lowercase" checked>
+                                        <label class="form-check-label" for="lowercase">
+                                            <i class="fas fa-font me-2"></i>Lowercase (a-z)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="numbers" checked>
+                                        <label class="form-check-label" for="numbers">
+                                            <i class="fas fa-hashtag me-2"></i>Numbers (0-9)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="symbols">
+                                        <label class="form-check-label" for="symbols">
+                                            <i class="fas fa-exclamation me-2"></i>Symbols (!@#$%)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-random me-2"></i>Generate String
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="result-container">
+                    <label for="output" class="form-label fw-semibold">Generated String</label>
+                    <textarea class="form-control" id="output" rows="4" readonly></textarea>
+                    <button id="copyBtn" class="copy-btn" title="Copy to clipboard">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <div class="character-count">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+                
+                <div class="d-grid gap-2 mt-3">
+                    <button id="downloadBtn" class="btn btn-success">
+                        <i class="fas fa-download me-2"></i>Download as Text File
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-4 text-center text-muted">
+                <small>
+                    Use these random strings for passwords, API keys, verification codes, and other security purposes.
+                </small>
+            </div>
+            <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Random String Generator Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const form = document.getElementById('stringForm');
+            const lengthInput = document.getElementById('length');
+            const lengthValue = document.getElementById('lengthValue');
+            const output = document.getElementById('output');
+            const copyBtn = document.getElementById('copyBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const charCount = document.getElementById('charCount');
+            
+            // Character sets
+            const charSets = {
+                uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                lowercase: 'abcdefghijklmnopqrstuvwxyz',
+                numbers: '0123456789',
+                symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
+            };
+            
+            // Update length value display
+            lengthInput.addEventListener('input', function() {
+                lengthValue.textContent = this.value;
+            });
+            
+            // Generate random string
+            function generateRandomString() {
+                const length = parseInt(lengthInput.value);
+                let chars = '';
+                
+                // Build character set based on selected options
+                if (document.getElementById('uppercase').checked) chars += charSets.uppercase;
+                if (document.getElementById('lowercase').checked) chars += charSets.lowercase;
+                if (document.getElementById('numbers').checked) chars += charSets.numbers;
+                if (document.getElementById('symbols').checked) chars += charSets.symbols;
+                
+                // Validate at least one character type is selected
+                if (chars.length === 0) {
+                    output.value = 'Please select at least one character type';
+                    charCount.textContent = '0';
+                    return;
+                }
+                
+                // Generate the random string
+                let result = '';
+                const crypto = window.crypto || window.msCrypto; // Use crypto API if available
+                
+                if (crypto && crypto.getRandomValues) {
+                    // More secure method using crypto API
+                    const values = new Uint32Array(length);
+                    crypto.getRandomValues(values);
+                    
+                    for (let i = 0; i < length; i++) {
+                        result += chars[values[i] % chars.length];
+                    }
+                } else {
+                    // Fallback to Math.random() if crypto API not available
+                    for (let i = 0; i < length; i++) {
+                        const randomIndex = Math.floor(Math.random() * chars.length);
+                        result += chars[randomIndex];
+                    }
+                }
+                
+                output.value = result;
+                charCount.textContent = result.length;
+            }
+            
+            // Copy to clipboard
+            copyBtn.addEventListener('click', function() {
+                if (!output.value) return;
+                
+                output.select();
+                document.execCommand('copy');
+                
+                // Show feedback
+                const originalIcon = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                copyBtn.style.color = 'var(--success-color)';
+                
+                setTimeout(function() {
+                    copyBtn.innerHTML = originalIcon;
+                    copyBtn.style.color = '';
+                }, 2000);
+            });
+            
+            // Download as text file
+            downloadBtn.addEventListener('click', function() {
+                if (!output.value) {
+                    alert('Please generate a string first');
+                    return;
+                }
+                
+                const blob = new Blob([output.value], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'random_string_' + new Date().getTime() + '.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                generateRandomString();
+            });
+            
+            // Generate initial string on page load
+            generateRandomString();
+        });
+    </script>
+</body>
+</html>

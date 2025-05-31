@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Fuel Efficiency and Angle Converter Tools - Fast, responsive, and user-friendly utilities for conversions with download functionality.">
+    <meta name="keywords" content="fuel efficiency converter, angle converter, online tools, conversion utilities">
+    <meta name="author" content="Your Site Name">
+    <title>Fuel Efficiency & Angle Converter Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .ad-space {
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .tool-card {
+            transition: transform 0.2s;
+        }
+        .tool-card:hover {
+            transform: scale(1.02);
+        }
+        .download-btn {
+            margin-top: 10px;
+        }
+        @media (max-width: 576px) {
+            .ad-space {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Sidebar Ad -->
+        <div class="ad-space col-md-12 mb-3">
+           <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+
+        <!-- Tool Section -->
+        <div class="row g-4">
+            <!-- Fuel Efficiency Converter -->
+            <div class="col-md-6">
+                <div class="card tool-card">
+                    <div class="card-body">
+                        <h2 class="card-title">Angle Converter</h2>
+                        <div class="mb-3">
+                            <label for="angleInput" class="form-label">Enter Value:</label>
+                            <input type="number" id="angleInput" class="form-control" placeholder="e.g., 90">
+                        </div>
+                        <div class="mb-3">
+                            <label for="angleUnitFrom" class="form-label">From:</label>
+                            <select id="angleUnitFrom" class="form-select">
+                                <option value="degrees">Degrees (°)</option>
+                                <option value="radians">Radians</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="angleUnitTo" class="form-label">To:</label>
+                            <select id="angleUnitTo" class="form-select">
+                                <option value="degrees">Degrees (°)</option>
+                                <option value="radians">Radians</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" onclick="convertAngle()">Convert</button>
+                        <p class="mt-3"><strong>Result:</strong> <span id="angleResult">0</span></p>
+                        <button class="btn btn-success download-btn" onclick="downloadAngleResult()">Download Result</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+           
+        </div>
+
+        <!-- Footer Ad -->
+        <div class="ad-space col-md-12 mt-4">
+           <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </main>
+
+     <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        // Dynamically Load Header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Dynamically Load Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        
+
+        // Angle Converter
+        function convertAngle() {
+            const input = parseFloat(document.getElementById('angleInput').value);
+            const unitFrom = document.getElementById('angleUnitFrom').value;
+            const unitTo = document.getElementById('angleUnitTo').value;
+            let result;
+
+            if (isNaN(input)) {
+                alert('Please enter a valid number');
+                return;
+            }
+
+            if (unitFrom === 'degrees' && unitTo === 'radians') {
+                result = input * (Math.PI / 180);
+            } else if (unitFrom === 'radians' && unitTo === 'degrees') {
+                result = input * (180 / Math.PI);
+            } else {
+                result = input; // Same unit
+            }
+
+            document.getElementById('angleResult').textContent = result.toFixed(4) + ' ' + unitTo;
+        }
+
+        
+
+        // Download Angle Result
+        function downloadAngleResult() {
+            const result = document.getElementById('angleResult').textContent;
+            const blob = new Blob([`Angle Conversion Result: ${result}`], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'angle_conversion_result.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

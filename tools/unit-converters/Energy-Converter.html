@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Energy Converter Tool - Convert between Joules, Kilowatt-hours, and Calories with ease. Fast and responsive.">
+    <meta name="keywords" content="energy converter, joules to kwh, calories to joules, conversion tool">
+    <title>Energy Converter Tool</title>
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .converter-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .form-control, .form-select {
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+        }
+        .btn-convert {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn-convert:hover {
+            transform: translateY(-2px);
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #e9f7ef;
+            display: none;
+        }
+        .error-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8d7da;
+            display: none;
+        }
+        .tool-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tool-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+        .tool-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        @media (max-width: 576px) {
+            .converter-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            .tool-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+
+
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+    <!-- Converter Tool -->
+    <div class="converter-container">
+        <div class="tool-header">
+            <h1>Energy Converter</h1>
+            <p>Convert energy units between Joules, Kilowatt-hours, and Calories instantly.</p>
+        </div>
+        <form id="energyForm">
+            <div class="mb-3">
+                <label for="inputValue" class="form-label">Energy Value</label>
+                <input type="number" class="form-control" id="inputValue" placeholder="Enter value (e.g., 100)" step="any" required>
+            </div>
+            <div class="mb-3">
+                <label for="inputUnit" class="form-label">From Unit</label>
+                <select class="form-select" id="inputUnit" required>
+                    <option value="" disabled selected>Select unit</option>
+                    <option value="joules">Joules (J)</option>
+                    <option value="kwh">Kilowatt-hours (kWh)</option>
+                    <option value="calories">Calories (cal)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="outputUnit" class="form-label">To Unit</label>
+                <select class="form-select" id="outputUnit" required>
+                    <option value="" disabled selected>Select unit</option>
+                    <option value="joules">Joules (J)</option>
+                    <option value="kwh">Kilowatt-hours (kWh)</option>
+                    <option value="calories">Calories (cal)</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-convert w-100">Convert</button>
+        </form>
+        <div id="resultBox" class="result-box"></div>
+        <div id="errorBox" class="error-box"></div>
+    </div>
+    <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+
+   <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Custom JavaScript for Conversion Logic -->
+    <script>
+        const energyForm = document.getElementById('energyForm');
+        const resultBox = document.getElementById('resultBox');
+        const errorBox = document.getElementById('errorBox');
+
+        energyForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset UI
+            resultBox.style.display = 'none';
+            errorBox.style.display = 'none';
+            resultBox.innerHTML = '';
+            errorBox.innerHTML = '';
+
+            // Get input values
+            const value = parseFloat(document.getElementById('inputValue').value);
+            const inputUnit = document.getElementById('inputUnit').value;
+            const outputUnit = document.getElementById('outputUnit').value;
+
+            // Validate inputs
+            if (isNaN(value)) {
+                errorBox.innerHTML = 'Please enter a valid number.';
+                errorBox.style.display = 'block';
+                return;
+            }
+            if (!inputUnit || !outputUnit) {
+                errorBox.innerHTML = 'Please select both input and output units.';
+                errorBox.style.display = 'block';
+                return;
+            }
+
+            // Conversion factors to Joules
+            const toJoules = {
+                joules: value => value,
+                kwh: value => value * 3.6e6, // 1 kWh = 3.6 million Joules
+                calories: value => value * 4.184 // 1 Calorie = 4.184 Joules
+            };
+
+            // Conversion from Joules to target unit
+            const fromJoules = {
+                joules: value => value,
+                kwh: value => value / 3.6e6,
+                calories: value => value / 4.184
+            };
+
+            try {
+                // Perform conversion
+                const joules = toJoules[inputUnit](value);
+                const result = fromJoules[outputUnit](joules);
+                
+                // Format result with better precision handling
+                function formatNumber(num) {
+                    // If the number is very small or very large, use exponential notation
+                    if (Math.abs(num) < 0.0001 || Math.abs(num) > 1000000) {
+                        return num.toExponential(4);
+                    }
+                    
+                    // For numbers between 0.0001 and 1,000,000, show up to 6 decimal places
+                    const fixed = num.toFixed(6);
+                    // Remove trailing zeros and unnecessary decimal point
+                    return parseFloat(fixed).toString();
+                }
+
+                const formattedResult = formatNumber(result);
+                const formattedInput = formatNumber(value);
+                
+                // Get unit display names
+                const unitNames = {
+                    joules: "Joules (J)",
+                    kwh: "Kilowatt-hours (kWh)",
+                    calories: "Calories (cal)"
+                };
+                
+                resultBox.innerHTML = `
+                    <strong>${formattedInput} ${unitNames[inputUnit]}</strong> 
+                    = 
+                    <strong>${formattedResult} ${unitNames[outputUnit]}</strong>
+                `;
+                resultBox.style.display = 'block';
+            } catch (error) {
+                errorBox.innerHTML = 'Conversion error. Please check your inputs.';
+                errorBox.style.display = 'block';
+                console.error(error);
+            }
+        });
+
+        // Reset form on input change to clear previous results
+        energyForm.addEventListener('input', function() {
+            resultBox.style.display = 'none';
+            errorBox.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online CSS Minifier/Unminifier tool. Minify or unminify your CSS code easily with a clean, responsive interface.">
+    <meta name="keywords" content="CSS minifier, CSS unminifier, online tools, web development">
+    <meta name="author" content="Tools Website">
+    <title>CSS Minifier/Unminifier - Online Tools</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+        .ad-sidebar, .ad-footer {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .ad-tool {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        @media (max-width: 768px) {
+            .ad-sidebar {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+ <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <main class="container my-4">
+        <div class="row">
+            <!-- Sidebar Ad -->
+            <aside class="col-md-3 ad-sidebar">
+                <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+           
+
+                <div class="ad-content"></div>
+            </aside>
+
+            <!-- Tool Page: CSS Minifier/Unminifier -->
+
+
+
+            <div class="col-md-9">
+                
+                <h2>CSS Minifier/Unminifier</h2>
+                <div class="ad-tool">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+                </div>
+                <div class="mb-3">
+                    <label for="cssInput" class="form-label">Enter CSS Code:</label>
+                    <textarea id="cssInput" class="form-control" rows="6" placeholder="Paste your CSS here"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary me-2" onclick="minifyCSS()">Minify</button>
+                    <button class="btn btn-secondary me-2" onclick="unminifyCSS()">Unminify</button>
+                    <button class="btn btn-danger" onclick="clearFields()">Clear</button>
+                </div>
+                <div class="mb-3">
+                    <label for="cssOutput" class="form-label">Output:</label>
+                    <textarea id="cssOutput" class="form-control" rows="6" readonly></textarea>
+                </div>
+                <button class="btn btn-success" onclick="copyToClipboard()">Copy Output</button>
+            </div>
+        </div>
+
+        
+    </main>
+    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+
+
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Bootstrap JS and Vanilla JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // CSS Minifier
+        function minifyCSS() {
+            const input = document.getElementById('cssInput').value;
+            let output = input
+                .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
+                .replace(/\s+/g, ' ') // Replace multiple spaces with single
+                .replace(/; /g, ';') // Remove spaces after semicolons
+                .replace(/: /g, ':') // Remove spaces after colons
+                .replace(/ {/g, '{') // Remove spaces before braces
+                .replace(/} /g, '}') // Remove spaces after braces
+                .trim();
+            document.getElementById('cssOutput').value = output;
+        }
+
+        // CSS Unminifier
+        function unminifyCSS() {
+            const input = document.getElementById('cssInput').value;
+            let output = input
+                .replace(/}/g, '}\n') // Add newline after closing braces
+                .replace(/;/g, ';\n') // Add newline after semicolons
+                .replace(/{/g, ' {\n') // Add newline and space before opening braces
+                .replace(/:/g, ': ') // Add space after colons
+                .replace(/,\s*/g, ', ') // Normalize commas
+                .replace(/\n\s*\n/g, '\n'); // Remove extra newlines
+            document.getElementById('cssOutput').value = output;
+        }
+
+        // Clear Input and Output Fields
+        function clearFields() {
+            document.getElementById('cssInput').value = '';
+            document.getElementById('cssOutput').value = '';
+        }
+
+        // Copy to Clipboard
+        function copyToClipboard() {
+            const output = document.getElementById('cssOutput');
+            output.select();
+            document.execCommand('copy');
+            alert('Output copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

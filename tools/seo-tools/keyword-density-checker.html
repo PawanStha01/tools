@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Density Checker - Analyze Keyword Usage | Multi-Tools</title>
+    <meta name="description" content="Free online keyword density checker tool. Analyze keyword usage and frequency in your content for SEO optimization. Find top keywords and phrases.">
+    <meta name="keywords" content="keyword density checker, keyword analyzer, seo tool, keyword frequency, keyword density calculator">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .keyword-bar {
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+        
+        .keyword-percentage {
+            font-weight: 700;
+            width: 60px;
+            text-align: right;
+        }
+        
+        .keyword-count {
+            font-weight: 500;
+            width: 50px;
+            text-align: right;
+            color: #6c757d;
+        }
+        
+        .keyword-text {
+            flex-grow: 1;
+            padding-left: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .density-optimal {
+            color: var(--success-color);
+        }
+        
+        .density-warning {
+            color: var(--warning-color);
+        }
+        
+        .density-danger {
+            color: var(--danger-color);
+        }
+        
+        .tab-content {
+            padding-top: 1rem;
+        }
+        
+        .stats-container {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats-value {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Keyword Density Checker</h1>
+                        <p class="tool-description">Analyze keyword usage and frequency in your content for SEO optimization. Find top keywords and phrases to improve your content strategy.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <div class="mb-3">
+                        <label for="content-input" class="form-label">Enter your content:</label>
+                        <textarea class="form-control" id="content-input" rows="10" placeholder="Paste your content here..."></textarea>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="min-word-length" class="form-label">Minimum Word Length</label>
+                            <select class="form-select" id="min-word-length">
+                                <option value="1">1 character</option>
+                                <option value="2">2 characters</option>
+                                <option value="3" selected>3 characters</option>
+                                <option value="4">4 characters</option>
+                                <option value="5">5 characters</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exclude-common-words" class="form-label">Common Words</label>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="exclude-common-words" checked>
+                                <label class="form-check-label" for="exclude-common-words">
+                                    Exclude common words (a, the, and, etc.)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mb-4">
+                        <button type="button" class="btn btn-primary" id="analyze-btn">Analyze Content</button>
+                        <div>
+                            <button type="button" class="btn btn-outline-secondary me-2" id="clear-btn">Clear</button>
+                            <button type="button" class="btn btn-outline-secondary" id="sample-btn">Load Sample</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container" id="result-container" style="display: none;">
+                        <h4>Keyword Density Analysis</h4>
+                        
+                        <div class="stats-container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="stats-item">
+                                        <span>Total Words:</span>
+                                        <span class="stats-value" id="total-words">0</span>
+                                    </div>
+                                    <div class="stats-item">
+                                        <span>Unique Words:</span>
+                                        <span class="stats-value" id="unique-words">0</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="stats-item">
+                                        <span>Top Keyword:</span>
+                                        <span class="stats-value" id="top-keyword">-</span>
+                                    </div>
+                                    <div class="stats-item">
+                                        <span>Top Keyword Density:</span>
+                                        <span class="stats-value" id="top-density">0%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <ul class="nav nav-tabs" id="keywordTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="single-tab" data-bs-toggle="tab" data-bs-target="#single-keywords" type="button" role="tab" aria-controls="single-keywords" aria-selected="true">
+                                    Single Words
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="two-tab" data-bs-toggle="tab" data-bs-target="#two-word-phrases" type="button" role="tab" aria-controls="two-word-phrases" aria-selected="false">
+                                    Two-Word Phrases
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="three-tab" data-bs-toggle="tab" data-bs-target="#three-word-phrases" type="button" role="tab" aria-controls="three-word-phrases" aria-selected="false">
+                                    Three-Word Phrases
+                                </button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="keywordTabContent">
+                            <div class="tab-pane fade show active" id="single-keywords" role="tabpanel" aria-labelledby="single-tab">
+                                <div id="single-keywords-container">
+                                    <!-- Single keywords will be populated here -->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="two-word-phrases" role="tabpanel" aria-labelledby="two-tab">
+                                <div id="two-word-phrases-container">
+                                    <!-- Two-word phrases will be populated here -->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="three-word-phrases" role="tabpanel" aria-labelledby="three-tab">
+                                <div id="three-word-phrases-container">
+                                    <!-- Three-word phrases will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="alert alert-info mt-4">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Keyword Density Recommendation</h5>
+                            <p class="mb-0">For optimal SEO, aim for a keyword density between 1-3% for your main keywords. Densities below 1% may be too low for search engines to recognize the topic, while densities above 3% might be considered keyword stuffing.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Keyword Density</h4>
+                        <p>Keyword density is the percentage of times a keyword or phrase appears on a webpage compared to the total number of words on the page. It's an important factor in search engine optimization (SEO) that helps search engines understand what your content is about.</p>
+                        
+                        <h5>Why Keyword Density Matters</h5>
+                        <ul>
+                            <li><strong>Content Relevance:</strong> Helps search engines determine the main topic of your content.</li>
+                            <li><strong>SEO Optimization:</strong> Proper keyword usage can improve your page's ranking for those keywords.</li>
+                            <li><strong>Avoiding Penalties:</strong> Excessive keyword usage (keyword stuffing) can lead to search engine penalties.</li>
+                            <li><strong>Content Quality:</strong> Analyzing keyword density can help ensure your content is focused and on-topic.</li>
+                        </ul>
+                        
+                        <h5>Optimal Keyword Density</h5>
+                        <p>While there's no exact formula for perfect keyword density, most SEO experts recommend:</p>
+                        <ul>
+                            <li><strong>Primary Keywords:</strong> 1-3% density</li>
+                            <li><strong>Secondary Keywords:</strong> 0.5-1% density</li>
+                            <li><strong>Long-tail Keywords:</strong> Natural usage without forced placement</li>
+                        </ul>
+                        
+                        <h5>Tips for Keyword Optimization</h5>
+                        <ul>
+                            <li>Focus on creating high-quality, valuable content first</li>
+                            <li>Use keywords naturally throughout your content</li>
+                            <li>Include keywords in important places like titles, headings, and the first paragraph</li>
+                            <li>Use synonyms and related terms (LSI keywords) to enhance context</li>
+                            <li>Avoid keyword stuffing, which can harm your SEO efforts</li>
+                        </ul>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <h5><i class="bi bi-exclamation-triangle-fill me-2"></i> Important Note</h5>
+                            <p class="mb-0">Modern search engines use sophisticated algorithms that consider many factors beyond keyword density. While keyword density is still relevant, focus on creating comprehensive, high-quality content that addresses user intent rather than obsessing over exact keyword percentages.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-container sidebar-ad">
+                    
+                       <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+
+
+
+
+                    </div>
+                </div> 
+            </div>
+            
+        </div>
+        
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentInput = document.getElementById('content-input');
+            const minWordLength = document.getElementById('min-word-length');
+            const excludeCommonWords = document.getElementById('exclude-common-words');
+            const analyzeBtn = document.getElementById('analyze-btn');
+            const clearBtn = document.getElementById('clear-btn');
+            const sampleBtn = document.getElementById('sample-btn');
+            const resultContainer = document.getElementById('result-container');
+            
+            // Result elements
+            const totalWords = document.getElementById('total-words');
+            const uniqueWords = document.getElementById('unique-words');
+            const topKeyword = document.getElementById('top-keyword');
+            const topDensity = document.getElementById('top-density');
+            const singleKeywordsContainer = document.getElementById('single-keywords-container');
+            const twoWordPhrasesContainer = document.getElementById('two-word-phrases-container');
+            const threeWordPhrasesContainer = document.getElementById('three-word-phrases-container');
+            
+            // Common words to exclude
+            const commonWords = [
+                'a', 'an', 'the', 'and', 'or', 'but', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
+                'in', 'on', 'at', 'to', 'for', 'with', 'by', 'about', 'against', 'between', 'into', 'through',
+                'during', 'before', 'after', 'above', 'below', 'from', 'up', 'down', 'of', 'off', 'over', 'under',
+                'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any',
+                'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own',
+                'same', 'so', 'than', 'too', 'very', 'can', 'will', 'just', 'should', 'now', 'i', 'me', 'my',
+                'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves',
+                'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they',
+                'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these',
+                'those', 'am', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'would', 'could',
+                'should', 'ought', 'as', 'if', 'because', 'since', 'while', 'until', 'unless', 'although',
+                'though', 'whether', 'through', 'throughout', 'therefore'
+            ];
+            
+            // Analyze content
+            function analyzeContent() {
+                const content = contentInput.value.trim();
+                
+                if (!content) {
+                    resultContainer.style.display = 'none';
+                    return;
+                }
+                
+                // Normalize content (remove special characters, convert to lowercase)
+                const normalizedContent = content.toLowerCase()
+                    .replace(/[^\w\s]/g, ' ')  // Replace special characters with spaces
+                    .replace(/\s+/g, ' ')      // Replace multiple spaces with a single space
+                    .trim();
+                
+                // Split into words
+                const words = normalizedContent.split(' ');
+                
+                // Filter words based on minimum length and common words exclusion
+                const minLength = parseInt(minWordLength.value);
+                const filteredWords = words.filter(word => {
+                    if (word.length < minLength) return false;
+                    if (excludeCommonWords.checked && commonWords.includes(word)) return false;
+                    return true;
+                });
+                
+                // Count word frequency
+                const wordFrequency = {};
+                filteredWords.forEach(word => {
+                    wordFrequency[word] = (wordFrequency[word] || 0) + 1;
+                });
+                
+                // Generate two-word phrases
+                const twoWordPhrases = [];
+                for (let i = 0; i < words.length - 1; i++) {
+                    if (words[i].length >= minLength && words[i+1].length >= minLength) {
+                        if (excludeCommonWords.checked && (commonWords.includes(words[i]) || commonWords.includes(words[i+1]))) {
+                            continue;
+                        }
+                        twoWordPhrases.push(words[i] + ' ' + words[i+1]);
+                    }
+                }
+                
+                // Count two-word phrase frequency
+                const twoWordFrequency = {};
+                twoWordPhrases.forEach(phrase => {
+                    twoWordFrequency[phrase] = (twoWordFrequency[phrase] || 0) + 1;
+                });
+                
+                // Generate three-word phrases
+                const threeWordPhrases = [];
+                for (let i = 0; i < words.length - 2; i++) {
+                    if (words[i].length >= minLength && words[i+1].length >= minLength && words[i+2].length >= minLength) {
+                        if (excludeCommonWords.checked && (commonWords.includes(words[i]) || commonWords.includes(words[i+1]) || commonWords.includes(words[i+2]))) {
+                            continue;
+                        }
+                        threeWordPhrases.push(words[i] + ' ' + words[i+1] + ' ' + words[i+2]);
+                    }
+                }
+                
+                // Count three-word phrase frequency
+                const threeWordFrequency = {};
+                threeWordPhrases.forEach(phrase => {
+                    threeWordFrequency[phrase] = (threeWordFrequency[phrase] || 0) + 1;
+                });
+                
+                // Sort keywords by frequency
+                const sortedWords = Object.keys(wordFrequency).sort((a, b) => wordFrequency[b] - wordFrequency[a]);
+                const sortedTwoWordPhrases = Object.keys(twoWordFrequency).sort((a, b) => twoWordFrequency[b] - twoWordFrequency[a]);
+                const sortedThreeWordPhrases = Object.keys(threeWordFrequency).sort((a, b) => threeWordFrequency[b] - threeWordFrequency[a]);
+                
+                // Calculate total words for density calculation
+                const totalWordCount = words.length;
+                
+                // Update statistics
+                totalWords.textContent = totalWordCount;
+                uniqueWords.textContent = sortedWords.length;
+                
+                if (sortedWords.length > 0) {
+                    const topWord = sortedWords[0];
+                    const topWordCount = wordFrequency[topWord];
+                    const topWordDensity = ((topWordCount / totalWordCount) * 100).toFixed(2);
+                    
+                    topKeyword.textContent = topWord;
+                    topDensity.textContent = topWordDensity + '%';
+                } else {
+                    topKeyword.textContent = '-';
+                    topDensity.textContent = '0%';
+                }
+                
+                // Display single keywords
+                displayKeywords(sortedWords, wordFrequency, totalWordCount, singleKeywordsContainer);
+                
+                // Display two-word phrases
+                displayKeywords(sortedTwoWordPhrases, twoWordFrequency, totalWordCount, twoWordPhrasesContainer);
+                
+                // Display three-word phrases
+                displayKeywords(sortedThreeWordPhrases, threeWordFrequency, totalWordCount, threeWordPhrasesContainer);
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Display keywords with bars
+            function displayKeywords(keywords, frequency, totalWords, container) {
+                container.innerHTML = '';
+                
+                if (keywords.length === 0) {
+                    container.innerHTML = '<p class="text-muted">No keywords found.</p>';
+                    return;
+                }
+                
+                // Get maximum frequency for scaling
+                const maxFrequency = frequency[keywords[0]];
+                
+                // Display top 20 keywords
+                const topKeywords = keywords.slice(0, 20);
+                
+                topKeywords.forEach(keyword => {
+                    const count = frequency[keyword];
+                    const density = (count / totalWords) * 100;
+                    const percentage = (count / maxFrequency) * 100;
+                    
+                    const keywordItem = document.createElement('div');
+                    keywordItem.className = 'd-flex align-items-center mb-2';
+                    
+                    // Determine density class
+                    let densityClass = '';
+                    if (density >= 1 && density <= 3) {
+                        densityClass = 'density-optimal';
+                    } else if (density > 3) {
+                        densityClass = 'density-danger';
+                    } else if (density >= 0.5) {
+                        densityClass = 'density-warning';
+                    }
+                    
+                    keywordItem.innerHTML = `
+                        <div class="keyword-percentage ${densityClass}">${density.toFixed(2)}%</div>
+                        <div class="keyword-count">(${count})</div>
+                        <div class="keyword-text">${keyword}</div>
+                        <div class="flex-grow-1">
+                            <div class="keyword-bar" style="width: ${percentage}%"></div>
+                        </div>
+                    `;
+                    
+                    container.appendChild(keywordItem);
+                });
+            }
+            
+            // Analyze button click
+            analyzeBtn.addEventListener('click', analyzeContent);
+            
+            // Clear button click
+            clearBtn.addEventListener('click', function() {
+                contentInput.value = '';
+                resultContainer.style.display = 'none';
+                contentInput.focus();
+            });
+            
+            // Sample button click
+            sampleBtn.addEventListener('click', function() {
+                contentInput.value = `Search Engine Optimization (SEO) is the practice of increasing the quantity and quality of traffic to your website through organic search engine results.
+
+SEO involves understanding what people are searching for online, the answers they're seeking, the words they're using, and the type of content they wish to consume. Knowing the answers to these questions will allow you to connect to the people who are searching online for the solutions you offer.
+
+If knowing your audience's intent is one side of the SEO coin, delivering it in a way search engines can understand is the other. In this guide, we'll cover SEO techniques that can help you improve your rankings and increase traffic.
+
+On-page SEO refers to optimizing the content and HTML source code of a page. Key on-page factors include:
+
+1. Content Quality: Creating high-quality, valuable content that satisfies user intent.
+2. Keyword Optimization: Using target keywords in titles, headings, and throughout the content.
+3. Meta Tags: Optimizing title tags and meta descriptions.
+4. URL Structure: Creating clean, descriptive URLs.
+5. Internal Linking: Linking to other relevant pages on your site.
+
+Off-page SEO refers to actions taken outside of your website to impact your rankings. Key off-page factors include:
+
+1. Backlinks: Getting high-quality links from other websites.
+2. Social Signals: Engagement on social media platforms.
+3. Brand Mentions: References to your brand across the web.
+
+Technical SEO focuses on improving the technical aspects of your website to help search engines crawl and index your site more effectively. Key technical factors include:
+
+1. Site Speed: Ensuring your website loads quickly.
+2. Mobile-Friendliness: Making your site work well on mobile devices.
+3. Structured Data: Implementing schema markup.
+4. XML Sitemaps: Helping search engines find and index your content.
+5. Robots.txt: Controlling which pages search engines can crawl.
+
+Local SEO is important for businesses that operate in specific geographic areas. Key local SEO factors include:
+
+1. Google My Business: Optimizing your Google My Business listing.
+2. Local Citations: Ensuring your business information is consistent across the web.
+3. Local Keywords: Targeting location-specific keywords.
+4. Reviews: Encouraging and managing customer reviews.
+
+SEO is an ongoing process that requires continuous monitoring and adjustment. By understanding and implementing these SEO techniques, you can improve your website's visibility in search engine results and attract more targeted traffic.`;
+                
+                analyzeContent();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap Generator | SEO Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+       
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 700;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .sitemap-preview {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .back-button {
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .url-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .url-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .url-list li:last-child {
+            border-bottom: none;
+        }
+        
+        
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Custom switch styling */
+        .form-switch .form-check-input {
+            width: 3em;
+            height: 1.5em;
+        }
+        
+        .form-switch .form-check-input:checked {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+<script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Ad Banner -->
+    <div class="container mt-3">
+        <div class="ad-container">
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        
+        <div class="tool-container">
+            <h1 class="text-center mb-4"><i class="fas fa-sitemap feature-icon"></i><br>Sitemap Generator</h1>
+            <p class="text-center mb-4">Generate XML sitemaps for your website to improve search engine indexing.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Website URLs
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="baseUrl" class="form-label">Base URL</label>
+                                <input type="url" class="form-control" id="baseUrl" placeholder="https://example.com" required>
+                                <div class="form-text">Include protocol (http:// or https://)</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="urlList" class="form-label">Page URLs (one per line)</label>
+                                <textarea class="form-control" id="urlList" rows="8" placeholder="/about\n/contact\n/products/item1"></textarea>
+                                <div class="form-text">Enter relative paths (e.g., /about) or full URLs</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <button class="btn btn-outline-secondary" onclick="addSampleUrls()">
+                                    <i class="fas fa-magic"></i> Add Sample URLs
+                                </button>
+                                <button class="btn btn-outline-danger float-end" onclick="clearUrls()">
+                                    <i class="fas fa-trash"></i> Clear All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Sitemap Options
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label">Change Frequency</label>
+                                <select class="form-select" id="changeFreq">
+                                    <option value="always">always</option>
+                                    <option value="hourly">hourly</option>
+                                    <option value="daily" selected>daily</option>
+                                    <option value="weekly">weekly</option>
+                                    <option value="monthly">monthly</option>
+                                    <option value="yearly">yearly</option>
+                                    <option value="never">never</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Priority</label>
+                                <select class="form-select" id="priority">
+                                    <option value="1.0">1.0 - Highest</option>
+                                    <option value="0.9">0.9</option>
+                                    <option value="0.8" selected>0.8</option>
+                                    <option value="0.7">0.7</option>
+                                    <option value="0.6">0.6</option>
+                                    <option value="0.5">0.5 - Default</option>
+                                    <option value="0.4">0.4</option>
+                                    <option value="0.3">0.3</option>
+                                    <option value="0.2">0.2</option>
+                                    <option value="0.1">0.1 - Lowest</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Last Modified</label>
+                                <select class="form-select" id="lastMod">
+                                    <option value="current">Current date/time</option>
+                                    <option value="none">Don't include</option>
+                                    <option value="custom">Custom date</option>
+                                </select>
+                                <input type="datetime-local" class="form-control mt-2" id="customDate" style="display: none;">
+                            </div>
+                            
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="includeImages" checked>
+                                <label class="form-check-label" for="includeImages">Include image tags</label>
+                            </div>
+                            
+                            <div class="form-check form-switch mb-3">
+                                <input class="form-check-input" type="checkbox" id="autoFormat" checked>
+                                <label class="form-check-label" for="autoFormat">Format XML output</label>
+                            </div>
+                            
+                            <button class="btn btn-primary w-100" onclick="generateSitemap()">
+                                <i class="fas fa-code"></i> Generate Sitemap
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Banner -->
+                    <div class="ad-container">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                   
+
+
+</div>
+                </div>
+            </div>
+            
+            <div id="resultSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Sitemap Preview</span>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary" onclick="copySitemap()">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="downloadSitemap()">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="sitemap-preview">
+                            <code id="sitemapOutput"></code>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Validation</h5>
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i> You can validate your sitemap using 
+                                <a href="https://search.google.com/search-console" target="_blank">Google Search Console</a> or 
+                                <a href="https://www.bing.com/webmasters" target="_blank">Bing Webmaster Tools</a>.
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Next Steps</h5>
+                            <ol>
+                                <li>Save the sitemap as <strong>sitemap.xml</strong></li>
+                                <li>Upload it to your website's root directory</li>
+                                <li>Submit it to search engines via their webmaster tools</li>
+                                <li>Reference it in your <strong>robots.txt</strong> file with: <code>Sitemap: https://yourdomain.com/sitemap.xml</code></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle custom date field
+        document.getElementById('lastMod').addEventListener('change', function() {
+            const customDateField = document.getElementById('customDate');
+            customDateField.style.display = this.value === 'custom' ? 'block' : 'none';
+        });
+        
+        function addSampleUrls() {
+            const sampleUrls = [
+                "/",
+                "/about",
+                "/contact",
+                "/products",
+                "/services",
+                "/blog",
+                "/privacy-policy",
+                "/terms-of-service"
+            ];
+            
+            const urlList = document.getElementById('urlList');
+            if (urlList.value.trim() === '') {
+                urlList.value = sampleUrls.join('\n');
+            } else {
+                urlList.value += '\n' + sampleUrls.join('\n');
+            }
+        }
+        
+        function clearUrls() {
+            if (confirm('Are you sure you want to clear all URLs?')) {
+                document.getElementById('urlList').value = '';
+            }
+        }
+        
+        function generateSitemap() {
+            const baseUrl = document.getElementById('baseUrl').value.trim();
+            if (!baseUrl) {
+                alert('Please enter a base URL');
+                return;
+            }
+            
+            // Ensure base URL ends with a slash
+            const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+            
+            // Get URLs and clean them up
+            const urlInput = document.getElementById('urlList').value.trim();
+            if (!urlInput) {
+                alert('Please enter at least one URL');
+                return;
+            }
+            
+            const urls = urlInput.split('\n')
+                .map(url => url.trim())
+                .filter(url => url.length > 0)
+                .map(url => {
+                    // Convert relative URLs to absolute
+                    if (url.startsWith('/')) {
+                        return normalizedBaseUrl + url.substring(1);
+                    }
+                    // Ensure full URLs are properly formatted
+                    if (!url.startsWith('http')) {
+                        return normalizedBaseUrl + url;
+                    }
+                    return url;
+                });
+            
+            // Get sitemap options
+            const changeFreq = document.getElementById('changeFreq').value;
+            const priority = document.getElementById('priority').value;
+            const lastModOption = document.getElementById('lastMod').value;
+            const includeImages = document.getElementById('includeImages').checked;
+            const autoFormat = document.getElementById('autoFormat').checked;
+            
+            let lastMod = '';
+            if (lastModOption === 'current') {
+                lastMod = new Date().toISOString();
+            } else if (lastModOption === 'custom') {
+                lastMod = document.getElementById('customDate').value;
+                if (!lastMod) {
+                    alert('Please select a custom date');
+                    return;
+                }
+                lastMod = new Date(lastMod).toISOString();
+            }
+            
+            // Generate XML sitemap
+            let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+            xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
+            
+            if (includeImages) {
+                xml += ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"';
+            }
+            
+            xml += '>\n';
+            
+            urls.forEach(url => {
+                xml += '  <url>\n';
+                xml += `    <loc>${escapeXml(url)}</loc>\n`;
+                
+                if (lastMod) {
+                    xml += `    <lastmod>${lastMod}</lastmod>\n`;
+                }
+                
+                xml += `    <changefreq>${changeFreq}</changefreq>\n`;
+                xml += `    <priority>${priority}</priority>\n`;
+                
+                if (includeImages) {
+                    // Simple image URL generation for demonstration
+                    const domain = new URL(url).hostname;
+                    xml += `    <image:image>\n`;
+                    xml += `      <image:loc>https://${domain}/images/page-image.jpg</image:loc>\n`;
+                    xml += `      <image:title>Page Image</image:title>\n`;
+                    xml += `    </image:image>\n`;
+                }
+                
+                xml += '  </url>\n';
+            });
+            
+            xml += '</urlset>';
+            
+            // Format XML if requested
+            if (autoFormat) {
+                xml = formatXml(xml);
+            }
+            
+            // Display results
+            document.getElementById('sitemapOutput').textContent = xml;
+            document.getElementById('resultSection').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function escapeXml(unsafe) {
+            return unsafe.replace(/[<>&'"]/g, function (c) {
+                switch (c) {
+                    case '<': return '&lt;';
+                    case '>': return '&gt;';
+                    case '&': return '&amp;';
+                    case '\'': return '&apos;';
+                    case '"': return '&quot;';
+                }
+            });
+        }
+        
+        function formatXml(xml) {
+            // Simple XML formatting for display purposes
+            let formatted = '';
+            let indent = '';
+            const tab = '  ';
+            let inTag = false;
+            
+            xml.split(/>\s*</).forEach(node => {
+                if (node.match(/^\/\w/)) {
+                    // Closing tag
+                    indent = indent.substring(tab.length);
+                }
+                
+                formatted += indent + '<' + node + '>\n';
+                
+                if (node.match(/^<?\w[^>]*[^\/]$/) && !node.startsWith('?xml')) {
+                    // Opening tag (not self-closing or XML declaration)
+                    indent += tab;
+                }
+            });
+            
+            return formatted.substring(1, formatted.length - 3);
+        }
+        
+        function copySitemap() {
+            const sitemapText = document.getElementById('sitemapOutput').textContent;
+            navigator.clipboard.writeText(sitemapText).then(() => {
+                alert('Sitemap copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy to clipboard. Please try again.');
+            });
+        }
+        
+        function downloadSitemap() {
+            const sitemapText = document.getElementById('sitemapOutput').textContent;
+            const blob = new Blob([sitemapText], { type: 'application/xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sitemap.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

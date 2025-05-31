@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Multi-Tools - Free Online Tools</title>
+    <meta name="description" content="A collection of 100+ free online tools including image converters, calculators, SEO tools, text utilities, and more.">
+    <meta name="keywords" content="online tools, free tools, image converter, calculator, SEO tools, text tools">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family="Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>Welcome to PDE Online Tools</h2>
+                    <h5>Free, fast, and reliable tools by Pawan Debian Empire (PDE). Convert images, count words, and more!</h5>
+                    <h2>Free Online Tools</h2>
+                    <p class="lead">Everything you need in one place - image converters, calculators, SEO tools, and more!</p>
+                    <div class="mt-4">
+                        <form class="d-flex justify-content-center" id="hero-search-form">
+                            <input class="form-control me-2" style="max-width: 500px;" type="search" placeholder="Search for a tool..." aria-label="Search" id="hero-search-input">
+                            <button class="btn btn-light" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container py-4">
+        <!-- Tools Categories Section -->
+        <section class="category-section" id="tools-container">
+            <h3 class="category-title">All Tools</h3>
+            
+            <!-- Search Form -->
+            <div class="mb-4">
+                <form id="search-form" class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search for a tool..." aria-label="Search" id="search-input">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- Image Tools -->
+            <div class="category-group mb-5">
+                <h4 class="category-subtitle">Image Tools</h4>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-crop"></i>
+                                </div>
+                                <h5 class="card-title">Image Cropper</h5>
+                                <p class="card-text">Crop images to specific dimensions.</p>
+                                <a href="/tools/image-tools/image-cropper.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-file-earmark-zip"></i>
+                                </div>
+                                <h5 class="card-title">Image Compressor</h5>
+                                <p class="card-text">Reduce image file size without losing quality.</p>
+                                <a href="/tools/image-tools/image-compressor.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-code-square"></i>
+                                </div>
+                                <h5 class="card-title">Image to Base64</h5>
+                                <p class="card-text">Convert images to Base64 strings.</p>
+                                <a href="/tools/image-tools/image-to-base64.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-file-earmark-image"></i>
+                                </div>
+                                <h5 class="card-title">Image to JPG</h5>
+                                <p class="card-text">Convert images to JPG format.</p>
+                                <a href="/tools/image-tools/image-to-jpg.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-image"></i>
+                                </div>
+                                <h5 class="card-title">Image to PNG</h5>
+                                <p class="card-text">Convert images to PNG format.</p>
+                                <a href="/tools/image-tools/image-to-png.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-arrows-fullscreen"></i>
+                                </div>
+                                <h5 class="card-title">Image Resizer</h5>
+                                <p class="card-text">Resize images to specific dimensions.</p>
+                                <a href="/tools/image-tools/image-resizer.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-qr-code"></i>
+                                </div>
+                                <h5 class="card-title">QR Code Generator</h5>
+                                <p class="card-text">Generate QR codes from text or URLs.</p>
+                                <a href="/tools/image-tools/qr-code-generator.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-file-earmark-pdf"></i>
+                                </div>
+                                <h5 class="card-title">Screenshot to PDF</h5>
+                                <p class="card-text">Convert screenshots to PDF documents.</p>
+                                <a href="/tools/image-tools/Screenshot-to-PDF-Converter.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SEO Tools -->
+            <div class="category-group mb-5">
+    <h4 class="category-subtitle">SEO Tools</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-link"></i>
+                    </div>
+                    <h5 class="card-title">Backlink Checker</h5>
+                    <p class="card-text">Backlink Checker</p>
+                    <a href="/tools/seo-tools/Backlink-Checker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-globe"></i>
+                    </div>
+                    <h5 class="card-title">Domain Authority Checker</h5>
+                    <p class="card-text">Domain Authority Checker</p>
+                    <a href="/tools/seo-tools/Domain-Authority-Checker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-text-indent-left"></i>
+                    </div>
+                    <h5 class="card-title">Google Index Checker</h5>
+                    <p class="card-text">Google Index Checker</p>
+                    <a href="/tools/seo-tools/Google-Index-Checker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-search-heart"></i>
+                    </div>
+                    <h5 class="card-title">Keyword Density Checker</h5>
+                    <p class="card-text">Analyze keyword density in your content.</p>
+                    <a href="/tools/seo-tools/keyword-density-checker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <h5 class="card-title">Meta Tag Generator</h5>
+                    <p class="card-text">Generate meta tags for your website.</p>
+                    <a href="/tools/seo-tools/meta-tag-generator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-phone"></i>
+                    </div>
+                    <h5 class="card-title">Mobile Friendly Test</h5>
+                    <p class="card-text">Mobile Friendly Test</p>
+                    <a href="/tools/seo-tools/Mobile-Friendly-Test.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <h5 class="card-title">Page Speed Checke</h5>
+                    <p class="card-text">Page Speed Checke</p>
+                    <a href="/tools/seo-tools/Page-Speed-Checker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+                    <h5 class="card-title">Robots.txt Generator</h5>
+                    <p class="card-text">Robots.txt Generator</p>
+                    <a href="/tools/seo-tools/Robots.txt-Generator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h5 class="card-title">Sitemap Generator</h5>
+                    <p class="card-text">Sitemap Generator</p>
+                    <a href="/tools/seo-tools/Sitemap-Generator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-filetype-xml"></i>
+                    </div>
+                    <h5 class="card-title">XML-Sitemap Validator</h5>
+                    <p class="card-text">XML-Sitemap Validator in your site</p>
+                    <a href="/tools/seo-tools/XML-Sitemap-Validator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+            <!-- Text Tools -->
+           <!-- Text Tools -->
+<div class="category-group mb-5">
+    <h4 class="category-subtitle">Text Tools</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-text-center"></i>
+                    </div>
+                    <h5 class="card-title">Character Counter</h5>
+                    <p class="card-text">Count characters in your text.</p>
+                    <a href="/tools/text-tools/character-counter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-pencil-square"></i>
+                    </div>
+                    <h5 class="card-title">Case Converter</h5>
+                    <p class="card-text">Convert text between different cases.</p>
+                    <a href="/tools/text-tools/case-converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <h5 class="card-title">Fancy Text Generator</h5>
+                    <p class="card-text">Fancy Text Generator Here</p>
+                    <a href="/tools/text-tools/Fancy-Text-Generator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-link"></i>
+                    </div>
+                    <h5 class="card-title">URL Encoder/Decoder</h5>
+                    <p class="card-text">Encode and decode URL strings.</p>
+                    <a href="/tools/text-tools/url-encoder-decoder.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-text-left"></i>
+                    </div>
+                    <h5 class="card-title">Word Counter</h5>
+                    <p class="card-text">Count words and characters in your text.</p>
+                    <a href="/tools/text-tools/word-counter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+        <!-- Developer Tools -->
+<div class="category-group mb-5">
+    <h4 class="category-subtitle">Developer Tools</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <!-- Base64 Encoder/Decoder -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-file-code"></i></div>
+                    <h5 class="card-title">Base64 Encoder/Decoder</h5>
+                    <p class="card-text">Encode and decode Base64 strings.</p>
+                    <a href="/tools/developer-tools/base64-encoder-decoder.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Code Picker -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-palette"></i></div>
+                    <h5 class="card-title">Color Code Picker</h5>
+                    <p class="card-text">Pick and copy color codes easily.</p>
+                    <a href="/tools/developer-tools/color-code-picker.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CSS Minifier -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-scissors"></i></div>
+                    <h5 class="card-title">CSS Minifier</h5>
+                    <p class="card-text">Minify your CSS for better performance.</p>
+                    <a href="/tools/developer-tools/css-minifier.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- HTML to Markdown -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-file-earmark-code"></i></div>
+                    <h5 class="card-title">HTML to Markdown</h5>
+                    <p class="card-text">Convert HTML to Markdown format.</p>
+                    <a href="/tools/developer-tools/html-to-markdown.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- IP Address Lookup -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-geo-alt"></i></div>
+                    <h5 class="card-title">IP Address Lookup</h5>
+                    <p class="card-text">Find the location and details of an IP address.</p>
+                    <a href="/tools/developer-tools/ip-address-lookup.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- JSON Formatter -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-code-slash"></i></div>
+                    <h5 class="card-title">JSON Formatter</h5>
+                    <p class="card-text">Format and validate JSON data.</p>
+                    <a href="/tools/developer-tools/json-formatter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markdown to HTML Converter -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-code-square"></i></div>
+                    <h5 class="card-title">Markdown to HTML Converter</h5>
+                    <p class="card-text">Convert Markdown text into HTML format.</p>
+                    <a href="/tools/developer-tools/" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SQL Formatter -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon"><i class="bi bi-database"></i></div>
+                    <h5 class="card-title">SQL Formatter</h5>
+                    <p class="card-text">Format SQL queries for better readability.</p>
+                    <a href="/tools/developer-tools/sql-formatter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+            <!-- Calculators -->
+<div class="category-group mb-5">
+    <h4 class="category-subtitle">Calculators</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <h5 class="card-title">Age Calculator</h5>
+                    <p class="card-text">Calculate age from birth date.</p>
+                    <a href="/tools/calculators/age-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-coin"></i>
+                    </div>
+                    <h5 class="card-title">Binary to Decimal Converter</h5>
+                    <p class="card-text">Binary to Decimal Converter</p>
+                    <a href="/tools/calculators/Binary-to-Decimal-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-calculator-fill"></i>
+                    </div>
+                    <h5 class="card-title">BMI Calculator</h5>
+                    <p class="card-text">Calculate Body Mass Index.</p>
+                    <a href="/tools/calculators/bmi-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-bank"></i>
+                    </div>
+                    <h5 class="card-title">Currency Converter</h5>
+                    <p class="card-text">Calculate Currency for services.</p>
+                    <a href="/tools/calculators/Currency-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-percent"></i>
+                    </div>
+                    <h5 class="card-title">Discount Calculator</h5>
+                    <p class="card-text">Calculate discounts and final prices.</p>
+                    <a href="/tools/calculators/discount-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-calculator"></i>
+                    </div>
+                    <h5 class="card-title">Percentage Calculator</h5>
+                    <p class="card-text">Calculate percentages easily.</p>
+                    <a href="/tools/calculators/percentage-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                    </div>
+                    <h5 class="card-title">Scientific Calculator</h5>
+                    <p class="card-text">Calculate Scientific for services.</p>
+                    <a href="/tools/calculators/Scientific-Calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-clock"></i>
+                    </div>
+                    <h5 class="card-title">Time Zone Converter</h5>
+                    <p class="card-text">Time Zone Converter for services.</p>
+                    <a href="/tools/calculators/Time-Zone-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-coin"></i>
+                    </div>
+                    <h5 class="card-title">Tip Calculator</h5>
+                    <p class="card-text">Calculate tips for services.</p>
+                    <a href="/tools/calculators/tip-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-cash-coin"></i>
+                    </div>
+                    <h5 class="card-title">Loan EMI Calculator</h5>
+                    <p class="card-text">Calculate loan EMIs and interest.</p>
+                    <a href="/tools/calculators/loan-emi-calculator.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+            <!-- Unit Converters -->
+            <div class="category-group mb-5">
+    <h4 class="category-subtitle">Unit Converters</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-compass"></i>
+                    </div>
+                    <h5 class="card-title">Angle Converter</h5>
+                    <p class="card-text">Angle Converter.</p>
+                    <a href="/tools/unit-converters/Angle-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-database-fill-check"></i>
+                    </div>
+                    <h5 class="card-title">Data Storage Converter</h5>
+                    <p class="card-text">Convert between different data units.</p>
+                    <a href="/tools/unit-converters/Data-Storage-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h5 class="card-title">Energy Converter</h5>
+                    <p class="card-text">Convert between different Energy units.</p>
+                    <a href="/tools/unit-converters/Energy-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-fuel-pump"></i>
+                    </div>
+                    <h5 class="card-title">Fuel Efficiency Converter</h5>
+                    <p class="card-text">Convert between different Fuel Efficiency units.</p>
+                    <a href="/tools/unit-converters/Fuel-Efficiency-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-rulers"></i>
+                    </div>
+                    <h5 class="card-title">Length Converter</h5>
+                    <p class="card-text">Convert between different length units.</p>
+                    <a href="/tools/unit-converters/length-converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-scale"></i>
+                    </div>
+                    <h5 class="card-title">Pressure Converter</h5>
+                    <p class="card-text">Convert between different pressure units.</p>
+                    <a href="/tools/unit-converters/Pressure-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-scale"></i>
+                    </div>
+                    <h5 class="card-title">Speed Converter</h5>
+                    <p class="card-text">Convert between different speed units.</p>
+                    <a href="/tools/unit-converters/Speed-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <h5 class="card-title">Temperature Converter</h5>
+                    <p class="card-text">Convert between temperature scales.</p>
+                    <a href="/tools/unit-converters/temperature-converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-rulers"></i>
+                    </div>
+                    <h5 class="card-title">Volume Converter</h5>
+                    <p class="card-text">Convert between different length units.</p>
+                    <a href="/tools/unit-converters/Volume-Converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card tool-card h-100">
+                <div class="card-body text-center">
+                    <div class="tool-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <h5 class="card-title">Weight Converter</h5>
+                    <p class="card-text">Convert between different weight units.</p>
+                    <a href="/tools/unit-converters/weight-converter.html" class="btn btn-primary">Use Tool</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+            <!-- Security Tools -->
+            <div class="category-group mb-5">
+                <h4 class="category-subtitle">Security Tools</h4>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-shield-lock"></i>
+                                </div>
+                                <h5 class="card-title">Password Generator</h5>
+                                <p class="card-text">Generate secure passwords.</p>
+                                <a href="/tools/security-tools/password-generator.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-hash"></i>
+                                </div>
+                                <h5 class="card-title">SHA256 Hash Generator</h5>
+                                <p class="card-text">Generate SHA256 hashes.</p>
+                                <a href="/tools/security-tools/sha256-hash-generator.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-file-lock"></i>
+                                </div>
+                                <h5 class="card-title">MD5 Hash Generator</h5>
+                                <p class="card-text">Generate MD5 hashes.</p>
+                                <a href="/tools/security-tools/md5-hash-generator.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- miscellaneous tools Media Tools -->
+            <div class="category-group mb-5">
+                <h4 class="category-subtitle">Miscellaneous Tools</h4>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="card tool-card h-100">
+                            <div class="card-body text-center">
+                                <div class="tool-icon">
+                                    <i class="bi bi-shuffle"></i>
+                                </div>
+                                <h5 class="card-title">Random String Generator</h5>
+                                <p class="card-text">Generator Random String </p>
+                                <a href="/tools/miscellaneous-tools/Random-String-Generator.html" class="btn btn-primary">Use Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+

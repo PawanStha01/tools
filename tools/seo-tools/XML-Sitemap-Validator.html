@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML Sitemap Validator | SEO Tools</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+            --danger-color: #e74a3b;
+            --warning-color: #f6c23e;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+       
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: 1px solid #e3e6f0;
+            padding: 1rem 1.35rem;
+            font-weight: 700;
+        }
+        
+        .tool-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ad-container {
+            background-color: #f8f9fa;
+            border: 1px dashed #ddd;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .sitemap-preview {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .back-button {
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .validation-result {
+            margin-top: 20px;
+        }
+        
+        .valid {
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        .invalid {
+            color: var(--danger-color);
+            font-weight: bold;
+        }
+        
+        .warning {
+            color: var(--warning-color);
+            font-weight: bold;
+        }
+        
+        .issues-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .issues-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .issues-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .issue-error {
+            color: var(--danger-color);
+        }
+        
+        .issue-warning {
+            color: var(--warning-color);
+        }
+        
+        
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tool-container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Loading spinner */
+        .spinner-border {
+            display: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: text-bottom;
+            border: 0.25em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border .75s linear infinite;
+        }
+        
+        @keyframes spinner-border {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+  
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Ad Banner -->
+    <div class="container mt-3">
+        <div class="ad-container">
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        
+        <div class="tool-container">
+            <h1 class="text-center mb-4"><i class="fas fa-check-circle feature-icon"></i><br>XML Sitemap Validator</h1>
+            <p class="text-center mb-4">Validate your XML sitemap to ensure it meets search engine requirements.</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Validate Sitemap
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="sitemapUrl" class="form-label">Sitemap URL</label>
+                                <input type="url" class="form-control" id="sitemapUrl" placeholder="https://example.com/sitemap.xml">
+                                <div class="form-text">Enter the full URL of your sitemap</div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Or paste XML content</label>
+                                <textarea class="form-control" id="sitemapContent" rows="10" placeholder="Paste your sitemap XML content here..."></textarea>
+                            </div>
+                            
+                            <button class="btn btn-primary" onclick="validateSitemap()" id="validateBtn">
+                                <span class="spinner-border spinner-border-sm" id="spinner" role="status" aria-hidden="true"></span>
+                                <i class="fas fa-check"></i> Validate Sitemap
+                            </button>
+                            
+                            <button class="btn btn-outline-secondary ms-2" onclick="loadSampleSitemap()">
+                                <i class="fas fa-magic"></i> Load Sample
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Quick Tips
+                        </div>
+                        <div class="card-body">
+                            <h5>About XML Sitemaps</h5>
+                            <p>XML sitemaps help search engines discover and index your website's pages.</p>
+                            
+                            <div class="alert alert-info">
+                                <h6><i class="fas fa-lightbulb"></i> Sitemap Requirements</h6>
+                                <ul class="mb-0">
+                                    <li>Must be UTF-8 encoded</li>
+                                    <li>Must use correct XML syntax</li>
+                                    <li>URLs must be properly escaped</li>
+                                    <li>Should be less than 50MB (uncompressed)</li>
+                                    <li>Should contain less than 50,000 URLs</li>
+                                </ul>
+                            </div>
+                            
+                            <h5 class="mt-3">Common Issues</h5>
+                            <ul>
+                                <li>Missing XML declaration</li>
+                                <li>Invalid characters in URLs</li>
+                                <li>Incorrect namespace declarations</li>
+                                <li>Missing required tags (like &lt;loc&gt;)</li>
+                                <li>Invalid date formats</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Banner -->
+                    <div class="ad-container">
+                        <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                   
+
+
+</div>
+                </div>
+            </div>
+            
+            <div id="resultSection" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        Validation Results
+                    </div>
+                    <div class="card-body">
+                        <div class="validation-result mb-4">
+                            <h4>Status: <span id="validationStatus"></span></h4>
+                            <div id="validationStats" class="mt-2"></div>
+                        </div>
+                        
+                        <div id="issuesContainer" style="display: none;">
+                            <h5>Issues Found</h5>
+                            <ul class="issues-list" id="issuesList"></ul>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Sitemap Preview</h5>
+                            <div class="sitemap-preview">
+                                <code id="sitemapPreview"></code>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <button class="btn btn-outline-primary" onclick="copySitemap()">
+                                <i class="fas fa-copy"></i> Copy Sitemap
+                            </button>
+                            <button class="btn btn-outline-success ms-2" onclick="downloadSitemap()">
+                                <i class="fas fa-download"></i> Download Sitemap
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+
+
+
+   <!-- Footer Placeholder -->
+   <div id="footer-placeholder"></div>
+    
+   <!-- Bootstrap JS Bundle with Popper -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom JS -->
+   <script src="/js/include.js"></script>
+   <script src="/js/main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validateSitemap() {
+            const sitemapUrl = document.getElementById('sitemapUrl').value.trim();
+            const sitemapContent = document.getElementById('sitemapContent').value.trim();
+            
+            if (!sitemapUrl && !sitemapContent) {
+                alert('Please enter a sitemap URL or paste XML content');
+                return;
+            }
+            
+            // Show loading spinner
+            const validateBtn = document.getElementById('validateBtn');
+            const spinner = document.getElementById('spinner');
+            validateBtn.disabled = true;
+            spinner.style.display = 'inline-block';
+            
+            // Clear previous results
+            document.getElementById('resultSection').style.display = 'none';
+            
+            // Simulate validation (in a real app, this would be an actual validation)
+            setTimeout(() => {
+                if (sitemapUrl) {
+                    validateSitemapFromUrl(sitemapUrl);
+                } else {
+                    validateSitemapContent(sitemapContent);
+                }
+                
+                // Hide spinner
+                validateBtn.disabled = false;
+                spinner.style.display = 'none';
+            }, 1000);
+        }
+        
+        function validateSitemapFromUrl(url) {
+            // In a real implementation, you would fetch the URL and validate the response
+            // For this demo, we'll simulate validation with sample data
+            
+            // Check if URL is valid
+            if (!isValidUrl(url)) {
+                showValidationResult(false, [
+                    { type: 'error', message: 'Invalid URL format' }
+                ]);
+                return;
+            }
+            
+            // Simulate fetching and validating
+            const isValid = Math.random() > 0.3; // 70% chance of being valid for demo
+            const issues = [];
+            
+            if (isValid) {
+                // Simulate a valid sitemap
+                showValidationResult(true, []);
+                document.getElementById('sitemapPreview').textContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${url.replace('sitemap.xml', '')}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${url.replace('sitemap.xml', 'about')}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>`;
+            } else {
+                // Simulate some common issues
+                issues.push(
+                    { type: 'error', message: 'Missing XML declaration' },
+                    { type: 'warning', message: 'No lastmod tag provided for URLs' },
+                    { type: 'error', message: 'Invalid URL found: /invalid-url-with-spaces' }
+                );
+                
+                showValidationResult(false, issues);
+                document.getElementById('sitemapPreview').textContent = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${url.replace('sitemap.xml', 'invalid url with spaces')}</loc>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>`;
+            }
+        }
+        
+        function validateSitemapContent(content) {
+            // In a real implementation, you would parse and validate the XML
+            // For this demo, we'll simulate validation
+            
+            const issues = [];
+            let isValid = true;
+            
+            // Check for basic XML structure
+            if (!content.includes('<?xml')) {
+                issues.push({ type: 'error', message: 'Missing XML declaration' });
+                isValid = false;
+            }
+            
+            if (!content.includes('<urlset')) {
+                issues.push({ type: 'error', message: 'Missing urlset element' });
+                isValid = false;
+            }
+            
+            // Check for URLs with spaces (invalid)
+            if (content.match(/<loc>[^<]*\s+[^<]*<\/loc>/)) {
+                issues.push({ type: 'error', message: 'URLs contain spaces (must be properly encoded)' });
+                isValid = false;
+            }
+            
+            // Check for missing loc tags
+            const urlCount = (content.match(/<url>/g) || []).length;
+            const locCount = (content.match(/<loc>/g) || []).length;
+            
+            if (urlCount !== locCount) {
+                issues.push({ type: 'error', message: `Found ${urlCount} url tags but ${locCount} loc tags - each url must contain exactly one loc` });
+                isValid = false;
+            }
+            
+            // Check for invalid dates
+            const lastmodTags = content.match(/<lastmod>([^<]*)<\/lastmod>/g) || [];
+            lastmodTags.forEach(tag => {
+                const date = tag.replace(/<\/?lastmod>/g, '');
+                if (date && isNaN(Date.parse(date))) {
+                    issues.push({ type: 'error', message: `Invalid date format in lastmod: ${date}` });
+                    isValid = false;
+                }
+            });
+            
+            // Show results
+            showValidationResult(isValid, issues);
+            document.getElementById('sitemapPreview').textContent = content;
+        }
+        
+        function showValidationResult(isValid, issues) {
+            const statusElement = document.getElementById('validationStatus');
+            const statsElement = document.getElementById('validationStats');
+            const issuesContainer = document.getElementById('issuesContainer');
+            const issuesList = document.getElementById('issuesList');
+            
+            if (isValid && issues.length === 0) {
+                statusElement.textContent = 'VALID';
+                statusElement.className = 'valid';
+                statsElement.innerHTML = '<p>Your sitemap is well-formed and meets all requirements.</p>';
+                issuesContainer.style.display = 'none';
+            } else {
+                statusElement.textContent = 'INVALID';
+                statusElement.className = 'invalid';
+                
+                let statsHtml = `<p>Found ${issues.length} issue${issues.length !== 1 ? 's' : ''}:</p>`;
+                statsHtml += `<div class="progress mb-3">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: ${issues.filter(i => i.type === 'error').length / issues.length * 100}%" 
+                        aria-valuenow="${issues.filter(i => i.type === 'error').length}" aria-valuemin="0" aria-valuemax="${issues.length}">Errors</div>
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: ${issues.filter(i => i.type === 'warning').length / issues.length * 100}%" 
+                        aria-valuenow="${issues.filter(i => i.type === 'warning').length}" aria-valuemin="0" aria-valuemax="${issues.length}">Warnings</div>
+                </div>`;
+                
+                statsElement.innerHTML = statsHtml;
+                
+                // Display issues
+                issuesList.innerHTML = '';
+                issues.forEach(issue => {
+                    const li = document.createElement('li');
+                    li.className = issue.type === 'error' ? 'issue-error' : 'issue-warning';
+                    li.innerHTML = `<i class="fas fa-${issue.type === 'error' ? 'times-circle' : 'exclamation-triangle'}"></i> ${issue.message}`;
+                    issuesList.appendChild(li);
+                });
+                
+                issuesContainer.style.display = 'block';
+            }
+            
+            document.getElementById('resultSection').style.display = 'block';
+            document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function isValidUrl(url) {
+            try {
+                new URL(url);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+        
+        function loadSampleSitemap() {
+            document.getElementById('sitemapContent').value = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2023-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://example.com/about</loc>
+    <lastmod>2023-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.com/contact</loc>
+    <lastmod>2023-02-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>`;
+        }
+        
+        function copySitemap() {
+            const sitemapText = document.getElementById('sitemapPreview').textContent;
+            navigator.clipboard.writeText(sitemapText).then(() => {
+                alert('Sitemap copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy to clipboard. Please try again.');
+            });
+        }
+        
+        function downloadSitemap() {
+            const sitemapText = document.getElementById('sitemapPreview').textContent;
+            const blob = new Blob([sitemapText], { type: 'application/xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'sitemap.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html> 

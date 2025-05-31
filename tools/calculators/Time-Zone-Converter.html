@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Time Zone Converter tool to convert times between popular countries including Nepal, India, USA, UK, Japan, UAE, Singapore, Australia, South Korea, China, and more.">
+    <meta name="keywords" content="time zone converter, time conversion, Nepal time, India time, USA time, UK time, Japan time, UAE time, Singapore time, Australia time, South Korea time, China time">
+    <title>Time Zone Converter</title>
+    <!-- Bootstrap CSS -->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --danger-color: #dc3545;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 2rem 0;
+        }
+        
+        .tool-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+        
+        .time-input-group {
+            position: relative;
+        }
+        
+        .time-input-group .form-control {
+            padding-right: 40px;
+        }
+        
+        .time-input-group .current-time-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .result-card {
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .timezone-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+        }
+        
+        .time-display {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        
+        .date-display {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .timezone-display {
+            font-weight: 500;
+        }
+        
+        .btn-download {
+            background-color: var(--success-color);
+            border: none;
+        }
+        
+        .btn-download:hover {
+            background-color: #157347;
+        }
+        
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 767px) {
+            .tool-container {
+                padding: 1.5rem;
+            }
+            
+            .time-display {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+   <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <div class="tool-container">
+                 <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                <h1 class="text-center mb-4"><i class="fas fa-globe me-2"></i>Time Zone Converter</h1>
+                <p class="text-center text-muted mb-4">Convert times between different time zones around the world</p>
+                
+                <form id="timezone-form">
+                    <div class="mb-4">
+                        <label for="input-time" class="form-label fw-semibold">Time</label>
+                        <div class="time-input-group">
+                            <input type="text" class="form-control" id="input-time" 
+                                   placeholder="HH:MM AM/PM (e.g., 02:30 PM)" required>
+                            <button type="button" class="current-time-btn" id="current-time-btn" 
+                                    title="Use current time">
+                                <i class="fas fa-clock"></i>
+                            </button>
+                        </div>
+                        <div class="form-text">Enter time in 12-hour format</div>
+                    </div>
+                    
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label for="source-timezone" class="form-label fw-semibold">From Time Zone</label>
+                            <select class="form-select" id="source-timezone" required>
+                                <option value="" disabled selected>Select source time zone</option>
+                                <option value="Asia/Kathmandu" data-flag="np">Nepal (Asia/Kathmandu)</option>
+                                <option value="Asia/Kolkata" data-flag="in">India (Asia/Kolkata)</option>
+                                <option value="America/New_York" data-flag="us">USA - Eastern (America/New_York)</option>
+                                <option value="America/Los_Angeles" data-flag="us">USA - Pacific (America/Los_Angeles)</option>
+                                <option value="Europe/London" data-flag="gb">UK (Europe/London)</option>
+                                <option value="Asia/Tokyo" data-flag="jp">Japan (Asia/Tokyo)</option>
+                                <option value="Asia/Dubai" data-flag="ae">UAE (Asia/Dubai)</option>
+                                <option value="Asia/Singapore" data-flag="sg">Singapore (Asia/Singapore)</option>
+                                <option value="Australia/Sydney" data-flag="au">Australia (Australia/Sydney)</option>
+                                <option value="Asia/Seoul" data-flag="kr">South Korea (Asia/Seoul)</option>
+                                <option value="Asia/Shanghai" data-flag="cn">China (Asia/Shanghai)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="target-timezone" class="form-label fw-semibold">To Time Zone</label>
+                            <select class="form-select" id="target-timezone" required>
+                                <option value="" disabled selected>Select target time zone</option>
+                                <option value="Asia/Kathmandu" data-flag="np">Nepal (Asia/Kathmandu)</option>
+                                <option value="Asia/Kolkata" data-flag="in">India (Asia/Kolkata)</option>
+                                <option value="America/New_York" data-flag="us">USA - Eastern (America/New_York)</option>
+                                <option value="America/Los_Angeles" data-flag="us">USA - Pacific (America/Los_Angeles)</option>
+                                <option value="Europe/London" data-flag="gb">UK (Europe/London)</option>
+                                <option value="Asia/Tokyo" data-flag="jp">Japan (Asia/Tokyo)</option>
+                                <option value="Asia/Dubai" data-flag="ae">UAE (Asia/Dubai)</option>
+                                <option value="Asia/Singapore" data-flag="sg">Singapore (Asia/Singapore)</option>
+                                <option value="Australia/Sydney" data-flag="au">Australia (Australia/Sydney)</option>
+                                <option value="Asia/Seoul" data-flag="kr">South Korea (Asia/Seoul)</option>
+                                <option value="Asia/Shanghai" data-flag="cn">China (Asia/Shanghai)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-exchange-alt me-2"></i>Convert Time
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="error-message mt-3" id="error-message"></div>
+                
+                <div class="card mt-4 result-card" id="result" style="display: none;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3"><i class="fas fa-clock me-2"></i>Conversion Result</h5>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img id="source-flag" class="timezone-flag" src="" alt="">
+                                    <span class="timezone-display" id="source-timezone-display"></span>
+                                </div>
+                                <div class="time-display" id="source-time-display"></div>
+                                <div class="date-display" id="source-date-display"></div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img id="target-flag" class="timezone-flag" src="" alt="">
+                                    <span class="timezone-display" id="target-timezone-display"></span>
+                                </div>
+                                <div class="time-display" id="target-time-display"></div>
+                                <div class="date-display" id="target-date-display"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="btn btn-download" id="download-btn">
+                                <i class="fas fa-download me-2"></i>Download Result
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 text-center text-muted">
+                 <div class="ad-space ad-space-sidebar">
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    </div>
+
+
+                <small>
+                    Note: This tool uses the current date for conversion. Daylight Saving Time is automatically accounted for.
+                </small>
+            </div>
+        </div>
+    </main>
+    
+
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Luxon for timezone handling -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    
+    <!-- Time Zone Converter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const form = document.getElementById('timezone-form');
+            const inputTime = document.getElementById('input-time');
+            const sourceTimezone = document.getElementById('source-timezone');
+            const targetTimezone = document.getElementById('target-timezone');
+            const errorMessage = document.getElementById('error-message');
+            const resultCard = document.getElementById('result');
+            const currentTimeBtn = document.getElementById('current-time-btn');
+            const downloadBtn = document.getElementById('download-btn');
+            
+            // Country flag base URL (using flag CDN)
+            const flagBaseUrl = 'https://flagcdn.com/24x18/';
+            
+            // Set current time button click handler
+            currentTimeBtn.addEventListener('click', function() {
+                const now = luxon.DateTime.now();
+                inputTime.value = now.toFormat('hh:mm a');
+                
+                // Try to auto-detect timezone
+                try {
+                    const userTimezone = luxon.DateTime.local().zoneName;
+                    for (let i = 0; i < sourceTimezone.options.length; i++) {
+                        if (sourceTimezone.options[i].value === userTimezone) {
+                            sourceTimezone.selectedIndex = i;
+                            break;
+                        }
+                    }
+                } catch (e) {
+                    console.log('Could not detect timezone');
+                }
+            });
+            
+            // Form submission handler
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset UI
+                errorMessage.textContent = '';
+                errorMessage.style.display = 'none';
+                resultCard.style.display = 'none';
+                downloadBtn.disabled = true;
+                
+                // Validate input time format
+                const timeRegex = /^(0?[1-9]|1[0-2]):[0-5][0-9] (AM|PM)$/i;
+                if (!timeRegex.test(inputTime.value.trim())) {
+                    showError('Please enter a valid time in HH:MM AM/PM format (e.g., 02:30 PM)');
+                    return;
+                }
+                
+                // Validate time zones
+                if (!sourceTimezone.value || !targetTimezone.value) {
+                    showError('Please select both source and target time zones');
+                    return;
+                }
+                
+                if (sourceTimezone.value === targetTimezone.value) {
+                    showError('Source and target time zones cannot be the same');
+                    return;
+                }
+                
+                // Parse input time
+                const [time, period] = inputTime.value.trim().split(' ');
+                const [hours, minutes] = time.split(':').map(Number);
+                
+                // Get current date for context
+                const now = luxon.DateTime.now();
+                
+                // Create DateTime object in source timezone
+                let sourceDate = luxon.DateTime.fromObject({
+                    year: now.year,
+                    month: now.month,
+                    day: now.day,
+                    hour: period.toUpperCase() === 'PM' ? 
+                          (hours === 12 ? 12 : hours + 12) : 
+                          (hours === 12 ? 0 : hours),
+                    minute: minutes
+                }, { zone: sourceTimezone.value });
+                
+                if (!sourceDate.isValid) {
+                    showError('Invalid time or timezone configuration');
+                    return;
+                }
+                
+                // Convert to target timezone
+                const targetDate = sourceDate.setZone(targetTimezone.value);
+                
+                // Update result display
+                updateResultDisplay(sourceDate, targetDate);
+                
+                // Set up download functionality
+                setupDownload(sourceDate, targetDate);
+                
+                // Show result
+                resultCard.style.display = 'block';
+                downloadBtn.disabled = false;
+            });
+            
+            // Show error message
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+            }
+            
+            // Update result display
+            function updateResultDisplay(sourceDate, targetDate) {
+                // Source timezone info
+                document.getElementById('source-time-display').textContent = sourceDate.toFormat('hh:mm a');
+                document.getElementById('source-date-display').textContent = sourceDate.toFormat('MMMM dd, yyyy');
+                document.getElementById('source-timezone-display').textContent = 
+                    sourceTimezone.options[sourceTimezone.selectedIndex].text;
+                
+                // Target timezone info
+                document.getElementById('target-time-display').textContent = targetDate.toFormat('hh:mm a');
+                document.getElementById('target-date-display').textContent = targetDate.toFormat('MMMM dd, yyyy');
+                document.getElementById('target-timezone-display').textContent = 
+                    targetTimezone.options[targetTimezone.selectedIndex].text;
+                
+                // Set flags
+                const sourceFlag = sourceTimezone.options[sourceTimezone.selectedIndex].dataset.flag;
+                const targetFlag = targetTimezone.options[targetTimezone.selectedIndex].dataset.flag;
+                document.getElementById('source-flag').src = flagBaseUrl + sourceFlag + '.png';
+                document.getElementById('target-flag').src = flagBaseUrl + targetFlag + '.png';
+            }
+            
+            // Set up download functionality
+            function setupDownload(sourceDate, targetDate) {
+                downloadBtn.onclick = function() {
+                    const sourceText = sourceDate.toFormat('MMMM dd, yyyy - hh:mm a (ZZZZ)');
+                    const targetText = targetDate.toFormat('MMMM dd, yyyy - hh:mm a (ZZZZ)');
+                    
+                    const content = [
+                        'Time Zone Conversion Result',
+                        'Generated on: ' + luxon.DateTime.now().toFormat('MMMM dd, yyyy - hh:mm a'),
+                        '',
+                        'Source Time:',
+                        sourceTimezone.options[sourceTimezone.selectedIndex].text,
+                        sourceText,
+                        '',
+                        'Converted Time:',
+                        targetTimezone.options[targetTimezone.selectedIndex].text,
+                        targetText,
+                        '',
+                        'Note: This conversion was done using the Time Zone Converter tool'
+                    ].join('\n');
+                    
+                    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'timezone_conversion_' + luxon.DateTime.now().toFormat('yyyyMMdd_HHmmss') + '.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                };
+            }
+            
+            // Initialize with current time
+            currentTimeBtn.click();
+        });
+    </script>
+</body>
+</html>

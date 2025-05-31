@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Lookup | Webmaster Tools</title>
+    <meta name="description" content="Free online tool to lookup IP address information including location, ISP, and more.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+            --success-color: #1cc88a;
+            --info-color: #36b9cc;
+            --warning-color: #f6c23e;
+            --danger-color: #e74a3b;
+        }
+        
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+       
+        
+        
+        
+        .card {
+            border: none;
+            border-radius: 0.35rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+        }
+        
+        
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .ad-container {
+            background: #f8f9fa;
+            border: 1px dashed #ddd;
+            border-radius: 0.35rem;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .result-box {
+            background-color: #f8f9fa;
+            border-radius: 0.35rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .result-item {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .result-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        .map-container {
+            height: 300px;
+            width: 100%;
+            border-radius: 0.35rem;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .card {
+                margin-bottom: 1rem;
+            }
+            
+            .tool-icon {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Main Tool Content -->
+            <div class="col-lg-8">
+                
+                
+                <div class="card">
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+
+                    <div class="card-header">
+                        <h2 class="h4 mb-0"><i class="fas fa-map-marker-alt me-2"></i> IP Address Lookup</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-globe tool-icon"></i>
+                            <p class="lead">Find detailed information about any IP address including location, ISP, and more.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="ipAddress" class="form-label">Enter IP Address:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="ipAddress" placeholder="e.g., 8.8.8.8" value="">
+                                <button class="btn btn-primary" id="lookupBtn" type="button">
+                                    <i class="fas fa-search me-1"></i> Lookup
+                                </button>
+                                <button class="btn btn-outline-secondary" id="myIpBtn" type="button">
+                                    <i class="fas fa-user me-1"></i> My IP
+                                </button>
+                            </div>
+                            <div class="form-text">Leave blank to lookup your own IP address</div>
+                        </div>
+                        
+                        <!-- Ad Space -->
+                        <div class="ad-container mb-4">
+                           <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                        </div>
+                        
+                        <!-- Results Section -->
+                        <div id="resultsSection" style="display: none;">
+                            <h4 class="mb-3">IP Address Information</h4>
+                            <div class="result-box">
+                                <div class="result-item">
+                                    <span class="result-label">IP Address:</span>
+                                    <span id="ipResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Location:</span>
+                                    <span id="locationResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">City:</span>
+                                    <span id="cityResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Region/State:</span>
+                                    <span id="regionResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Country:</span>
+                                    <span id="countryResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Postal Code:</span>
+                                    <span id="postalResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Timezone:</span>
+                                    <span id="timezoneResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">ISP:</span>
+                                    <span id="ispResult" class="d-block">-</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-label">Organization:</span>
+                                    <span id="orgResult" class="d-block">-</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Map Container -->
+                            <div id="mapContainer" class="map-container">
+                                <!-- Map will be loaded here -->
+                                <div id="map" style="height: 100%; width: 100%;"></div>
+                            </div>
+                            
+                            <!-- Share Results -->
+                            <div class="mt-4">
+                                <h5 class="mb-3">Share Results</h5>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-primary"><i class="fab fa-facebook-f"></i></button>
+                                    <button type="button" class="btn btn-outline-info"><i class="fab fa-twitter"></i></button>
+                                    <button type="button" class="btn btn-outline-danger"><i class="fab fa-pinterest"></i></button>
+                                    <button type="button" class="btn btn-outline-secondary"><i class="fas fa-link"></i> Copy Link</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Information -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3 class="h5 mb-0"><i class="fas fa-info-circle me-2"></i> About IP Lookup</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="mb-3">What is an IP Address?</h5>
+                        <p>An IP (Internet Protocol) address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. It serves two main functions: identifying the host or network interface, and providing the location of the host in the network.</p>
+                        
+                        <h5 class="mb-3 mt-4">How IP Lookup Works</h5>
+                        <p>Our IP lookup tool queries a database that contains geographical information associated with IP addresses. When you enter an IP address, our system retrieves the available data including country, region, city, ISP, and other details.</p>
+                        
+                        <h5 class="mb-3 mt-4">Common Uses</h5>
+                        <ul>
+                            <li>Website analytics to understand visitor locations</li>
+                            <li>Network troubleshooting</li>
+                            <li>Content localization</li>
+                            <li>Fraud detection and prevention</li>
+                            <li>Cybersecurity investigations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                
+
+               
+               
+                <!-- Ad Space -->
+                
+                     <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+           
+
+                </div>
+                
+                <!-- Popular Tools -->
+               <!-- <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="h5 mb-0">Popular Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-ruler-combined me-2"></i> Word Counter
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-image me-2"></i> Image Converter
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-lock me-2"></i> Password Generator
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-code me-2"></i> HTML Beautifier
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fas fa-link me-2"></i> URL Shortener
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- Quick Tools -->
+               <!-- <div class="card">
+                    <div class="card-header">
+                        <h3 class="h5 mb-0">Quick Tools</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-text-width"></i> Word Count
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-hashtag"></i> Hash Generator
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-qrcode"></i> QR Generator
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-link"></i> URL Encoder
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> --> 
+            </div>
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+        </div>
+    </div>
+    
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+     
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ipAddressInput = document.getElementById('ipAddress');
+            const lookupBtn = document.getElementById('lookupBtn');
+            const myIpBtn = document.getElementById('myIpBtn');
+            const resultsSection = document.getElementById('resultsSection');
+            
+            // Initialize map (will be shown when results are available)
+            let map = null;
+            let marker = null;
+            
+            // Event listeners
+            lookupBtn.addEventListener('click', lookupIp);
+            myIpBtn.addEventListener('click', getMyIp);
+            
+            // Handle Enter key in input field
+            ipAddressInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    lookupIp();
+                }
+            });
+            
+            // Function to lookup IP address
+            function lookupIp() {
+                const ip = ipAddressInput.value.trim();
+                
+                if (ip && !isValidIp(ip)) {
+                    alert('Please enter a valid IP address (e.g., 8.8.8.8)');
+                    return;
+                }
+                
+                // Show loading state
+                lookupBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-1"></i> Looking up...';
+                lookupBtn.disabled = true;
+                
+                // API endpoint (using a free IP geolocation API)
+                const url = ip ? 
+                    `https://ipapi.co/${ip}/json/` : 
+                    'https://ipapi.co/json/';
+                
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        displayResults(data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching IP data:', error);
+                        alert('Error fetching IP data. Please try again later.');
+                    })
+                    .finally(() => {
+                        lookupBtn.innerHTML = '<i class="fas fa-search me-1"></i> Lookup';
+                        lookupBtn.disabled = false;
+                    });
+            }
+            
+            // Function to get user's own IP
+            function getMyIp() {
+                ipAddressInput.value = '';
+                lookupIp();
+            }
+            
+            // Function to validate IP address format
+            function isValidIp(ip) {
+                const ipv4Regex = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+                const ipv6Regex = /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
+                return ipv4Regex.test(ip) || ipv6Regex.test(ip);
+            }
+            
+            // Function to display results
+            function displayResults(data) {
+                // Update result fields
+                document.getElementById('ipResult').textContent = data.ip || '-';
+                document.getElementById('cityResult').textContent = data.city || '-';
+                document.getElementById('regionResult').textContent = data.region || '-';
+                document.getElementById('countryResult').textContent = `${data.country_name} (${data.country})` || '-';
+                document.getElementById('postalResult').textContent = data.postal || '-';
+                document.getElementById('timezoneResult').textContent = data.timezone || '-';
+                document.getElementById('ispResult').textContent = data.org || '-';
+                document.getElementById('orgResult').textContent = data.org || '-';
+                
+                // Build location string
+                const locationParts = [];
+                if (data.city) locationParts.push(data.city);
+                if (data.region) locationParts.push(data.region);
+                if (data.country_name) locationParts.push(data.country_name);
+                document.getElementById('locationResult').textContent = locationParts.join(', ') || '-';
+                
+                // Show results section
+                resultsSection.style.display = 'block';
+                
+                // Initialize or update map if we have coordinates
+                if (data.latitude && data.longitude) {
+                    initMap(data.latitude, data.longitude, data.city || 'IP Location');
+                } else {
+                    document.getElementById('mapContainer').style.display = 'none';
+                }
+                
+                // Scroll to results
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // Function to initialize or update map
+            function initMap(lat, lng, title) {
+                const mapContainer = document.getElementById('mapContainer');
+                mapContainer.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('map').setView([lat, lng], 10);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: ' <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+                    
+                    marker = L.marker([lat, lng]).addTo(map)
+                        .bindPopup(title)
+                        .openPopup();
+                } else {
+                    map.setView([lat, lng], 10);
+                    marker.setLatLng([lat, lng])
+                        .setPopupContent(title)
+                        .openPopup();
+                }
+            }
+            
+            // Check if there's an IP in the URL (for direct linking to results)
+            const urlParams = new URLSearchParams(window.location.search);
+            const ipParam = urlParams.get('ip');
+            
+            if (ipParam) {
+                ipAddressInput.value = ipParam;
+                setTimeout(lookupIp, 500); // Small delay to ensure everything is loaded
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator - Calculate Tips & Split Bills | Multi-Tools</title>
+    <meta name="description" content="Free online tip calculator. Calculate tips, total bill amount, and split bills among multiple people. Perfect for restaurants, bars, and services.">
+    <meta name="keywords" content="tip calculator, gratuity calculator, bill splitter, restaurant tip, split bill calculator">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Tool-specific styles */
+        .result-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        
+        .tip-btn {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tip-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bill-summary {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #dee2e6;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .summary-value {
+            font-weight: 700;
+        }
+        
+        .total-row {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-ms-thumb {
+            background: var(--primary-color);
+        }
+        
+        .range-value {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+
+      <script async="async" data-cfasync="false" src="//pl26614486.profitableratecpm.com/c5fb71b349ae6a43f6fdf2c00a2f3a0e/invoke.js"></script>
+<div id="container-c5fb71b349ae6a43f6fdf2c00a2f3a0e"></div>
+
+    <!-- Main Content -->
+    <main class="container py-4">
+        <div class="row">
+            <!-- Tool Content -->
+            <div class="col-lg-8">
+                <div class="tool-container">
+                     <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                    <div class="tool-header">
+                        <h1>Tip Calculator</h1>
+                        <p class="tool-description">Calculate tips, total bill amount, and split bills among multiple people. Perfect for restaurants, bars, and service providers.</p>
+                    </div>
+                    
+                    <!-- Tool Form -->
+                    <form id="tip-form">
+                        <div class="mb-3">
+                            <label for="bill-amount" class="form-label">Bill Amount</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="number" class="form-control" id="bill-amount" placeholder="Enter bill amount" min="0.01" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Tip Percentage</label>
+                            <div class="mb-2">
+                                <button type="button" class="btn btn-outline-primary tip-btn" data-tip="10">10%</button>
+                                <button type="button" class="btn btn-outline-primary tip-btn" data-tip="15">15%</button>
+                                <button type="button" class="btn btn-outline-primary tip-btn active" data-tip="20">20%</button>
+                                <button type="button" class="btn btn-outline-primary tip-btn" data-tip="25">25%</button>
+                                <button type="button" class="btn btn-outline-primary tip-btn" data-tip="30">30%</button>
+                            </div>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="tip-percentage" placeholder="Custom tip percentage" min="0" max="100" step="0.1" value="20" required>
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="tip-slider" class="form-label">Adjust Tip</label>
+                            <input type="range" class="form-range" id="tip-slider" min="0" max="50" step="1" value="20">
+                            <div class="d-flex justify-content-between">
+                                <small>0%</small>
+                                <small class="range-value" id="tip-slider-value">20%</small>
+                                <small>50%</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="num-people" class="form-label">Number of People</label>
+                            <input type="number" class="form-control" id="num-people" placeholder="Enter number of people" min="1" step="1" value="1" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="round-up">
+                                <label class="form-check-label" for="round-up">
+                                    Round up total to nearest dollar
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Calculate Tip</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Results Section -->
+                    <div class="result-container mt-4" id="result-container" style="display: none;">
+                        <h4>Tip Results</h4>
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="result-box">
+                                    <div class="result-label">Tip Amount</div>
+                                    <div class="result-value text-primary" id="tip-amount">$0.00</div>
+                                    <div id="tip-per-person-text">per person: $0.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="result-box">
+                                    <div class="result-label">Total Amount</div>
+                                    <div class="result-value text-success" id="total-amount">$0.00</div>
+                                    <div id="total-per-person-text">per person: $0.00</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="result-box">
+                                    <div class="result-label">Each Person Pays</div>
+                                    <div class="result-value text-danger" id="per-person">$0.00</div>
+                                    <div id="split-text">Split between 1 person</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bill-summary">
+                            <h5>Bill Summary</h5>
+                            <div class="summary-item">
+                                <span>Bill Amount:</span>
+                                <span class="summary-value" id="summary-bill">$0.00</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Tip (<span id="summary-tip-percentage">20%</span>):</span>
+                                <span class="summary-value" id="summary-tip">$0.00</span>
+                            </div>
+                            <div class="summary-item total-row">
+                                <span>Total:</span>
+                                <span id="summary-total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Information -->
+                    <div class="mt-4">
+                        <h4>About Tipping</h4>
+                        <p>Tipping is a practice of giving a gratuity (additional money) to service workers for their service. It's customary in many countries, particularly in the United States, where service workers often receive lower base wages with the expectation that tips will supplement their income.</p>
+                        
+                        <h5>Standard Tipping Guidelines</h5>
+                        <ul>
+                            <li><strong>Restaurants:</strong> 15-20% of the pre-tax bill is standard. 10% for poor service, 20% for good service, and 25%+ for exceptional service.</li>
+                            <li><strong>Bars:</strong> $1-2 per drink or 15-20% of the total tab.</li>
+                            <li><strong>Food Delivery:</strong> 10-15% of the bill, with a minimum of $2-5.</li>
+                            <li><strong>Taxi/Rideshare:</strong> 10-15% of the fare.</li>
+                            <li><strong>Hotel Housekeeping:</strong> $2-5 per day.</li>
+                            <li><strong>Hairdressers/Barbers:</strong> 15-20% of the service cost.</li>
+                        </ul>
+                        
+                        <h5>Tipping Etiquette Around the World</h5>
+                        <ul>
+                            <li><strong>United States & Canada:</strong> Tipping is expected (15-20%).</li>
+                            <li><strong>United Kingdom:</strong> Service charge is often included (10-15%), but additional tipping is appreciated.</li>
+                            <li><strong>Europe:</strong> Service is typically included in the bill, but rounding up or leaving a small amount is common.</li>
+                            <li><strong>Japan:</strong> Tipping is not customary and can sometimes be considered rude.</li>
+                            <li><strong>Australia:</strong> Tipping is not expected but appreciated for exceptional service (10%).</li>
+                            <li><strong>China:</strong> Tipping is not traditional but is becoming more common in tourist areas.</li>
+                        </ul>
+                        
+                        <h5>Tip Calculation Formula</h5>
+                        <div class="alert alert-light">
+                            <p><strong>Tip Amount = Bill Amount × (Tip Percentage ÷ 100)</strong></p>
+                            <p><strong>Total Amount = Bill Amount + Tip Amount</strong></p>
+                            <p><strong>Amount Per Person = Total Amount ÷ Number of People</strong></p>
+                        </div>
+                        
+                        <div class="alert alert-info mt-3">
+                            <h5><i class="bi bi-info-circle-fill me-2"></i> Tip</h5>
+                            <p class="mb-0">When dining in a group, consider calculating the tip based on the pre-tax amount and before any discounts or coupons are applied. This ensures that your server is tipped fairly based on the value of the service provided.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ad Section -->
+                <div class="ad-container mt-4">
+                    <!-- Ad code will go here -->
+                    <div class="placeholder-ad">
+                         <script type="text/javascript">
+	atOptions = {
+		'key' : '941778e6f5da4a6696df590abbf5ffea',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/941778e6f5da4a6696df590abbf5ffea/invoke.js"></script>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+               
+                    <script type="text/javascript">
+	atOptions = {
+		'key' : '1d99cf6bf3beeb92853e64f4d0393bad',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/1d99cf6bf3beeb92853e64f4d0393bad/invoke.js"></script>
+                    
+                        
+                    </div>
+                </div>
+                
+            
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/include.js"></script>
+    <script src="/js/main.js"></script>
+    
+    <!-- Tool-specific JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tipForm = document.getElementById('tip-form');
+            const billAmount = document.getElementById('bill-amount');
+            const tipPercentage = document.getElementById('tip-percentage');
+            const tipSlider = document.getElementById('tip-slider');
+            const tipSliderValue = document.getElementById('tip-slider-value');
+            const numPeople = document.getElementById('num-people');
+            const roundUp = document.getElementById('round-up');
+            const tipBtns = document.querySelectorAll('.tip-btn');
+            const resultContainer = document.getElementById('result-container');
+            
+            // Result elements
+            const tipAmount = document.getElementById('tip-amount');
+            const totalAmount = document.getElementById('total-amount');
+            const perPerson = document.getElementById('per-person');
+            const tipPerPersonText = document.getElementById('tip-per-person-text');
+            const totalPerPersonText = document.getElementById('total-per-person-text');
+            const splitText = document.getElementById('split-text');
+            
+            // Summary elements
+            const summaryBill = document.getElementById('summary-bill');
+            const summaryTipPercentage = document.getElementById('summary-tip-percentage');
+            const summaryTip = document.getElementById('summary-tip');
+            const summaryTotal = document.getElementById('summary-total');
+            
+            // Set default bill amount
+            billAmount.value = '50.00';
+            
+            // Sync tip percentage and slider
+            tipPercentage.addEventListener('input', function() {
+                tipSlider.value = this.value;
+                tipSliderValue.textContent = this.value + '%';
+                
+                // Update active button
+                updateActiveTipButton(this.value);
+            });
+            
+            tipSlider.addEventListener('input', function() {
+                tipPercentage.value = this.value;
+                tipSliderValue.textContent = this.value + '%';
+                
+                // Update active button
+                updateActiveTipButton(this.value);
+            });
+            
+            // Handle tip buttons
+            tipBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tipValue = this.getAttribute('data-tip');
+                    
+                    // Update tip percentage input and slider
+                    tipPercentage.value = tipValue;
+                    tipSlider.value = tipValue;
+                    tipSliderValue.textContent = tipValue + '%';
+                    
+                    // Update active button
+                    updateActiveTipButton(tipValue);
+                });
+            });
+            
+            // Update active tip button
+            function updateActiveTipButton(value) {
+                tipBtns.forEach(btn => {
+                    if (btn.getAttribute('data-tip') === value) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Calculate tip
+            tipForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get input values
+                const bill = parseFloat(billAmount.value);
+                const tip = parseFloat(tipPercentage.value);
+                const people = parseInt(numPeople.value);
+                
+                // Validate inputs
+                if (isNaN(bill) || bill <= 0) {
+                    alert('Please enter a valid bill amount.');
+                    return;
+                }
+                
+                if (isNaN(tip) || tip < 0) {
+                    alert('Please enter a valid tip percentage.');
+                    return;
+                }
+                
+                if (isNaN(people) || people <= 0) {
+                    alert('Please enter a valid number of people.');
+                    return;
+                }
+                
+                // Calculate tip and total
+                let tipValue = bill * (tip / 100);
+                let totalValue = bill + tipValue;
+                
+                // Round up if selected
+                if (roundUp.checked) {
+                    totalValue = Math.ceil(totalValue);
+                    tipValue = totalValue - bill;
+                }
+                
+                // Calculate per person amounts
+                const tipPerPersonValue = tipValue / people;
+                const totalPerPersonValue = totalValue / people;
+                
+                // Format values for display
+                const formattedBill = formatCurrency(bill);
+                const formattedTip = formatCurrency(tipValue);
+                const formattedTotal = formatCurrency(totalValue);
+                const formattedTipPerPerson = formatCurrency(tipPerPersonValue);
+                const formattedTotalPerPerson = formatCurrency(totalPerPersonValue);
+                
+                // Display results
+                tipAmount.textContent = formattedTip;
+                totalAmount.textContent = formattedTotal;
+                perPerson.textContent = formattedTotalPerPerson;
+                
+                // Update per person text
+                if (people > 1) {
+                    tipPerPersonText.textContent = `per person: ${formattedTipPerPerson}`;
+                    totalPerPersonText.textContent = `per person: ${formattedTotalPerPerson}`;
+                    splitText.textContent = `Split between ${people} people`;
+                } else {
+                    tipPerPersonText.textContent = '';
+                    totalPerPersonText.textContent = '';
+                    splitText.textContent = '';
+                }
+                
+                // Update summary
+                summaryBill.textContent = formattedBill;
+                summaryTipPercentage.textContent = tip + '%';
+                summaryTip.textContent = formattedTip;
+                summaryTotal.textContent = formattedTotal;
+                
+                // Show results
+                resultContainer.style.display = 'block';
+                
+                // Scroll to results
+                resultContainer.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Reset form
+            tipForm.addEventListener('reset', function() {
+                resultContainer.style.display = 'none';
+                tipSliderValue.textContent = '20%';
+                tipPercentage.value = 20;
+                tipSlider.value = 20;
+                numPeople.value = 1;
+                
+                // Reset active button
+                updateActiveTipButton('20');
+            });
+            
+            // Format currency
+            function formatCurrency(value) {
+                return '$' + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+            }
+        });
+    </script>
+</body>
+</html>
